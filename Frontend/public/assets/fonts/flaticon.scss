@@ -1,0 +1,125 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?de518832a6d5b0ebf3a6a6fd7097a3e6") format("truetype"),
+url("./flaticon.woff?de518832a6d5b0ebf3a6a6fd7097a3e6") format("woff"),
+url("./flaticon.woff2?de518832a6d5b0ebf3a6a6fd7097a3e6") format("woff2"),
+url("./flaticon.eot?de518832a6d5b0ebf3a6a6fd7097a3e6#iefix") format("embedded-opentype"),
+url("./flaticon.svg?de518832a6d5b0ebf3a6a6fd7097a3e6#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "add-contact": "\f101",
+    "back": "\f102",
+    "book": "\f103",
+    "camera": "\f104",
+    "checked": "\f105",
+    "color-palette": "\f106",
+    "credit-card": "\f107",
+    "drum": "\f108",
+    "email": "\f109",
+    "facebook": "\f10a",
+    "instagram": "\f10b",
+    "music-note": "\f10c",
+    "next-1": "\f10d",
+    "next": "\f10e",
+    "sketch": "\f10f",
+    "snapchat": "\f110",
+    "spotlight": "\f111",
+    "telephone": "\f112",
+    "text": "\f113",
+    "twitter": "\f114",
+    "upload": "\f115",
+    "user-1": "\f116",
+    "user": "\f117",
+    "video-camera": "\f118",
+    "writing": "\f119",
+);
+
+.flaticon-add-contact:before {
+    content: map-get($flaticon-map, "add-contact");
+}
+.flaticon-back:before {
+    content: map-get($flaticon-map, "back");
+}
+.flaticon-book:before {
+    content: map-get($flaticon-map, "book");
+}
+.flaticon-camera:before {
+    content: map-get($flaticon-map, "camera");
+}
+.flaticon-checked:before {
+    content: map-get($flaticon-map, "checked");
+}
+.flaticon-color-palette:before {
+    content: map-get($flaticon-map, "color-palette");
+}
+.flaticon-credit-card:before {
+    content: map-get($flaticon-map, "credit-card");
+}
+.flaticon-drum:before {
+    content: map-get($flaticon-map, "drum");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
+}
+.flaticon-facebook:before {
+    content: map-get($flaticon-map, "facebook");
+}
+.flaticon-instagram:before {
+    content: map-get($flaticon-map, "instagram");
+}
+.flaticon-music-note:before {
+    content: map-get($flaticon-map, "music-note");
+}
+.flaticon-next-1:before {
+    content: map-get($flaticon-map, "next-1");
+}
+.flaticon-next:before {
+    content: map-get($flaticon-map, "next");
+}
+.flaticon-sketch:before {
+    content: map-get($flaticon-map, "sketch");
+}
+.flaticon-snapchat:before {
+    content: map-get($flaticon-map, "snapchat");
+}
+.flaticon-spotlight:before {
+    content: map-get($flaticon-map, "spotlight");
+}
+.flaticon-telephone:before {
+    content: map-get($flaticon-map, "telephone");
+}
+.flaticon-text:before {
+    content: map-get($flaticon-map, "text");
+}
+.flaticon-twitter:before {
+    content: map-get($flaticon-map, "twitter");
+}
+.flaticon-upload:before {
+    content: map-get($flaticon-map, "upload");
+}
+.flaticon-user-1:before {
+    content: map-get($flaticon-map, "user-1");
+}
+.flaticon-user:before {
+    content: map-get($flaticon-map, "user");
+}
+.flaticon-video-camera:before {
+    content: map-get($flaticon-map, "video-camera");
+}
+.flaticon-writing:before {
+    content: map-get($flaticon-map, "writing");
+}

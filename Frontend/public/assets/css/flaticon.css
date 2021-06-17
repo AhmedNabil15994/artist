@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?e33fb590ce4eda36e6f8491be7e9a527") format("truetype"),
+url("./flaticon.woff?e33fb590ce4eda36e6f8491be7e9a527") format("woff"),
+url("./flaticon.woff2?e33fb590ce4eda36e6f8491be7e9a527") format("woff2"),
+url("./flaticon.eot?e33fb590ce4eda36e6f8491be7e9a527#iefix") format("embedded-opentype"),
+url("./flaticon.svg?e33fb590ce4eda36e6f8491be7e9a527#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-next:before {
+    content: "\f101";
+}
+.flaticon-left-arrow:before {
+    content: "\f102";
+}
+.flaticon-verified:before {
+    content: "\f103";
+}
+.flaticon-down-arrow:before {
+    content: "\f104";
+}
+.flaticon-twitter:before {
+    content: "\f105";
+}
+.flaticon-instagram:before {
+    content: "\f106";
+}
+.flaticon-achievement:before {
+    content: "\f107";
+}
+.flaticon-layers:before {
+    content: "\f108";
+}
+.flaticon-win:before {
+    content: "\f109";
+}
+.flaticon-visibility:before {
+    content: "\f10a";
+}
+.flaticon-download-circular-button:before {
+    content: "\f10b";
+}
+.flaticon-down-arrow-1:before {
+    content: "\f10c";
+}
+.flaticon-check:before {
+    content: "\f10d";
+}
+.flaticon-youtube:before {
+    content: "\f10e";
+}

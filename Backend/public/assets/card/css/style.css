@@ -1,0 +1,356 @@
+/* ------------------------------------------ */
+/*         General & Basic Styles
+/* ------------------------------------------ */
+
+body,html
+{
+	height:100%
+}
+
+body
+{
+	font-family: 'Cairo', sans-serif;
+}
+
+
+h1,h2,h3,h4,h5,h6
+{
+	margin-top:0;
+	margin-bottom:0
+}
+
+ul
+{
+	margin-bottom:0;
+	padding-right:0;
+	list-style:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+p
+{
+	margin-bottom:0
+}
+
+a
+{
+	text-decoration:none!important;
+	outline:none;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a:hover, a:active, a:focus {
+    outline: 0;
+}
+
+.center-block
+{
+	float:none
+}
+
+.background-cover
+{
+	-webkit-background-size:cover!important;
+	-moz-background-size:cover!important;
+	-o-background-size:cover!important;
+	background-size:cover!important;
+}
+
+input,
+textarea,
+button,
+select
+{
+	outline:none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.Owl
+{
+    direction:ltr;
+}
+
+.bgCard
+{
+	background:url(../images/bgCard.png) #F9F6EC;
+	min-height:100vh;
+	overflow:hidden
+}
+
+.containerStyle
+{
+	max-width:1300px;
+	margin:0 auto;
+}
+
+.headCard
+{
+	padding:50px 60px;
+	text-align: left;
+}
+
+.info
+{
+	background-color:#FAD28F;
+	padding-bottom:50px;
+	color:#6E4F65;
+}
+
+.info.info2
+{
+	color:#fff;
+	background-color:#7A5F63
+}
+
+.info .contentCard
+{
+	padding:30px 50px 0;
+}
+
+.info .contentCard .rtl
+{
+	float:right;
+	width:50%;
+}
+
+.info .contentCard .ltr
+{
+	float:left;
+	width:50%;
+	direction: ltr
+}
+
+.info .contentCard .rtl,
+.info .contentCard .ltr
+{
+	line-height:37px;
+	font-weight:700;
+	margin-bottom:15px;
+	font-size:20px;
+}
+
+.info .numbs
+{
+	font-weight:600;
+	font-size:20px;
+	line-height:37px;
+}
+
+.cardFooter
+{
+	padding:50px;
+}
+
+.cardFooter .website
+{
+	float:right;
+}
+
+.cardFooter .location
+{
+	float:left;
+	font-size:20px;
+	color:#6E4F65;
+	font-weight:600;
+	text-align:center;
+	line-height:40px;
+}
+
+.cardFooter .website li
+{
+	margin-bottom:20px;
+}
+
+.cardFooter .website a
+{
+	color:#6E4F65;
+	font-size:20px;
+	font-weight:600;
+	display:block
+}
+
+.cardFooter .website a img {
+	float:left;
+	margin-top:-2px;
+	width:34px;
+	margin-right:5px;
+}
+
+@media(max-width:991px) {
+	.headCard
+	{
+		text-align:center
+	}
+	
+	.info .contentCard .rtl, .info .contentCard .ltr
+	{
+		float:none;
+		text-align:center;
+		width:100%;
+	}
+	
+	.cardFooter .website
+	{
+		float:none;
+		margin:0 auto 15px;
+		display:block;
+		max-width:200px;
+	}
+	.cardFooter .location
+	{
+		float:none;
+	}
+}
+
+.headCard2 img
+{
+	float:right;
+	max-width:200px;
+}
+
+.headCard2 .title
+{
+	font-size:28px;
+	color:#6E4F65;
+	line-height:52px;
+	float:left;
+	font-weight:700;
+}
+
+.contentCard2
+{
+	padding:0 60px;
+}
+
+.contentCard2 .data
+{
+	float:right;	
+}
+
+.contentCard2 .data li
+{
+	margin-bottom:20px;
+	font-weight:700;
+	color:#6E4F65;
+	font-size:25px;
+	margin-bottom:55px;
+}
+
+.contentCard2 .imageStyle
+{
+	padding:5px;
+	width:269px;
+	height:294px;
+	background:url(../images/bgImg.png);
+	float:left;
+}
+
+.contentCard2 .imageStyle img
+{
+	max-width:100%;
+	height: 100%;
+}
+
+.line
+{
+	margin-right:0;
+	width:100%;
+	height:56px;
+	margin-bottom:35px;
+	background:url(../images/line1.png)
+}
+
+.line.line2
+{
+	background:url(../images/line2.png)
+}
+
+.validTill
+{
+	padding:0 65px 40px;
+	color:#000000;
+	font-size:25px;
+	font-weight:700;
+}
+
+.validTill span
+{
+	color:#6E4F65;
+	min-width:185px;
+	display:inline-block;
+	padding:0 10px;
+}
+
+@media(max-width:991px) {
+	.headCard,
+	.validTill
+	{
+		padding:30px 20px;
+	}
+	.contentCard2
+	{
+		padding:0 20px;
+	}
+}
+
+@media(max-width:767px) {
+	.headCard2 img
+	{
+		margin-bottom:15px;
+	}
+	.headCard2 img,
+	.headCard2 .title
+	{
+		float:none;
+		font-size:20px;
+	}
+	
+	.contentCard2 .data,
+	.contentCard2 .imageStyle
+	{
+		float:none;
+	}
+	
+	.contentCard2 .data li
+	{
+		margin-bottom:30px;
+		font-size:17px;
+	}
+	
+	.contentCard2 .imageStyle{
+		margin:0 auto 30px;
+		max-width:100%
+	}
+	
+	.validTill
+	{
+		font-size:17px;
+	}
+	
+	.validTill span
+	{
+		min-width: 121px;
+	}
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,99 @@
+/*Big Size Screens*/
+@media (max-width: 1200px)
+{
+
+}
+
+/* small Screens & tablets & Smart phone */
+@media (max-width: 991px) 
+{
+	
+}
+
+/* Small Screens */
+@media (min-width: 768px) and (max-width: 991px) 
+{
+	
+	
+}
+
+/* Mobile & Tablets */
+@media (max-width: 767px) 
+{
+	.aboutHead .title
+	{
+		font-size:35px;
+	}
+	
+	.aboutHead .desc
+	{
+		font-size:18px;
+	}
+	
+	.aboutPage .item .title
+	{
+		font-size:25px;
+	}
+	.aboutPage .item
+	{
+		padding-left:15px;
+		padding-right:15px;
+	}
+	
+	.sliderDetails .owl-theme .owl-controls .owl-buttons div,
+	.detailsPage .owl-theme .owl-controls .owl-buttons div
+	{
+		right:0;
+	}
+	.sliderDetails .owl-theme .owl-controls .owl-buttons div.owl-prev,
+	.detailsPage .owl-theme .owl-controls .owl-buttons div.owl-prev
+	{
+		left:0;
+	}
+}
+
+/* Tablets */
+@media (min-width:480px) and (max-width: 767px)
+{
+
+}
+
+/* Mobile */
+@media (max-width: 479px) 
+{
+	
+	.projectHead .title
+	{
+		margin-bottom:30px;
+	}
+	
+	.projects .head .name
+	{
+		font-size:22px;
+	}
+	
+	.projects .proj .details .title,
+	.projects .head .job
+	{
+		font-size:17px;
+	}
+	
+	.detailsPage .titlePage
+	{
+		padding:20px;
+		font-size:20px;
+	}
+	
+	.detailsPage .owl-theme .owl-controls .owl-buttons div
+	{
+		display:none;
+	}
+	
+	.detailsPage .owlDetails .item .logo {
+	    width: 170px;
+	    height: 55px;
+	    line-height: 55px;
+	    right: calc(50% - 85px);
+   }
+	
+}

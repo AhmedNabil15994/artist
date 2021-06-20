@@ -223,6 +223,20 @@
                       <textarea name="brief" class="form-control" id="" placeholder="السيره الذاتية المختصرة:">{{ old('brief') }}</textarea>
                   </div>
                 </div>
+                <div class="col-lg-12 col-sm-12 mb-4 mt-2">
+                  <div class="btnCheck">
+                    <div class="checkDiv">
+                      <span class="text">
+                        الموافقة على <a href="#" data-toggle="modal" data-target="#modalSing">الشروط والأحكام</a>
+                      </span>
+                      <label class="switch">
+                        <input type="checkbox" name="privacy" {{ isset($data->data) || old('privacy') == 'on' ? 'checked' : '' }}>
+                        <span class="sliderSwitch round"></span>
+                      </label>
+                      <br>
+                    </div>
+                  </div>
+                </div>
             </div>
             <button type="submit">التسجيل الآن</button>
           </form>
@@ -272,6 +286,8 @@
   <div class="map">
     <iframe src = "https://maps.google.com/maps?q={{ $data->lat }},{{ $data->lng }}&hl=es;z=14&amp;output=embed" width="600" height="450"></iframe>
   </div>
+
+  @include('Partials.privacyModal')
 @endsection
 
 @section('scripts')

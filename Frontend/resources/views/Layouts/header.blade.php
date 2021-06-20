@@ -33,7 +33,7 @@
         <li class="navLink"><a class="navItem" href="{{ URL::to('/regulations') }}">لوائح وسياسات</a></li>
         {{-- <li class="navLink"><a class="navItem" href="">طلب بطاقة</a></li> --}}
         <li class="navLink"><a class="navItem" href="{{ URL::to('/registeration') }}">طلب عضوية</a></li>
-        <li class="navLink"><a class="navItem" href="#">اتصل بنا</a></li>
+        <li class="navLink"><a class="navItem"  data-scroll-nav="1" href="#contactUs">اتصل بنا</a></li>
         <div class="clear"></div>
       </ul>
       <div class="clear"></div>

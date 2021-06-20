@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" id="contactUs">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6">
@@ -42,6 +42,9 @@
             <img src="{{ asset('/assets/images/form-logo.png') }}" alt="">
           </div>
           <div class="social">
+            @php 
+            $mobile = App\Models\Variable::getVar('رقم الواتس اب:');
+            @endphp
             <a href="{{ \App\Models\Variable::getVar('رابط تويتر:') }}"><i class="flaticon-twitter"></i></a>
             <a href="{{ \App\Models\Variable::getVar('رابط يوتيوب:') }}"><i class="flaticon-youtube"></i></a>
             <a href="{{ \App\Models\Variable::getVar('رابط انستجرام:') }}"><i class="flaticon-instagram"></i></a>
@@ -50,7 +53,7 @@
       </div>
       <div class="copy">
         <div class="copy-whats">
-          <img src="{{ asset('/assets/images/whatsapp.png') }}" alt="">
+          <a href="https://api.whatsapp.com/send?phone={{ $mobile }}&text=مرحبا" title=""><img src="{{ asset('/assets/images/whatsapp.png') }}" alt=""></a>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-6">

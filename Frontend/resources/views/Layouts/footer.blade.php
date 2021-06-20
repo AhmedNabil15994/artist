@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12">
                   <div class="form-group">
-                    <textarea name="" name="message" class="form-control" placeholder="تفاصيل الرسالة"></textarea>
+                    <textarea name="message" class="form-control" placeholder="تفاصيل الرسالة"></textarea>
                   </div>
                 </div>
               </div>
@@ -43,8 +43,8 @@
           </div>
           <div class="social">
             <a href="{{ \App\Models\Variable::getVar('رابط تويتر:') }}"><i class="flaticon-twitter"></i></a>
-            <a href="{{ \App\Models\Variable::getVar('رابط يوتيوب:') }}"><i class="flaticon-instagram"></i></a>
-            <a href="{{ \App\Models\Variable::getVar('رابط انستجرام:') }}"><i class="flaticon-youtube"></i></a>
+            <a href="{{ \App\Models\Variable::getVar('رابط يوتيوب:') }}"><i class="flaticon-youtube"></i></a>
+            <a href="{{ \App\Models\Variable::getVar('رابط انستجرام:') }}"><i class="flaticon-instagram"></i></a>
           </div>
         </div>
       </div>

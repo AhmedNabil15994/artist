@@ -87,7 +87,7 @@ class GroupsControllers extends Controller {
         $groupObj->save();
 
         WebActions::newType(2,'Group');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
 
@@ -127,7 +127,7 @@ class GroupsControllers extends Controller {
         $groupObj->save();
 
         WebActions::newType(1,'Group');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('groups/');
     }
 

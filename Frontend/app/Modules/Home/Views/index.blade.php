@@ -181,16 +181,6 @@
                 </div>
                 <div class="col-sm-12 col-lg-12">
                   <div class="form-group">
-                      <select class="form-control select2" name="membership_id">
-                          <option value="">حدد العضوية:</option>
-                          @foreach($data->memberships as $membership)
-                          <option value="{{ $membership->id }}" {{ Request::has('membership_id') && Request::get('membership_id') == $membership->id ? 'selected' : (isset($data->data->membership_id)  && $data->data->membership_id == $membership->id ? 'selected' : '' ) }}>{{ $membership->title }}</option>
-                          @endforeach
-                        </select>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-lg-12">
-                  <div class="form-group">
                       <select class="form-control select2" name="city_id">
                         @foreach($data->cities as $city)
                         <option value="">حدد المدينة:</option>

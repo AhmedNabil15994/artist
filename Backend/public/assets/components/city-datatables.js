@@ -89,6 +89,10 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			],
 			columnDefs: [
 				{
+					targets:0,
+					orderable: false,
+				},
+				{
 					targets: 1,
 					title: 'العنوان عربي',
 					className: 'edits',

@@ -56,7 +56,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 	        ],
 	        oLanguage: {
 				sSearch: "  البحث: ",
-				sInfo: 'يتم العرض من  _START_ الي _END_ (العدد الكلي للسجلات _TOTAL_ )',
+				sInfo: 'يتم العرض من  _START_ إلى _END_ (العدد الكلي للسجلات _TOTAL_ )',
 				sLengthMenu: 'عرض _MENU_ سجلات',
 				sEmptyTable: "لا يوجد نتائج مسجلة",
 				sProcessing: "جاري التحميل",
@@ -74,7 +74,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			processing: true,
 			serverSide: true,
 			ajax: {
-				url: '/directors',
+				url: '/ATAdmin/directors',
 				type: 'GET',
 				data: {
 					// parameters for custom backend script demo
@@ -110,7 +110,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				},
 				{
 					targets: 2,
-					title: 'العنوان عربي',
+					title: 'الاسم',
 					className: 'edits',
 					render: function(data, type, full, meta) {
 						return '<a class="editable" data-col="title" data-id="'+full.id+'">'+data+'</a>';
@@ -124,7 +124,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 						var editButton = '';
 						var deleteButton = '';
 						if($('input[name="data-area"]').val() == 1){
-							editButton = '<a href="/directors/edit/'+data+'" class="dropdown-item">'+
+							editButton = '<a href="/ATAdmin/directors/edit/'+data+'" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon fa fa-pencil-alt"></i>'+
 		                                    '<span class="m-nav__link-text">تعديل</span>'+
 		                                '</a>';

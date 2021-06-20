@@ -26,7 +26,7 @@ class CouponControllers extends Controller {
             'code.required' => "يرجي ادخال كود كوبون الخصم",
             'discount_type.required' => "يرجي اختيار نوع الخصم",
             'discount_value.required' => "يرجي ادخال قيمة الخصم",
-            'valid_type.required' => "يرجي اختيار نوع المدة المتاحة للخصم",
+            'valid_type.required' => "يرجي اختيار المدة المتاحة للخصم",
             'valid_value.required' => "يرجي ادخال متاح ل الخصم",
         ];
 
@@ -94,7 +94,7 @@ class CouponControllers extends Controller {
         $menuObj->save();
 
         WebActions::newType(2,'Coupon');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
     
@@ -126,7 +126,7 @@ class CouponControllers extends Controller {
         $menuObj->save();
 
         WebActions::newType(1,'Coupon');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('coupons/');
     }
 

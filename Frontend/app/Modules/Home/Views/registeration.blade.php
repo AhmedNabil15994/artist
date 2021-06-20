@@ -40,16 +40,6 @@
 			                  		<input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="البريد الالكتروني:">
 			                	</div>
 			              	</div>
-			              	<div class="col-sm-12 col-lg-12">
-                				<div class="form-group">
-                  					<select class="form-control select2" name="membership_id">
-										<option value="">حدد العضوية:</option>
-										@foreach($data->memberships as $membership)
-										<option value="{{ $membership->id }}" {{ Request::has('membership_id') && Request::get('membership_id') == $membership->id ? 'selected' : (isset($data->data->membership_id)  && $data->data->membership_id == $membership->id ? 'selected' : '' ) }}>{{ $membership->title }}</option>
-										@endforeach
-									</select>
-                				</div>
-              				</div>
 				            <div class="col-sm-12 col-lg-12">
 				                <div class="form-group">
 				                  	<select class="form-control select2" name="city_id">

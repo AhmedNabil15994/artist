@@ -1,4 +1,4 @@
-<!--begin::Aside-->
+begin::Aside-->
 <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
@@ -37,8 +37,8 @@
                     </a>
                 </li>
 
-                @if(\Helper::checkRules('list-pages,list-cities,list-fields,list-sliders,list-categories'))
-                <li class="menu-item menu-item-submenu {{ Active(URL::to('/cities*'),'menu-item-open active') }} {{ Active(URL::to('/sliders*'),'menu-item-open active') }} {{ Active(URL::to('/categories*'),'menu-item-open active') }} {{ Active(URL::to('/fields*'),'menu-item-open active') }} {{ Active(URL::to('/pages*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
+                @if(\Helper::checkRules('list-pages,list-cities,list-fields,list-sliders'))
+                <li class="menu-item menu-item-submenu {{ Active(URL::to('/cities*'),'menu-item-open active') }} {{ Active(URL::to('/sliders*'),'menu-item-open active') }} {{ Active(URL::to('/fields*'),'menu-item-open active') }} {{ Active(URL::to('/pages*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-home-2"></i>
                         <span class="menu-text">الواجهة الرئيسية</span>
@@ -65,14 +65,6 @@
                                 <a href="{{ URL::to('/fields') }}" class="menu-link ">
                                     <i class="menu-bullet menu-bullet-dot"></i>
                                     <span class="menu-text">المجالات الفنية</span>
-                                </a>
-                            </li>
-                            @endif
-                            @if(\Helper::checkRules('list-categories'))
-                            <li class="menu-item {{ Active(URL::to('/categories*')) }} " aria-haspopup="true">
-                                <a href="{{ URL::to('/categories') }}" class="menu-link ">
-                                    <i class="menu-bullet menu-bullet-dot"></i>
-                                    <span class="menu-text">التصنيفات</span>
                                 </a>
                             </li>
                             @endif
@@ -221,7 +213,7 @@
                 </li>
                 @endif
                 
-                @if(\Helper::checkRules('list-memberships,list-conditions,list-features'))
+             {{--    @if(\Helper::checkRules('list-memberships,list-conditions,list-features'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/memberships*'),'menu-item-open active') }} {{ Active(URL::to('/conditions*'),'menu-item-open active') }} {{ Active(URL::to('/features*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon far fa-id-card"></i>
@@ -263,7 +255,7 @@
                         </ul>
                     </div>
                 </li>
-                @endif
+                @endif --}}
 
                 @if(\Helper::checkRules('list-orders'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/orders*'),'menu-item-open active') }} " aria-haspopup="true" data-menu-toggle="hover">
@@ -445,4 +437,4 @@
     </div>
     <!--end::Aside Menu-->
 </div>
-<!--end::Aside-->
+<!--end::Aside

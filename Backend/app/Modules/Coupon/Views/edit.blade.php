@@ -116,7 +116,7 @@
                     </div>     
                     <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                         <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">نوع المدة المتاحة</label>
+                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">المدة المتاحة</label>
                             <select name="valid_type" class="form-control">
                                 <option value="1" {{ $data->data->valid_type == 1 ? 'selected' : '' }}>عدد مرات استخدام</option>
                                 <option value="2" {{ $data->data->valid_type == 2 ? 'selected' : '' }}>لتاريخ معين</option>

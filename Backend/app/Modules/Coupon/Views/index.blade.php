@@ -169,7 +169,7 @@
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>نوع المدة المتاحة:</label>
+                                    <label>المدة المتاحة:</label>
                                     <select name="valid_type" class="form-control m-input">
                                         <option value="">حدد اختيارك</option>
                                         <option value="1" {{ Request::get('valid_type') == 1 ? 'selected' : '' }}>عدد مرات استخدام</option>
@@ -212,7 +212,7 @@
                     <th>نوع الخصم</th>
                     <th>قيمة الخصم</th>
                     <th>المدة المتاحة</th>
-                    <th>فعال حتي</th>
+                    <th>فعال حتى</th>
                     <th>الاجراءات</th>
                 </tr>
             </thead>
@@ -223,7 +223,7 @@
                     <th>نوع الخصم</th>
                     <th>قيمة الخصم</th>
                     <th>المدة المتاحة</th>
-                    <th>فعال حتي</th>
+                    <th>فعال حتى</th>
                     <th>الاجراءات</th>
                 </tr>
             </tfoot>

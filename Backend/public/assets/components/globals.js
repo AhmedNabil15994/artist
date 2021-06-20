@@ -15,7 +15,7 @@ function deleteItem($id) {
         closeOnConfirm: false
     }).then(function(result){
         if (result.value) {
-            Swal.fire("تم الحذف بنجاح!", "تم العملية بنجاح.", "success");
+            Swal.fire("تم الحذف بنجاح!", "", "success");
             $.get(myURL+'/delete/' + $id,function(data) {
                 if (data.status.original.status.status == 1) {
                     successNotification(data.status.original.status.message);

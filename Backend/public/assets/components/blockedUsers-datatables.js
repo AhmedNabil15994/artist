@@ -56,7 +56,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 	        ],
 	        oLanguage: {
 				sSearch: "  البحث: ",
-				sInfo: 'يتم العرض من  _START_ الي _END_ (العدد الكلي للسجلات _TOTAL_ )',
+				sInfo: 'يتم العرض من  _START_ إلى _END_ (العدد الكلي للسجلات _TOTAL_ )',
 				sLengthMenu: 'عرض _MENU_ سجلات',
 				sEmptyTable: "لا يوجد نتائج مسجلة",
 				sProcessing: "جاري التحميل",

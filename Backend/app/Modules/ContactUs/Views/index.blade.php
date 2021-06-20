@@ -148,7 +148,7 @@
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>محتوي الرسالة:</label>
+                                <label>محتوى الرسالة:</label>
                                     <input type="text" class="form-control m-input" data-col-index="4" name="message" value="{{ Request::get('message') }}" data-col-index="1">
                                     <br>
                                 </div>
@@ -202,7 +202,7 @@
                     <th>الاسم بالكامل</th>
                     <th>البريد الالكتروني</th>
                     <th>الجوال</th>
-                    <th>محتوي الرسالة</th>
+                    <th>محتوى الرسالة</th>
                     <th>الرد</th>
                     <th>تاريخ الارسال</th>
                     <th>الاجراءات</th>
@@ -214,7 +214,7 @@
                     <th>الاسم بالكامل</th>
                     <th>البريد الالكتروني</th>
                     <th>الجوال</th>
-                    <th>محتوي الرسالة</th>
+                    <th>محتوى الرسالة</th>
                     <th>الرد</th>
                     <th>تاريخ الارسال</th>
                     <th>الاجراءات</th>

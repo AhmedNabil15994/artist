@@ -56,7 +56,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 	        ],
 	        oLanguage: {
 				sSearch: "  البحث: ",
-				sInfo: 'يتم العرض من  _START_ الي _END_ (العدد الكلي للسجلات _TOTAL_ )',
+				sInfo: 'يتم العرض من  _START_ إلى _END_ (العدد الكلي للسجلات _TOTAL_ )',
 				sLengthMenu: 'عرض _MENU_ سجلات',
 				sEmptyTable: "لا يوجد نتائج مسجلة",
 				sProcessing: "جاري التحميل",
@@ -96,6 +96,10 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			],
 			columnDefs: [
 				{
+					targets:0,
+					orderable: false,
+				},
+				{
 					targets: 1,
 					title: 'اسم المستخدم',
 					className: 'edits',
@@ -129,14 +133,6 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				},
 				{
 					targets: 5,
-					title: 'العنوان',
-					className: 'edits',
-					render: function(data, type, full, meta) {
-						return '<a class="editable" data-col="address" data-id="'+full.id+'">'+data+'</a>';
-					},
-				},
-				{
-					targets: 6,
 					title: 'رقم الجوال',
 					className: 'edits',
 					render: function(data, type, full, meta) {
@@ -144,7 +140,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 7,
+					targets: 6,
 					title: 'المدينة',
 					className: 'edits selects',
 					render: function(data, type, full, meta) {

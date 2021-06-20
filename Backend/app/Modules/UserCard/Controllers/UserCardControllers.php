@@ -26,8 +26,6 @@ class UserCardControllers extends Controller {
         $rules = [
             'identity_no' => 'required',
             'identity_end_date' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
             'membership_id' => 'required',
             'status' => 'required',
         ];
@@ -35,8 +33,6 @@ class UserCardControllers extends Controller {
         $message = [
             'identity_no.required' => 'يرجي ادخال رقم الهوية',
             'identity_end_date.required' => "يرجي ادخال تاريخ انتهاء الهوية",
-            'start_date.required' => "يرجي ادخال تاريخ البدء",
-            'end_date.required' => "يرجي ادخال تاريخ الانتهاء",
             'membership_id.required' => "يرجي اختيار العضوية",
             'status.required' => "يرجي اختيار الحالة",
         ];
@@ -144,14 +140,6 @@ class UserCardControllers extends Controller {
             $menuObj->membership_id = $input['membership_id'];
         }
 
-        if(isset($input['start_date']) && !empty($input['start_date'])){
-            $menuObj->start_date = $input['start_date'];
-        }
-
-        if(isset($input['end_date']) && !empty($input['end_date'])){
-            $menuObj->end_date = $input['end_date'];
-        }
-
         if(isset($input['status']) && !empty($input['status'])){
             $menuObj->status = $input['status'];
         }
@@ -181,7 +169,7 @@ class UserCardControllers extends Controller {
         //image
 
         WebActions::newType(4,'UserCard');
-        Session::flash('success','تم التعديل بنجاح');
+        Session::flash('success','تم الحفظ بنجاح');
         return redirect()->back()->withInput();
     }
 

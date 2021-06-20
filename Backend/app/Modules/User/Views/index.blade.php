@@ -171,13 +171,8 @@
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>العنوان:</label>
-                                    <input type="text" class="form-control m-input" name="address" value="{{ Request::get('address') }}" data-col-index="5">
-                                    <br>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <label>رقم الجوال:</label>
-                                    <input type="text" class="form-control m-input" name="phone" value="{{ Request::get('phone') }}" data-col-index="6">
+                                    <input type="text" class="form-control m-input" name="phone" value="{{ Request::get('phone') }}" data-col-index="5">
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6" data-col-index="3">
@@ -235,7 +230,6 @@
                     <th>الاسم عربي</th>
                     <th>الاسم انجليزي</th>
                     <th>البريد الالكتروني</th>
-                    <th>العنوان</th>
                     <th>رقم الجوال</th>
                     <th>المدينة</th>
                     <th>الاجراءات</th>
@@ -248,7 +242,6 @@
                     <th>الاسم عربي</th>
                     <th>الاسم انجليزي</th>
                     <th>البريد الالكتروني</th>
-                    <th>العنوان</th>
                     <th>رقم الجوال</th>
                     <th>المدينة</th>
                     <th>الاجراءات</th>

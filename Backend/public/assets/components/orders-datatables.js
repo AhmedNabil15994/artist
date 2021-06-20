@@ -98,7 +98,6 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				{data: 'phone',},
 				{data: 'fieldText',},
 				{data: 'cityText',},
-				{data: 'membershipText',},
 				{data: 'brief',},
 				{data: 'statusText',},
 				{data: 'created_at', type: 'date'},
@@ -171,14 +170,6 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				},
 				{
 					targets: 8,
-					title: 'العضوية',
-					className: 'edits selects',
-					render: function(data, type, full, meta) {
-						return '<a class="editable" data-col="membership_id" data-id="'+full.id+'"><div class="btn btn-raised waves-effect">'+data+'</div></a>';
-					},
-				},
-				{
-					targets: 9,
 					title: 'السيرة الذاتية',
 					className: 'edits',
 					render: function(data, type, full, meta) {
@@ -186,7 +177,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 10,
+					targets: 9,
 					title: 'الحالة',
 					className: 'edits selects',
 					render: function(data, type, full, meta) {
@@ -194,7 +185,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 11,
+					targets: 10,
 					title: 'تاريخ الارسال',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
@@ -202,7 +193,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 12,
+					targets: 11,
 					title: 'روابط التواصل الاجتماعي',
 					className: '',
 					render: function(data, type, full, meta) {

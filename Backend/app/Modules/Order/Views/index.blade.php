@@ -173,16 +173,6 @@
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>العضوية:</label>
-                                    <select name="membership_id" class="form-control m-input">
-                                        <option value="">حدد اختيارك</option>
-                                        @foreach($data->memberships as $membership)
-                                        <option value="{{ $membership->id }}">{{ $membership->title }}</option>
-                                        @endforeach
-                                    </select>
-                                    <br>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <input type="hidden" class="url" value="{{ $data->url }}">
                                     <label>الحالة:</label>
                                     <select name="status" class="form-control m-input">
@@ -200,7 +190,7 @@
                                     <label>تاريخ الارسال:</label>
                                     <div class="row">
                                         <div class="col">
-                                            <input type="text" class="form-control datetimepicker-input" id="kt_datetimepicker_7_1" placeholder="تاريخ الارسال"  name="created_at" value="{{ Request::get('created_at') }}" data-col-index="8" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_1" />
+                                            <input type="text" class="form-control datetimepicker-input" id="kt_datetimepicker_7_1" placeholder="تاريخ الارسال"  name="created_at" value="{{ Request::get('created_at') }}" data-col-index="10" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_1" />
                                         </div>
                                     </div>
                                 </div>
@@ -242,7 +232,6 @@
                     <th>رقم الجوال</th>
                     <th>المجال الفني</th>
                     <th>المدينة</th>
-                    <th>العضوية</th>
                     <th>السيرة الذاتية</th>
                     <th>الحالة</th>
                     <th>تاريخ الارسال</th>
@@ -260,7 +249,6 @@
                     <th>رقم الجوال</th>
                     <th>المجال الفني</th>
                     <th>المدينة</th>
-                    <th>العضوية</th>
                     <th>السيرة الذاتية</th>
                     <th>الحالة</th>
                     <th>تاريخ الارسال</th>

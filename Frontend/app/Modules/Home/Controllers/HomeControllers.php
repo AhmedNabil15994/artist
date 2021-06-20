@@ -182,6 +182,7 @@ class HomeControllers extends Controller {
 
     public function postOrder() {
         $input = \Request::all();
+        $input['membership_id'] = 1;
         $coupon = $input['coupon'];
         $availableCoupons = Coupon::availableCoupons();
         $availableCoupons = reset($availableCoupons);

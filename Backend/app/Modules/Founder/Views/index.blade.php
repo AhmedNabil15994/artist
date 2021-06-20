@@ -151,7 +151,7 @@
                                     <br>
                                 </div>  
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>العنوان عربي:</label>
+                                    <label>الاسم:</label>
                                     <input type="text" class="form-control m-input" data-col-index="2" name="title" value="{{ Request::get('title') }}">
                                     <br>
                                 </div>

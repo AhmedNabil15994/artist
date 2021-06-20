@@ -74,7 +74,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			processing: true,
 			serverSide: true,
 			ajax: {
-				url: '/userCards',
+				url: '/ATAdmin/userCards',
 				type: 'GET',
 				data:function(dtParms){
 			       	dtParms.status = $('select[name="status"]').val();
@@ -95,10 +95,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				{data: 'identity_no'},
 				{data: 'identity_end_date'},
 				{data: 'deliver_no'},
-				{data: 'membership_name'},
 				{data: 'start_date'},
-				{data: 'end_date'},
-				{data: 'statusText'},
 				{data: 'id', responsivePriority: -1},
 			],
 			
@@ -179,7 +176,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				},
 				{
 					targets: 6,
-					title: 'تاريخ الانتهاء الهوية',
+					title: 'تاريخ انتهاء الهوية',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
 						return '<a class="editable" data-col="identity_end_date" data-id="'+full.id+'">'+data+'</a>';
@@ -195,30 +192,6 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				},
 				{
 					targets: 8,
-					title: 'العضوية',
-					className: 'edits selects',
-					render: function(data, type, full, meta) {
-						return '<a class="editable" data-col="membership_id" data-id="'+full.id+'">'+data+'</a>';
-					},
-				},
-				{
-					targets: 9,
-					title: 'تاريخ البدء',
-					className: 'edits dates',
-					render: function(data, type, full, meta) {
-						return '<a class="editable" data-col="start_date" data-id="'+full.id+'">'+data+'</a>';
-					},
-				},
-				{
-					targets: 10,
-					title: 'تاريخ الانتهاء',
-					className: 'edits dates',
-					render: function(data, type, full, meta) {
-						return '<a class="editable" data-col="end_date" data-id="'+full.id+'">'+data+'</a>';
-					},
-				},
-				{
-					targets: 11,
 					title: 'الحالة',
 					className: 'edits selects',
 					render: function(data, type, full, meta) {
@@ -247,7 +220,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 						var editButton = '';
 
 						if($('input[name="data-area"]').val() == 1){
-							editButton = '<a href="/userCards/edit/'+data+'" class="dropdown-item">'+
+							editButton = '<a href="/ATAdmin/userCards/edit/'+data+'" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon fa fa-pencil-alt"></i>'+
 		                                    '<span class="m-nav__link-text">تعديل</span>'+
 		                                '</a>';
@@ -271,7 +244,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 		                            '</button>'+
 		                            '<div class="dropdown-menu" dropdown-toggle="hover">'+
 		                                newMembButton+
-		                                '<a href="/userCards/'+full.id+'/viewCard" class="dropdown-item">'+
+		                                '<a href="/ATAdmin/userCards/'+full.id+'/viewCard" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon far fa-credit-card"></i>'+
 		                                    '<span class="m-nav__link-text">طباعة العضوية</span>'+
 		                                '</a>'+

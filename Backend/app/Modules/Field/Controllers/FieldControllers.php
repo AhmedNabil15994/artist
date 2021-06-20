@@ -76,7 +76,7 @@ class FieldControllers extends Controller {
         $menuObj->save();
 
         WebActions::newType(2,'Field');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
     
@@ -98,7 +98,7 @@ class FieldControllers extends Controller {
         $menuObj->save();
 
         WebActions::newType(1,'Field');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('fields/');
     }
 

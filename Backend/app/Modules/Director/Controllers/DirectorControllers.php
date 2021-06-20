@@ -95,7 +95,7 @@ class DirectorControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(2,'Director');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
     
@@ -135,7 +135,7 @@ class DirectorControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(1,'Director');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('directors/');
     }
 

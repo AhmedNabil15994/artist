@@ -84,7 +84,7 @@ class UsersControllers extends Controller {
         }
         $data['groups'] = Group::dataList()['data'];
         $data['title'] = 'المشرفين والاداريين';
-        $data['url'] = 'admins';
+        $data['url'] = 'ATAdmin/admins';
         return view('User.Views.index')->with('data', (object) $data);
     }
 
@@ -206,7 +206,7 @@ class UsersControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(2,'User');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
 
@@ -295,7 +295,7 @@ class UsersControllers extends Controller {
         }
         \Session::forget('photos');
         WebActions::newType(1,'User');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('users/');
     }
 
@@ -382,7 +382,7 @@ class UsersControllers extends Controller {
         $data['counts'] = [$addCount , $editCount , $deleteCount , $fastEditCount];
         $data['title'] = 'المشرفين والاداريين';
         $data['miniTitle'] = 'المشرفين والاداريين';
-        $data['url'] = 'users';
+        $data['url'] = 'ATAdmin/users';
 
         return view('TopMenu.Views.charts')->with('data',(object) $data);
     }

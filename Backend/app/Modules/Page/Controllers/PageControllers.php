@@ -96,7 +96,7 @@ class PageControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(2,'Page');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
     
@@ -136,7 +136,7 @@ class PageControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(1,'Page');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('pages/');
     }
 

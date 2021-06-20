@@ -97,7 +97,7 @@ class InitiativeControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(2,'Initiative');
-        \Session::flash('success', "تنبيه! تم التعديل بنجاح");
+        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
         return \Redirect::back()->withInput();
     }
     
@@ -139,7 +139,7 @@ class InitiativeControllers extends Controller {
 
         \Session::forget('photos');
         WebActions::newType(1,'Initiative');
-        \Session::flash('success', "تنبيه! تم الحفظ بنجاح");
+        \Session::flash('success', "تنبيه! تم الضافة بنجاح");
         return redirect()->to('events/');
     }
 

@@ -9,10 +9,10 @@
 @section('content')
 	<div class="breadcrumb" style="background-image: url('{{ asset("/assets/images/breadcrumb.png") }}');">
     <div class="container">
-      <h5>عن الجمعية</h5>
+      <h5>من نحن</h5>
       <ul class="list-unstyled">
         <li><a href="{{ URL::to('/') }}">الرئيسية</a></li>
-        <li><a href="#">عن الجمعية</a></li>
+        <li><a href="#">من نحن</a></li>
       </ul>
     </div>
   </div>

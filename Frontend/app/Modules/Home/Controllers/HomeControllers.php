@@ -53,6 +53,7 @@ class HomeControllers extends Controller {
     protected function validateOrder($input){
         $rules = [
             'name' => 'required',
+            'name_en' => 'required',
             'phone' => 'required|min:10',//|regex:/(01)[0-9]{9}/',
             'email' => 'required',
             'gender' => 'required',
@@ -62,7 +63,8 @@ class HomeControllers extends Controller {
         ];
 
         $message = [
-            'name.required' => "يرجي ادخال الاسم بالكامل",
+            'name.required' => "يرجي ادخال الاسم عربي بالكامل",
+            'name_en.required' => "يرجي ادخال الاسم انجليزي بالكامل",
             'phone.required' => "يرجي ادخال رقم الجوال",
             'phone.min' => "رقم الجوال يجب ان يكون 10 خانات",
             'email.required' => "يرجي ادخال البريد الالكتروني",
@@ -108,6 +110,7 @@ class HomeControllers extends Controller {
         $data['founders'] = Director::dataList(1,null,1)['data'];
         $data['fields'] = Field::dataList(1)['data'];
         $data['cities'] = City::dataList(1)['data'];
+        $data['counters'] = Page::dataList(1,[7,8,9])['data'];
         $data['partners'] = Slider::generateObj(Slider::NotDeleted()->where('title','الشركاء والداعمين'))['data'];
         $data['lat'] = Variable::getVar('latitude:');
         $data['lng'] = Variable::getVar('longitude:');
@@ -203,7 +206,13 @@ class HomeControllers extends Controller {
 
         $namesArr = explode(' ', $input['name']);
         if(count($namesArr) < 4){
-            Session::flash('error','يجب ادخال الاسم رباعي');
+            Session::flash('error','يجب ادخال الاسم عربي رباعي');
+            return redirect()->back()->withInput();
+        }
+
+        $namesEn = explode(' ', $input['name_en']);
+        if(count($namesEn) < 4){
+            Session::flash('error','يجب ادخال الاسم انجليزي رباعي');
             return redirect()->back()->withInput();
         }
 
@@ -229,6 +238,7 @@ class HomeControllers extends Controller {
         $menuObj = new Order;
         $menuObj->order_no = Order::newOrderNo();
         $menuObj->name = $input['name'];
+        $menuObj->name_en = $input['name_en'];
         $menuObj->phone = $input['phone'];
         $menuObj->email = $input['email'];
         $menuObj->card_name = null;

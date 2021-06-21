@@ -64,9 +64,9 @@ class OrderControllers extends Controller {
         }
 
         $menuObj->name = $input['name'];
+        $menuObj->name_en = $input['name_en'];
         $menuObj->email = $input['email'];
         $menuObj->phone = $input['phone'];
-        $menuObj->card_name = $input['card_name'];
         $menuObj->gender = $input['gender'];
         $menuObj->field_id = $input['field_id'];
         $menuObj->city_id = $input['city_id'];

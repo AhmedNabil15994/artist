@@ -27,9 +27,14 @@
             			<div class="row">
               				<div class="col-sm-12 col-lg-12">
                 				<div class="form-group">
-                  					<input type="text" name="name" id="" class="form-control" placeholder="الاسم:">
+                  					<input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="الاسم عربي:">
                 				</div>
               				</div>
+              				<div class="col-sm-12 col-lg-12">
+			                  	<div class="form-group">
+			                      	<input type="text" name="name_en" value="{{ old('name_en') }}" class="form-control" placeholder="الاسم انجليزي:">
+			                  	</div>
+			                </div>
               				<div class="col-sm-12 col-lg-12">
                 				<div class="form-group">
                   					<input type="text" name="phone" value="{{ old('phone') }}" class="form-control" placeholder="رقم الجوال:">
@@ -76,7 +81,7 @@
               				</div>
               				<div class="col-sm-12 col-lg-12">
                 				<div class="form-group">
-                  					<input type="text" name="coupon" class="form-control" value="{{ isset($data->data->coupon) ? $data->data->coupon  : old('coupon') }}" placeholder="كوبون الخصم : لاصحاب الهمم - أبناء الشهداء - اسر الاعضاء يرجي استخدام الكود SASCA1">
+                  					<input type="text" name="coupon" class="form-control" value="{{ isset($data->data->coupon) ? $data->data->coupon  : old('coupon') }}" placeholder="كوبون الخصم :">
                 				</div>
               				</div>
               				<div class="col-sm-12 col-lg-12">

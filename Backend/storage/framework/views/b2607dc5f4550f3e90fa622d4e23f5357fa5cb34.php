@@ -156,26 +156,6 @@
                                     <br>
                                 </div> 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>العضوية:</label>
-                                    <select name="membership_id" class="form-control m-input">
-                                        <option value="">حدد اختيارك</option>
-                                        <?php $__currentLoopData = $data->memberships; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $membership): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($membership->id); ?>"><?php echo e($membership->title); ?></option>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </select>
-                                    <br>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>تاريخ البدء:</label>
-                                    <input type="text" class="form-control datetimepicker-input" id="kt_datetimepicker_7_1" placeholder="تاريخ البدء"  name="start_date" value="<?php echo e(Request::get('start_date')); ?>" data-col-index="5" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_1" />
-                                    <br>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>تاريخ الانتهاء:</label>
-                                    <input type="text" class="form-control datetimepicker-input" id="kt_datetimepicker_7_3" placeholder="تاريخ الانتهاء"  name="end_date" value="<?php echo e(Request::get('end_date')); ?>" data-col-index="6" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_3" />
-                                    <br>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <label>الحالة:</label>
                                     <select name="status" class="form-control m-input">
                                         <option value="">حدد اختيارك</option>
@@ -223,9 +203,6 @@
                     <th>رقم الهوية</th>
                     <th>تاريخ انتهاء الهوية</th>
                     <th>رقم الشحنة</th>
-                    <th>العضوية</th>
-                    <th>تاريخ البدء</th>
-                    <th>تاريخ الانتهاء</th>
                     <th>الحالة</th>
                     <th>الاجراءات</th>
                 </tr>
@@ -240,9 +217,6 @@
                     <th>رقم الهوية</th>
                     <th>تاريخ انتهاء الهوية</th>
                     <th>رقم الشحنة</th>
-                    <th>العضوية</th>
-                    <th>تاريخ البدء</th>
-                    <th>تاريخ الانتهاء</th>
                     <th>الحالة</th>
                     <th>الاجراءات</th>
                 </tr>

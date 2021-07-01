@@ -70,6 +70,7 @@ class EventControllers extends Controller {
         }
 
         $menuObj->title = $input['title'];
+        $menuObj->show_slider = $input['show_slider'];
         $menuObj->date = date('Y-m-d H:i:s',strtotime($input['date']));
         $menuObj->type = 1;
         $menuObj->description = $input['description'];
@@ -113,6 +114,7 @@ class EventControllers extends Controller {
         
         $menuObj = new Event;
         $menuObj->title = $input['title'];
+        $menuObj->show_slider = $input['show_slider'];
         $menuObj->date = date('Y-m-d H:i:s',strtotime($input['date']));
         $menuObj->type = 1;
         // $menuObj->price = $input['price'];

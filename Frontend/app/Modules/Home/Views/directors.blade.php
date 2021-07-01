@@ -30,7 +30,7 @@
               </a>
               <img src="{{ $one->photo }}" alt="">
             </div>
-            <h5 class="card-title">{{ $one->title }}</h5>
+            <h5 class="card-title">{{ $one->title }} <br><span>{{ $one->description }}</span></h5>
           </div>
         </div>
         @endforeach

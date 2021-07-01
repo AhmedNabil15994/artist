@@ -16,6 +16,7 @@
         "h4cc/wkhtmltopdf-amd64": "^0.12.4",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "watson/active": "^5",
         "yajra/laravel-datatables-oracle": "~9.0"
     },

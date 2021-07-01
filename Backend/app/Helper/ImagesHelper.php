@@ -95,8 +95,8 @@ class ImagesHelper {
         unset($extensionExplode[0]);
         $extensionExplode = array_values($extensionExplode);
         $extension = $extensionExplode[0];
-
-        if (!in_array($extension, ['jpg', 'jpeg', 'JPG', 'JPEG', 'png', 'PNG', 'gif', 'GIF','zip','rar','docx','pdf','dwg','.3gp','.3g2','.avi','.uvh','.uvm','.uvu','.uvp','.uvs','.uaa','.fvt','.f4v','.flv','.fli','.h261','.h263','.h264','.jpgv','.m4v','.asf','.pyv','.wm','.wmx','.wmv','.wvx','.mj2','.mxu','.mpeg','.mp4','.ogv','.webm','.qt','.movie','.viv','.wav','.avi','.mkv','x-m4v'])) {
+        // dd($extension);
+        if (!in_array($extension, ['jpg', 'jpeg' ,'svg+xml','svg', 'JPG', 'JPEG', 'png', 'PNG', 'gif', 'GIF','zip','rar','docx','pdf','dwg','.3gp','.3g2','.avi','.uvh','.uvm','.uvu','.uvp','.uvs','.uaa','.fvt','.f4v','.flv','.fli','.h261','.h263','.h264','.jpgv','.m4v','.asf','.pyv','.wm','.wmx','.wmv','.wvx','.mj2','.mxu','.mpeg','.mp4','.ogv','.webm','.qt','.movie','.viv','.wav','.avi','.mkv','x-m4v'])) {
             return false;
         }
         
@@ -139,6 +139,10 @@ class ImagesHelper {
         }
 
         $fileName_full = $fileName . '.' . $extension;
+
+        if($strAction == 'variables'){
+            $fileName_full = $fileObj->getClientOriginalName();
+        }
 
         if ($directory == '') {
             return false;

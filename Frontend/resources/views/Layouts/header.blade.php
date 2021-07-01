@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="Logo">
         <a href="{{ URL::to('/') }}">
-          <img src="{{ asset('/assets/images/logo.png') }}" alt="">
+          <img src="{{ \App\Models\Variable::getVar('HEADER_LOGO') }}" alt="">
         </a>
       </div>
       <ul class="links list-unstyled">
@@ -19,6 +19,7 @@
           </ul>
         </li>
         <li class="navLink"><a class="navItem" href="{{ URL::to('/events') }}">الفعاليات</a></li>
+        <li class="navLink"><a class="navItem" href="{{ URL::to('/memberships') }}">العضويات</a></li>
        {{--  <li class="navLink NesteListParent">
           <a class="navItem" href="#">لوائح وسياسيات</a>
           <ul class="sideMenue list-unstyled">

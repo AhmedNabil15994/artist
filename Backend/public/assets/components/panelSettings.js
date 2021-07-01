@@ -3,8 +3,8 @@ if(myURL.indexOf("#") != -1){
     myURL = myURL.replace('#','');
 }
 
-var id = $('#kt_dropzone_111').data('area');
-$('#kt_dropzone_111').dropzone({
+var id = $('#kt_dropzone_1120').data('area');
+$('#kt_dropzone_1120').dropzone({
     url: myURL + "/editImage/"+id, // Set the url for your upload script location
     paramName: "file", // The name that will be used to transfer the file
     maxFiles: 1,

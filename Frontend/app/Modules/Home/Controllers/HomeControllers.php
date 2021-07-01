@@ -10,6 +10,7 @@ use App\Models\City;
 use App\Models\Membership;
 use App\Models\Slider;
 use App\Models\Regulation;
+use App\Models\Feature;
 use App\Models\UserCard;
 use App\Models\User;
 use App\Models\Variable;
@@ -21,6 +22,7 @@ use App\Models\ContactUs;
 use App\Models\Event;
 use App\Models\Director;
 use App\Models\Coupon;
+use PDF;
 
 class HomeControllers extends Controller {
 
@@ -103,11 +105,11 @@ class HomeControllers extends Controller {
         $data['memberships'] = Membership::dataList(1)['data'];
         $data['pages'] = Page::dataList(1,[1])['data'];
         $data['aboutUs'] = Page::dataList(1,[1,4,5,6])['data']; 
-        $data['events'] = Event::dataList(1,null,1)['data'];
-        $data['initiatives'] = Event::dataList(1,null,2)['data'];
+        $data['events'] = Event::dataList(1,null,1,1)['data'];
+        $data['initiatives'] = Event::dataList(1,null,2,1)['data'];
         $data['categories'] = Category::dataList(1)['data'];
         $data['sliders'] = Slider::dataList(1,[1,2])['data'];
-        $data['founders'] = Director::dataList(1,null,1)['data'];
+        $data['founders'] = Director::dataList(1,null,2,1)['data'];
         $data['fields'] = Field::dataList(1)['data'];
         $data['cities'] = City::dataList(1)['data'];
         $data['counters'] = Page::dataList(1,[7,8,9])['data'];
@@ -185,18 +187,18 @@ class HomeControllers extends Controller {
 
     public function postOrder() {
         $input = \Request::all();
-        $input['membership_id'] = 1;
-        $coupon = $input['coupon'];
-        $availableCoupons = Coupon::availableCoupons();
-        $availableCoupons = reset($availableCoupons);
-        // dd($availableCoupons);
+        // $input['membership_id'] = 1;
+        // $coupon = $input['coupon'];
+        // $availableCoupons = Coupon::availableCoupons();
+        // $availableCoupons = reset($availableCoupons);
+        // // dd($availableCoupons);
         
-        if(!empty($coupon)){
-            if(count($availableCoupons) > 0 && !in_array($coupon, $availableCoupons)){
-                \Session::flash('error', 'هذا الكود ('.$coupon.') غير متاح حاليا');
-                return redirect()->back()->withInput();
-            }
-        }
+        // if(!empty($coupon)){
+        //     if(count($availableCoupons) > 0 && !in_array($coupon, $availableCoupons)){
+        //         \Session::flash('error', 'هذا الكود ('.$coupon.') غير متاح حاليا');
+        //         return redirect()->back()->withInput();
+        //     }
+        // }
 
         $validate = $this->validateOrder($input);
         if($validate->fails()){
@@ -205,14 +207,14 @@ class HomeControllers extends Controller {
         }
 
         $namesArr = explode(' ', $input['name']);
-        if(count($namesArr) < 4){
-            Session::flash('error','يجب ادخال الاسم عربي رباعي');
+        if(count($namesArr) < 2){
+            Session::flash('error','يجب ادخال الاسم عربي ثنائي');
             return redirect()->back()->withInput();
         }
 
         $namesEn = explode(' ', $input['name_en']);
-        if(count($namesEn) < 4){
-            Session::flash('error','يجب ادخال الاسم انجليزي رباعي');
+        if(count($namesEn) < 2){
+            Session::flash('error','يجب ادخال الاسم انجليزي ثنائي');
             return redirect()->back()->withInput();
         }
 
@@ -256,6 +258,10 @@ class HomeControllers extends Controller {
         $detailsObj = new OrderDetails;
         $detailsObj->order_id = $menuObj->id;
         $detailsObj->facebook = $input['facebook'];
+        $detailsObj->twitter = $input['twitter'];
+        $detailsObj->snapchat = $input['snapchat'];
+        $detailsObj->youtube = $input['youtube'];
+        $detailsObj->instagram = $input['instagram'];
         $detailsObj->save();
 
         WebActions::newType(2,'Order',1);
@@ -322,7 +328,7 @@ class HomeControllers extends Controller {
         
 
         $orderDetailsObj->identity_no = $input['identity_no'];
-        $orderDetailsObj->identity_end_date = $input['identity_end_date'];
+        $orderDetailsObj->identity_end_date = date('Y-m-d H:i:s',strtotime($input['identity_end_date']));
         $orderDetailsObj->save();
         if ($request->hasFile('image')) {
             $files = $request->file('image');
@@ -459,6 +465,8 @@ class HomeControllers extends Controller {
 
             $dataObj['id'] = base64_encode('order-'.$orderObj->id);
             $dataObj['price'] = $orderObj->Membership->price.'.00';
+            $dataObj['membership'] = $menuObj;
+            $dataObj['image'] = OrderDetails::getData(OrderDetails::where('order_id',$orderObj->id)->first())->image;
             return view('Home.Views.paymentSuccess')->with('data',(object) $dataObj);
         }
 
@@ -510,8 +518,34 @@ class HomeControllers extends Controller {
         
         $dataObj['id'] = base64_encode('order-'.Session::get('newOrderId'));
         $dataObj['price'] = $orderObj->Membership->price.'.00';
+        $dataObj['membership'] = $menuObj;
+        $dataObj['image'] = OrderDetails::getData(OrderDetails::where('order_id',$orderObj->id)->first())->image;
         Session::forget('newOrderId');
         return view('Home.Views.paymentSuccess')->with('data',(object) $dataObj);
     }
 
+    public function printCard($id) {
+        $id = (int) $id;
+        $menuObj = UserCard::getOne($id);
+        if(!$menuObj){
+            return redirect(404);
+        }
+        $data['data'] = UserCard::getData($menuObj);
+        $data['data']->order = Order::getData($menuObj->Order);
+
+        $pdf = PDF::loadView('Home.Views.print', $data)
+                ->setPaper('a4', 'landscape')
+                ->setOption('margin-bottom', '0mm')
+                ->setOption('margin-top', '0mm')
+                ->setOption('margin-right', '0mm')
+                ->setOption('margin-left', '0mm');
+
+        return $pdf->download('MemberShip.pdf');
+    }
+
+    public function memberships(){   
+        $data = Membership::dataList(1);
+        $data['features'] = Feature::dataList(1)['data'];
+        return view('Home.Views.memberships')->with('data',(object) $data);
+    }
 }

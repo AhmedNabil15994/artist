@@ -67,6 +67,8 @@ class Director extends Model{
         $data = new  \stdClass();
         $data->id = $source->id;
         $data->title = $source->title;
+        $data->show_slider = $source->show_slider;
+        $data->description = $source->description != null ? $source->description : '';
         $data->type = $source->type;
         $data->sort = $source->sort;
         $data->status = $source->status;

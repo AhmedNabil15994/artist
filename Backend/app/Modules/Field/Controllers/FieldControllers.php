@@ -16,10 +16,12 @@ class FieldControllers extends Controller {
     protected function validateObject($input){
         $rules = [
             'title' => 'required',
+            'title_en' => 'required',
         ];
 
         $message = [
-            'title.required' => "يرجي ادخال العنوان",
+            'title.required' => "يرجي ادخال العنوان عربي",
+            'title_en.required' => "يرجي ادخال العنوان انجليزي",
         ];
 
         $validate = \Validator::make($input, $rules, $message);
@@ -70,6 +72,7 @@ class FieldControllers extends Controller {
         }
 
         $menuObj->title = $input['title'];
+        $menuObj->title_en = $input['title_en'];
         $menuObj->status = $input['status'];
         $menuObj->updated_at = DATE_TIME;
         $menuObj->updated_by = USER_ID;
@@ -91,6 +94,7 @@ class FieldControllers extends Controller {
         
         $menuObj = new Field;
         $menuObj->title = $input['title'];
+        $menuObj->title_en = $input['title_en'];
         $menuObj->status = $input['status'];
         $menuObj->sort = Field::newSortIndex();
         $menuObj->created_at = DATE_TIME;

@@ -67,13 +67,22 @@
                     <?php $__currentLoopData = $data->data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item => $variable): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                         <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2 <?php echo e($item == 0 ? 'mt-15' : ''); ?>" style="margin-bottom: 20px;"><?php echo e($variable->key); ?></label>
                             <?php if($variable->var_type == 0): ?>
-                            <input class="form-control" type="number" name="value<?php echo e($variable->id); ?>" value="<?php echo e($variable->value); ?>" maxlength="" placeholder="">
+                            <?php
+                                $color = '';
+                                if(strpos($variable->key, '#') !== false){
+                                    $result = explode('#', $variable->key);
+                                    // dd();
+                                    $color = '#'.str_replace(')', '', $result[1]).'"';
+                                }
+                                // dd($color);
+                            ?>
+                            <label class="label label-danger label-pill label-inline mr-2 <?php echo e($item == 0 ? 'mt-15' : ''); ?>" style="margin-bottom: 20px; background-color: <?php echo $color != '' ? $color : 'transparent'; ?> "><?php echo e($variable->key); ?></label>
+                            <input class="form-control" type="<?php echo e($color != '' ? 'text' : 'number'); ?>" <?php echo e($color != '' ? "dir=ltr" : ''); ?> name="value<?php echo e($variable->id); ?>" value="<?php echo e($variable->value); ?>" maxlength="" placeholder="">
                             <?php elseif($variable->var_type == 4): ?>
                             <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                                 <div class="col-lg-12">
-                                    <div class="dropzone dropzone-default" id="kt_dropzone_111" data-area="<?php echo e($variable->id); ?>">
+                                    <div class="dropzone dropzone-default" id="kt_dropzone_1120" data-area="<?php echo e($variable->id); ?>">
                                         <div class="dropzone-msg dz-message needsclick">
                                             <h3 class="dropzone-msg-title"><i class="flaticon-upload-1 fa-4x"></i></h3>
                                             <span class="dropzone-msg-desc">اسحب الملفات هنا أو انقر هنا للرفع .</span>

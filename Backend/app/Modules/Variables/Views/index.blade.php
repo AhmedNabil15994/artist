@@ -83,6 +83,77 @@
                         </div>
                     </div>   
                     @endforeach
+                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
+                        <div class="col-lg-12">
+                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">شعار الهيدر</label>
+                            <div class="dropzone dropzone-default kt_dropzone_{{ $data->header_logo->id }}">
+                                <div class="dropzone-msg dz-message needsclick">
+                                    <h3 class="dropzone-msg-title"><i class="flaticon-upload-1 fa-4x"></i></h3>
+                                    <span class="dropzone-msg-desc">اسحب الملفات هنا أو انقر هنا للرفع .</span>
+                                </div>
+                                @if($data->header_logo->var_value != '')
+                                <div class="dz-preview dz-image-preview" id="my-preview">  
+                                    <div class="dz-image">
+                                        <img alt="image" src="{{ $data->header_logo->var_value }}">
+                                    </div>  
+                                    <div class="dz-details">
+                                        <div class="dz-size">
+                                            <span><strong>{{ \App\Models\Page::getPhotoSize($data->header_logo->var_value) }}</strong></span>
+                                        </div>
+                                        <div class="dz-filename">
+                                            {{-- <span data-dz-name="">{{ $variable->value }}</span> --}}
+                                        </div>
+                                        <div class="PhotoBTNS">
+                                            <div class="my-gallery" itemscope="" itemtype="" data-pswp-uid="1">
+                                               <figure itemprop="associatedMedia" itemscope="" itemtype="">
+                                                    <a href="{{ $data->header_logo->var_value }}" itemprop="contentUrl" data-size="555x370"><i class="flaticon-search"></i></a>
+                                                    <img src="{{ $data->header_logo->var_value }}" itemprop="thumbnail" style="display: none;">
+                                                </figure>
+                                            </div>
+                                            <a class="DeletePhotoq" data-area="{{ $data->header_logo->id }}"><i class="flaticon-delete" data-name="{{ $data->header_logo->var_value }}" data-clname="Photo"></i> </a>                                               
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
+                        <div class="col-lg-12">
+                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">شعار الفوتر</label>
+                            <div class="dropzone dropzone-default kt_dropzone_{{ $data->footer_logo->id }}">
+                                <div class="dropzone-msg dz-message needsclick">
+                                    <h3 class="dropzone-msg-title"><i class="flaticon-upload-1 fa-4x"></i></h3>
+                                    <span class="dropzone-msg-desc">اسحب الملفات هنا أو انقر هنا للرفع .</span>
+                                </div>
+                                @if($data->footer_logo->var_value != '')
+                                <div class="dz-preview dz-image-preview" id="my-preview">  
+                                    <div class="dz-image">
+                                        <img alt="image" src="{{ $data->footer_logo->var_value }}">
+                                    </div>  
+                                    <div class="dz-details">
+                                        <div class="dz-size">
+                                            <span><strong>{{ \App\Models\Page::getPhotoSize($data->footer_logo->var_value) }}</strong></span>
+                                        </div>
+                                        <div class="dz-filename">
+                                            {{-- <span data-dz-name="">{{ $variable->value }}</span> --}}
+                                        </div>
+                                        <div class="PhotoBTNS">
+                                            <div class="my-gallery" itemscope="" itemtype="" data-pswp-uid="1">
+                                               <figure itemprop="associatedMedia" itemscope="" itemtype="">
+                                                    <a href="{{ $data->footer_logo->var_value }}" itemprop="contentUrl" data-size="555x370"><i class="flaticon-search"></i></a>
+                                                    <img src="{{ $data->footer_logo->var_value }}" itemprop="thumbnail" style="display: none;">
+                                                </figure>
+                                            </div>
+                                            <a class="DeletePhotoq" data-area="{{ $data->footer_logo->id }}"><i class="flaticon-delete" data-name="{{ $data->footer_logo->var_value }}" data-clname="Photo"></i> </a>                                               
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

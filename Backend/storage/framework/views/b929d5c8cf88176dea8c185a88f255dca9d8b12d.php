@@ -136,18 +136,23 @@
                                     <br>
                                 </div>  
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>الاسم:</label>
+                                    <label>الاسم عربي:</label>
                                     <input type="text" class="form-control m-input" data-col-index="3" name="name" value="<?php echo e(Request::get('name')); ?>">
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <label>الاسم انجليزي:</label>
+                                    <input type="text" class="form-control m-input" data-col-index="4" name="name_en" value="<?php echo e(Request::get('name_en')); ?>">
+                                    <br>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <label>البريد الالكتروني:</label>
-                                    <input type="text" class="form-control m-input" data-col-index="4" name="email" value="<?php echo e(Request::get('email')); ?>">
+                                    <input type="text" class="form-control m-input" data-col-index="5" name="email" value="<?php echo e(Request::get('email')); ?>">
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <label>رقم الجوال:</label>
-                                    <input type="text" class="form-control m-input" data-col-index="5" name="phone" value="<?php echo e(Request::get('phone')); ?>">
+                                    <input type="text" class="form-control m-input" data-col-index="6" name="phone" value="<?php echo e(Request::get('phone')); ?>">
                                     <br>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -188,7 +193,7 @@
                                     <label>تاريخ الارسال:</label>
                                     <div class="row">
                                         <div class="col">
-                                            <input type="text" class="form-control datetimepicker-input" id="kt_datetimepicker_7_1" placeholder="تاريخ الارسال"  name="created_at" value="<?php echo e(Request::get('created_at')); ?>" data-col-index="10" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_1" />
+                                            <input type="text" class="form-control datetimepicker-input" id="kt_datetimepicker_7_1" placeholder="تاريخ الارسال"  name="created_at" value="<?php echo e(Request::get('created_at')); ?>" data-col-index="11" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_1" />
                                         </div>
                                     </div>
                                 </div>
@@ -225,7 +230,8 @@
                     <th>ID</th>
                     <th>اختيار</th>
                     <th>رقم الطلب</th>
-                    <th>الاسم</th>
+                    <th>الاسم عربي</th>
+                    <th>الاسم انجليزي</th>
                     <th>البريد الالكتروني</th>
                     <th>رقم الجوال</th>
                     <th>المجال الفني</th>
@@ -242,7 +248,8 @@
                     <th>ID</th>
                     <th>اختيار</th>
                     <th>رقم الطلب</th>
-                    <th>الاسم</th>
+                    <th>الاسم عربي</th>
+                    <th>الاسم انجليزي</th>
                     <th>البريد الالكتروني</th>
                     <th>رقم الجوال</th>
                     <th>المجال الفني</th>

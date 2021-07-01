@@ -10,6 +10,46 @@
 custom style
 -------------------------------------------------------
 */
+:root{
+  --color-1 : #4a3309;
+  --color-2 : #7b591a;
+  --color-3 : #b98e33;
+  --color-4 : #b58727;
+  --color-5 : #d19515;
+  --color-6 : #fff;
+  --color-7 : #000;
+  --color-8 : #e5e5e5;
+  --color-9 : #707070;
+  --color-10 : #be8a1c;
+
+  --color-11 : #757575;
+  --color-12 : #f9f9f9;
+  --color-13 : #444;
+  --color-14 : #f1b478;
+  --color-15 : #f8f8f8;
+  --color-16 : #efefef;
+  --color-17 : #bebebe;
+  --color-18 : #050f1e;
+  --color-19 : #030b17;
+  --color-20 : #111d33;
+
+  --color-21 : #777777;
+  --color-22 : #e9e9e9;
+  --color-23 : #f5f5f5;
+  --color-24 : #4a3000;
+  --color-25 : #f1f1f1;
+  --color-26 : #a8a8a8;
+  --color-27 : #189b59;
+  --color-28 : #7C6074;
+  --color-29 : #495057;
+  --color-30 : #DFA129;
+
+  --color-31 : #F3F3F3;
+  --color-32 : #EBEBEB;
+  --color-33 : #6D6D6D;
+  --color-34 : #8B8B8B;
+  --color-35 : #1376DB;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -56,12 +96,12 @@ button {
   bottom: 15px;
   right: 20px;
   cursor: pointer;
-  background-color: #b58727;
+  background-color: var(--color-4);
   opacity: 0;
   transition: all 0.5s;
 }
 #floating i {
-  color: #fff;
+  color: var(--color-6);
 }
 
 .iMenue {
@@ -85,7 +125,7 @@ splach style
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--color-6);
   z-index: 999999;
   text-align: center;
   padding: 0 20px 0;
@@ -103,7 +143,7 @@ splach style
 
 .splash .loadProgress {
   width: 400px;
-  background-color: #e5e5e5;
+  background-color: var(--color-8);
   height: 10px;
   margin: 0 auto;
   overflow: hidden;
@@ -122,7 +162,7 @@ splach style
   top: 0;
   width: 180px;
   height: 100%;
-  background-color: #b58727;
+  background-color: var(--color-4);
   -moz-animation: move-progress 3s linear infinite;
   -ms-animation: move-progress 3s linear infinite;
   -o-animation: move-progress 3s linear infinite;
@@ -176,7 +216,7 @@ sidenav style
   z-index: 99999;
   top: 0;
   right: -400px;
-  background-color: #fff;
+  background-color: var(--color-6);
   box-shadow: 0 22px 22px rgba(0, 0, 0, 0.05);
   overflow-x: hidden;
   padding-top: 30px;
@@ -191,12 +231,12 @@ sidenav style
 .sidenav a {
   text-decoration: none;
   font-size: 18px;
-  color: #000;
+  color: var(--color-7);
   transition: 0.3s;
   padding-right: 56px;
 }
 .sidenav a:hover {
-  color: #b58727;
+  color: var(--color-4);
 }
 .sidenav .closebtn {
   position: absolute;
@@ -208,8 +248,8 @@ sidenav style
   display: inline-block;
   width: 35px;
   height: 40px;
-  background-color: #b58727;
-  color: #fff !important;
+  background-color: var(--color-4);
+  color: var(--color-6) !important;
   line-height: 40px;
 }
 .sidenav .logo {
@@ -223,7 +263,7 @@ sidenav style
 .sidenav .NesteListParent i {
   position: absolute;
   left: 10px;
-  color: #444;
+  color: var(--color-13);
   font-size: 14px;
 }
 .sidenav .sideMenue {
@@ -278,7 +318,7 @@ sidenav style
 .form-control:focus {
   outline: 0 !important;
   box-shadow: none !important;
-  border: 1px solid #b58727;
+  border: 1px solid var(--color-4);
 }
 
 .slick-next,
@@ -332,7 +372,7 @@ Navbr style
 -------------------------------------------------------
 */
 .myNavbar {
-  background-color: #fff;
+  background-color: var(--color-6);
   position: fixed;
   z-index: 999;
   top: 0;
@@ -357,14 +397,14 @@ Navbr style
   line-height: 100px;
   height: 100px;
   padding: 0 15px;
-  color: #000;
+  color: var(--color-7);
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
 }
 .myNavbar .links .navLink .navItem:hover {
-  color: #b58727;
+  color: var(--color-4);
 }
 .myNavbar .openSideMenue {
   display: none;
@@ -382,8 +422,8 @@ Navbr style
   opacity: 0;
   position: absolute;
   top: 100%;
-  border: 1px solid #707070;
-  background-color: #fff;
+  border: 1px solid var(--color-9);
+  background-color: var(--color-6);
   padding-bottom: 25px;
   padding-top: 25px;
 }
@@ -397,15 +437,15 @@ Navbr style
   display: block;
   line-height: 60px;
   padding-right: 25px;
-  color: #000;
+  color: var(--color-7);
   font-weight: 500;
   width: 95%;
 }
 .myNavbar .sideMenue li:hover {
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 .myNavbar .sideMenue li:hover a {
-  color: #fff;
+  color: var(--color-6);
 }
 
 /*
@@ -436,24 +476,24 @@ header slider style
 .header-slider .header-content h5 {
   font-size: 90px;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-6);
 }
 .header-slider .header-content p {
   font-size: 30px;
   margin-top: 30px;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-6);
 }
 .header-slider .slick-arrow {
   width: 44px;
   height: 44px;
-  background-color: #ffffff;
+  background-color: var(--color-6)fff;
   transition: all 0.1s ease-in-out;
 }
 .header-slider .slick-arrow::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #000;
+  color: var(--color-7);
   transition: all 0.1s ease-in-out;
   font-family: flaticon !important;
   font-style: normal;
@@ -465,10 +505,10 @@ header slider style
   -moz-osx-font-smoothing: grayscale;
 }
 .header-slider .slick-arrow:hover {
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 .header-slider .slick-arrow:hover::before {
-  color: #fff;
+  color: var(--color-6);
 }
 .header-slider .slick-next {
   right: 20px;
@@ -488,12 +528,12 @@ header slider style
 }
 .header-slider .slick-dots li button:before {
   height: 3px;
-  background-color: #b58727;
+  background-color: var(--color-4);
   opacity: 1;
 }
 .header-slider .slick-dots li.slick-active button:before {
   height: 3px;
-  background-color: #fff;
+  background-color: var(--color-6);
 }
 
 /*
@@ -502,7 +542,7 @@ Who us style
 -------------------------------------------------------
 */
 .home-whoUs {
-  background-color: #4a3309;
+  background-color: var(--color-1);
   padding-top: 65px;
   padding-right: 96px;
   padding-left: 96px;
@@ -513,7 +553,7 @@ Who us style
 .home-whoUs .section-header {
   text-align: center;
   font-size: 40px;
-  color: #fff;
+  color: var(--color-6);
   font-weight: bold;
 }
 .home-whoUs .coFounder {
@@ -534,10 +574,11 @@ Who us style
   z-index: 8;
   margin-top: 65px;
   border-radius: 0;
-  background-color: #7b591a;
+  background-color: var(--color-2);
   padding: 8px;
   padding-bottom: 55px;
   text-decoration: none !important;
+  height: 396px;
 }
 .distinguis-card .card-body {
   padding: 0;
@@ -561,14 +602,14 @@ Who us style
   transform: translate(-50%, -50%);
   width: 130px;
   height: 130px;
-  background-color: #b98e33;
+  background-color: var(--color-3);
   border-radius: 50%;
   text-align: center;
   line-height: 130px;
   font-size: 66px;
 }
 .distinguis-card .card-icon-parent .card-icon i {
-  color: #fff;
+  color: var(--color-6);
   line-height: 148px;
 }
 .distinguis-card .card-title {
@@ -576,40 +617,40 @@ Who us style
   margin: 0;
   margin-top: 24px;
   margin-bottom: 17px;
-  color: #fff;
+  color: var(--color-6);
   text-decoration: none;
   font-size: 30px;
   padding-bottom: 20px;
   position: relative;
 }
 .distinguis-card .card-text {
-  color: #fff;
+  color: var(--color-6);
   width: 90%;
   margin: auto;
   font-size: 16px;
   -webkit-line-clamp: 2 !important;
 }
 .distinguis-card:hover {
-  background-color: #b98e33;
+  background-color: var(--color-3);
   transform: translateY(-10px);
 }
 .distinguis-card:hover .card-body .card-icon-parent {
-  border: 2px solid #fff;
+  border: 2px solid var(--color-6);
 }
 .distinguis-card:hover .card-body .card-icon-parent .card-icon {
-  background-color: #fff;
+  background-color: var(--color-6);
 }
 .distinguis-card:hover .card-body .card-icon-parent .card-icon i {
-  color: #b58727;
+  color: var(--color-4);
 }
 .distinguis-card:hover .card-body .card-title {
-  color: #000;
+  color: var(--color-7);
 }
 .distinguis-card:hover .card-body .card-title::after {
-  background-color: #f1b478;
+  background-color: var(--color-14);
 }
 .distinguis-card:hover .card-body .card-text {
-  color: #000;
+  color: var(--color-7);
 }
 
 /*
@@ -641,7 +682,7 @@ con founder section style
   transition: all 0.5s ease-in-out;
 }
 .coFounders .card-founder::before {
-  background-image: linear-gradient(to bottom, rgba(190, 138, 28, 0), #be8a1c);
+  background-image: linear-gradient(to bottom, rgba(190, 138, 28, 0), var(--color-10));
   position: absolute;
   content: "";
   width: 100%;
@@ -664,11 +705,11 @@ con founder section style
   left: 50%;
   transform: translate(-50%, 0);
   width: 100%;
-  color: #fff;
+  color: var(--color-6);
   z-index: 4;
 }
 .coFounders .card-founder:hover::after {
-  background-image: linear-gradient(to bottom, rgba(190, 138, 28, 0), #be8a1c);
+  background-image: linear-gradient(to bottom, rgba(190, 138, 28, 0), var(--color-10));
   opacity: 0;
 }
 .coFounders .card-founder:hover::before {
@@ -677,13 +718,13 @@ con founder section style
 .coFounders .slick-arrow {
   width: 44px;
   height: 44px;
-  background-color: #4a3309;
+  background-color: var(--color-1);
   transition: all 0.1s ease-in-out;
 }
 .coFounders .slick-arrow::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #fff;
+  color: var(--color-6);
   transition: all 0.1s ease-in-out;
   font-family: flaticon !important;
   font-style: normal;
@@ -695,10 +736,10 @@ con founder section style
   -moz-osx-font-smoothing: grayscale;
 }
 .coFounders .slick-arrow:hover {
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 .coFounders .slick-arrow:hover::before {
-  color: #fff;
+  color: var(--color-6);
 }
 .coFounders .slick-next {
   right: -40px;
@@ -720,7 +761,7 @@ Event section style
 -------------------------------------------------------
 */
 .events-initiativs {
-  background-color: #b58727;
+  background-color: var(--color-4);
   margin-top: 6px;
   padding-top: 80px;
   padding-bottom: 160px;
@@ -729,12 +770,12 @@ Event section style
   justify-content: center;
 }
 .events-initiativs .nav .nav-item {
-  background-color: #fff;
+  background-color: var(--color-6);
   margin-bottom: 31px;
   text-align: center;
 }
 .events-initiativs .nav .nav-item .nav-link {
-  color: #000;
+  color: var(--color-7);
   font-weight: bold;
   font-size: 25px;
   width: 200px;
@@ -744,8 +785,8 @@ Event section style
   padding: 0;
 }
 .events-initiativs .nav .nav-item .active {
-  background-color: #4a3309;
-  color: #fff;
+  background-color: var(--color-1);
+  color: var(--color-6);
 }
 .events-initiativs .slider-item {
   padding: 38px;
@@ -753,13 +794,13 @@ Event section style
 .events-initiativs .slick-arrow {
   width: 44px;
   height: 44px;
-  background-color: #ffffff;
+  background-color: var(--color-6)fff;
   transition: all 0.1s ease-in-out;
 }
 .events-initiativs .slick-arrow::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #000;
+  color: var(--color-7);
   transition: all 0.1s ease-in-out;
   font-family: flaticon !important;
   font-style: normal;
@@ -771,10 +812,10 @@ Event section style
   -moz-osx-font-smoothing: grayscale;
 }
 .events-initiativs .slick-arrow:hover {
-  background-color: #4a3309;
+  background-color: var(--color-1);
 }
 .events-initiativs .slick-arrow:hover::before {
-  color: #fff;
+  color: var(--color-6);
 }
 .events-initiativs .slick-next {
   right: -40px;
@@ -808,19 +849,19 @@ Event section style
   top: 0;
   left: 0;
   content: "";
-  background-image: linear-gradient(to bottom, rgba(190, 138, 28, 0), #be8a1c);
+  background-image: linear-gradient(to bottom, rgba(190, 138, 28, 0), var(--color-10));
   opacity: 0;
 }
 .event-card .card-img .date {
   width: 64px;
   height: 80px;
-  background-color: #4a3309;
+  background-color: var(--color-1);
   position: absolute;
   left: 11px;
   text-align: center;
   bottom: -20px;
   font-size: 22px;
-  color: #fff;
+  color: var(--color-6);
   line-height: 25px;
 }
 .event-card .card-img .date span {
@@ -838,11 +879,11 @@ Event section style
   font-size: 20px;
   margin-bottom: 14px;
   font-weight: bold;
-  color: #000;
+  color: var(--color-7);
 }
 .event-card .card-body .card-text {
   font-size: 16px;
-  color: #000;
+  color: var(--color-7);
   font-weight: 500;
   width: 348px;
   -webkit-line-clamp: 2 !important;
@@ -851,7 +892,7 @@ Event section style
   opacity: 1;
 }
 .event-card:hover .card-img .date {
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 
 /*
@@ -865,7 +906,7 @@ Join ti us section style
 }
 .join .joing-parent {
   display: flex;
-  background-color: #f8f8f8;
+  background-color: var(--color-15);
 }
 .join .joing-parent .join-img {
   width: 60%;
@@ -884,7 +925,7 @@ Join ti us section style
 }
 .join .joing-parent .join-img h5 {
   font-size: 41px;
-  color: #fff;
+  color: var(--color-6);
   position: absolute;
   top: 80px;
   width: 278px;
@@ -894,7 +935,7 @@ Join ti us section style
   padding-bottom: 26px;
 }
 .join .joing-parent .join-img h5 span {
-  color: #b58727;
+  color: var(--color-4);
 }
 .join .joing-parent .join-img h5::after {
   content: "";
@@ -903,7 +944,7 @@ Join ti us section style
   right: 0;
   width: 102px;
   height: 4px;
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 .join .joing-parent .join-img .join-logo {
   width: 218px;
@@ -926,7 +967,7 @@ Join ti us section style
   padding-right: 13px;
   border: 0;
   height: 60px;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--color-6);
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -934,14 +975,14 @@ Join ti us section style
 }
 .join .joing-parent .joing-form .form-group .form-control::placeholder {
   font-size: 14px;
-  color: #000;
+  color: var(--color-7);
 }
 .join .joing-parent .joing-form .form-group .form-control::after {
   content: "";
 }
 .join .joing-parent .joing-form .form-group .form-control:focus {
-  background-color: #efefef;
-  border-bottom: 2px solid #b58727;
+  background-color: var(--color-16);
+  border-bottom: 2px solid var(--color-4);
 }
 .join .joing-parent .joing-form .mycustom-select-parent input {
   opacity: 0;
@@ -954,8 +995,8 @@ Join ti us section style
   cursor: pointer;
   height: 60px;
   border: 0;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--color-6);
+  color: var(--color-7);
   position: relative;
 }
 .join
@@ -971,7 +1012,7 @@ Join ti us section style
   position: absolute;
   z-index: 3;
   font-size: 13px;
-  color: #000;
+  color: var(--color-7);
   top: 50%;
   transform: translate(0, -50%);
   padding-right: 12px;
@@ -1004,7 +1045,7 @@ Join ti us section style
   .selectList {
   display: none;
   width: 273px;
-  background-color: #fff;
+  background-color: var(--color-6);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   padding-top: 38px;
   padding-right: 30px;
@@ -1082,8 +1123,8 @@ Join ti us section style
   .container
   input:checked
   ~ .checkmark {
-  background-color: #b58727;
-  border: 1px solid #b58727;
+  background-color: var(--color-4);
+  border: 1px solid var(--color-4);
   border-radius: 0px;
 }
 .join
@@ -1111,7 +1152,7 @@ Join ti us section style
   top: 2px;
   width: 8px;
   height: 14px;
-  border: solid #fff;
+  border: solid var(--color-6);
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -1130,8 +1171,8 @@ Join ti us section style
   left: 0;
   height: 22px;
   width: 22px;
-  background-color: #fff;
-  border: 1px solid #bebebe;
+  background-color: var(--color-6);
+  border: 1px solid var(--color-17);
   border-radius: 0px;
 }
 .join
@@ -1156,17 +1197,17 @@ Join ti us section style
 .join .joing-parent .joing-form button[type="submit"] {
   width: 100%;
   height: 60px;
-  background-color: #b58727;
-  color: #fff;
-  border: 1px solid #b58727;
+  background-color: var(--color-4);
+  color: var(--color-6);
+  border: 1px solid var(--color-4);
   font-size: 18px;
   font-weight: bold;
   margin-top: 11px;
 }
 .join .joing-parent .joing-form button[type="submit"]:hover {
-  background-color: #fff;
-  border: 1px solid #b58727;
-  color: #b58727;
+  background-color: var(--color-6);
+  border: 1px solid var(--color-4);
+  color: var(--color-4);
 }
 
 /*
@@ -1193,7 +1234,7 @@ Numbers section style
 
 .number-card {
   font-size: 25px;
-  color: #fff;
+  color: var(--color-6);
   text-align: center;
   border-radius: 0;
   background-color: transparent;
@@ -1210,14 +1251,14 @@ Numbers section style
   position: absolute;
   content: "";
   height: 4px;
-  background-color: #b98e33;
+  background-color: var(--color-3);
   left: 50%;
   transform: translate(-50%, 0);
   bottom: 0;
 }
 .number-card .the-number {
   font-size: 60px;
-  color: #d19515;
+  color: var(--color-5);
   font-weight: bold;
 }
 
@@ -1245,14 +1286,14 @@ Clinets slider section style
 .clients {
   padding-top: 70px;
   padding-bottom: 118px;
-  background-color: #efefef;
+  background-color: var(--color-16);
 }
 .clients .clients-slider {
   width: 1100px !important;
   margin: auto;
 }
 .clients .section-header {
-  color: #000;
+  color: var(--color-7);
   font-size: 40px;
   position: relative;
   z-index: 9;
@@ -1266,7 +1307,7 @@ Clinets slider section style
   padding: 0 15px;
 }
 .clients .slider-item .card {
-  background-color: #fff;
+  background-color: var(--color-6);
   max-width: 100%;
   margin: auto;
   min-height: 134px;
@@ -1282,13 +1323,13 @@ Clinets slider section style
 .clients .slick-arrow {
   width: 44px;
   height: 44px;
-  background-color: #b58727;
+  background-color: var(--color-4);
   transition: all 0.1s ease-in-out;
 }
 .clients .slick-arrow::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #fff;
+  color: var(--color-6);
   transition: all 0.1s ease-in-out;
   font-family: flaticon !important;
   font-style: normal;
@@ -1300,10 +1341,10 @@ Clinets slider section style
   -moz-osx-font-smoothing: grayscale;
 }
 .clients .slick-arrow:hover {
-  background-color: #4a3309;
+  background-color: var(--color-1);
 }
 .clients .slick-arrow:hover::before {
-  color: #fff;
+  color: var(--color-6);
 }
 .clients .slick-next {
   right: -50px;
@@ -1338,7 +1379,7 @@ Footer section style
 -------------------------------------------------------
 */
 .site-footer {
-  background-color: #050f1e;
+  background-color: var(--color-18);
   padding-top: 64px;
   padding-bottom: 80px;
   position: relative;
@@ -1353,7 +1394,7 @@ Footer section style
 .site-footer .footer-form h5 {
   font-size: 25px;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-6);
   margin-bottom: 48px;
 }
 .site-footer .footer-form .form-group {
@@ -1362,9 +1403,9 @@ Footer section style
 .site-footer .footer-form .form-control,
 .site-footer .footer-form textarea {
   height: 60px;
-  background-color: #030b17;
+  background-color: var(--color-19);
   border: 0;
-  border-bottom: 2px solid #030b17;
+  border-bottom: 2px solid var(--color-19);
   border-radius: 0;
   padding-right: 18px;
   transition: all 0.3s;
@@ -1372,13 +1413,13 @@ Footer section style
 .site-footer .footer-form .form-control::placeholder,
 .site-footer .footer-form textarea::placeholder {
   font-size: 14px;
-  color: #757575;
+  color: var(--color-11);
   border-radius: 0;
 }
 .site-footer .footer-form .form-control:focus,
 .site-footer .footer-form textarea:focus {
-  border-bottom: 2px solid #b58727;
-  background-color: #111d33;
+  border-bottom: 2px solid var(--color-4);
+  background-color: var(--color-20);
 }
 .site-footer .footer-form textarea {
   height: 80px !important;
@@ -1388,17 +1429,17 @@ Footer section style
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background-color: #b58727;
-  color: #fff;
-  border: 1px solid #b58727;
+  background-color: var(--color-4);
+  color: var(--color-6);
+  border: 1px solid var(--color-4);
   font-size: 18px;
   font-weight: bold;
   margin-top: 11px;
 }
 .site-footer .footer-form button[type="submit"]:hover {
-  background-color: #fff;
-  border: 1px solid #b58727;
-  color: #b58727;
+  background-color: var(--color-6);
+  border: 1px solid var(--color-4);
+  color: var(--color-4);
 }
 .site-footer .footer-logo {
   text-align: left;
@@ -1412,8 +1453,8 @@ Footer section style
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid #757575;
-  color: #757575;
+  border: 2px solid var(--color-11);
+  color: var(--color-11);
   display: inline-block;
   line-height: 48px;
   text-align: center;
@@ -1425,7 +1466,7 @@ Footer section style
 }
 .site-footer .copy h5 {
   font-size: 16px;
-  color: #757575;
+  color: var(--color-11);
 }
 .site-footer .copy .copy-whats img {
   max-height: 60px;
@@ -1462,7 +1503,7 @@ breadcrumb section style
   font-size: 50px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-6);
   position: relative;
   z-index: 4;
 }
@@ -1477,7 +1518,7 @@ breadcrumb section style
 }
 .breadcrumb ul li::after {
   content: "/";
-  color: #fff;
+  color: var(--color-6);
   margin-right: 16px;
   font-weight: bold;
 }
@@ -1488,7 +1529,7 @@ breadcrumb section style
   margin-left: 10px;
 }
 .breadcrumb ul li a {
-  color: #fff;
+  color: var(--color-6);
   font-size: 14px;
 }
 
@@ -1498,13 +1539,13 @@ regulations page style
 -------------------------------------------------------
 */
 .regulations {
-  background-color: #f9f9f9;
+  background-color: var(--color-12);
   padding-top: 70px;
   padding-bottom: 121px;
 }
 
 .regulations-card {
-  background-color: #fff;
+  background-color: var(--color-6);
   border-radius: 0;
   border: 0;
   padding-top: 40px;
@@ -1526,8 +1567,8 @@ regulations page style
   float: right;
   height: 60px;
   line-height: 60px;
-  width: 50%;
-  color: #777777;
+  width: 100%;
+  color: var(--color-21);
   font-size: 16px;
 }
 .regulations-card .option span {
@@ -1540,17 +1581,17 @@ regulations page style
   top: 3px;
 }
 .regulations-card .option-1 {
-  background-color: #e9e9e9;
+  background-color: var(--color-22);
 }
 .regulations-card .option-2 {
-  background-color: #f5f5f5;
+  background-color: var(--color-23);
 }
 .regulations-card .option:hover {
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 .regulations-card .option:hover i,
 .regulations-card .option:hover span {
-  color: #fff;
+  color: var(--color-6);
 }
 
 /*
@@ -1559,11 +1600,11 @@ About page style
 -------------------------------------------------------
 */
 .aboutPage {
-  background-color: #f9f9f9;
+  background-color: var(--color-12);
   margin-top: -40px;
 }
 .aboutPage .img-card {
-  background-color: #fff;
+  background-color: var(--color-6);
   padding-top: 50px;
   padding-bottom: 50px;
   border: 0;
@@ -1577,7 +1618,7 @@ About page style
   font-size: 25px;
   font-weight: 500;
   line-height: 35px;
-  color: #b58727;
+  color: var(--color-4);
 }
 .aboutPage .img-card .img-card-img {
   position: relative;
@@ -1595,7 +1636,7 @@ About page style
 }
 
 .vision-card {
-  background-color: #fff;
+  background-color: var(--color-6);
   padding-top: 30px;
   padding-bottom: 35px;
   padding-left: 30px;
@@ -1628,7 +1669,7 @@ events page style
 -------------------------------------------------------
 */
 .events-page .events-initiativs {
-  background-color: #f9f9f9;
+  background-color: var(--color-12);
   margin-top: 0;
   padding-top: 0;
   padding-bottom: 108px;
@@ -1637,10 +1678,10 @@ events page style
   margin-bottom: 40px;
 }
 .events-page .events-initiativs .card .date {
-  background-color: #b58727;
+  background-color: var(--color-4);
 }
 .events-page .events-initiativs .card:hover .date {
-  background-color: #4a3000;
+  background-color: var(--color-24);
 }
 .events-page .events-initiativs .nav {
   margin-top: -40px;
@@ -1658,7 +1699,7 @@ founders page style
 */
 
 .fonders {
-  background-color: #f9f9f9;
+  background-color: var(--color-12);
   padding-top: 85px;
   padding-bottom: 116px;
 }
@@ -1683,7 +1724,7 @@ founders page style
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #b58727;
+  background-color: var(--color-4);
   display: block;
   opacity: 0;
   z-index: 3;
@@ -1728,7 +1769,7 @@ confirm page style
   padding-bottom: 90px;
 }
 .confirm-page .complete-order-form {
-  background-color: #f8f8f8;
+  background-color: var(--color-15);
   padding-top: 57px;
   padding-right: 50px;
   padding-left: 50px;
@@ -1751,7 +1792,7 @@ confirm page style
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: #f1f1f1;
+  background-color: var(--color-25);
   position: absolute;
   z-index: 9;
   border-radius: 50%;
@@ -1765,7 +1806,7 @@ confirm page style
 .confirm-page .complete-order-form .upload-file .input-group .pic .delete-bank {
   width: 20px;
   height: 20px;
-  border: 1px solid #a8a8a8;
+  border: 1px solid var(--color-26);
   border-radius: 50%;
   position: absolute;
   display: inline-block;
@@ -1776,7 +1817,7 @@ confirm page style
   margin-top: 0;
   z-index: 2;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--color-6);
 }
 .confirm-page .complete-order-form .upload-file .input-group .pic .delete-pic i,
 .confirm-page
@@ -1786,7 +1827,7 @@ confirm page style
   .pic
   .delete-bank
   i {
-  color: #000;
+  color: var(--color-7);
   font-size: 12px;
 }
 .confirm-page
@@ -1797,11 +1838,11 @@ confirm page style
   .custom-file-label {
   height: 60px;
   line-height: 60px;
-  background-color: #fff;
+  background-color: var(--color-6);
   padding: 0;
   padding-right: 15px;
   border: 0;
-  color: #000;
+  color: var(--color-7);
   font-size: 14px;
 }
 .confirm-page
@@ -1836,7 +1877,7 @@ confirm page style
 }
 .confirm-page .complete-order-form .delete-btn {
   margin-top: 15px;
-  color: #fff !important;
+  color: var(--color-6) !important;
   display: inline-block;
   cursor: pointer;
   font-size: 15px;
@@ -1851,39 +1892,39 @@ confirm page style
 }
 .confirm-page .complete-order-form .form-control {
   height: 60px;
-  background-color: #fff;
+  background-color: var(--color-6);
   border-radius: 0;
   border: 0;
   padding-right: 15px;
 }
 .confirm-page .complete-order-form .form-control::placeholder {
-  color: #000;
+  color: var(--color-7);
   font-size: 14px;
 }
 .confirm-page .complete-order-form button[type="submit"] {
   width: 100%;
-  background-color: #b58727;
+  background-color: var(--color-4);
   font-size: 18px;
   font-weight: bold;
   line-height: 60px;
-  color: #fff;
+  color: var(--color-6);
   text-align: center;
-  border: 1px solid #b58727;
+  border: 1px solid var(--color-4);
 }
 .confirm-page .complete-order-form button[type="submit"]:hover {
-  background-color: #fff;
-  border: 1px solid #b58727;
-  color: #b58727;
+  background-color: var(--color-6);
+  border: 1px solid var(--color-4);
+  color: var(--color-4);
 }
 .confirm-page .paymentNow {
-  background-color: #f8f8f8;
+  background-color: var(--color-15);
   padding-top: 61px;
   padding-bottom: 54px;
   margin-top: 31px;
   text-align: center;
 }
 .confirm-page .paymentNow i {
-  color: #189b59;
+  color: var(--color-27);
   font-size: 91px;
 }
 .confirm-page .paymentNow h5 {
@@ -1937,14 +1978,14 @@ event modal page style
   left: 20px;
   top: 25px;
   font-size: 20px;
-  color: #000;
+  color: var(--color-7);
   opacity: 1;
 }
 #eventModal .modal-body .close:focus {
   outline: 0 !important;
 }
 #eventModal .modal-body .close i {
-  color: #000000;
+  color: var(--color-7)000;
 }
 #eventModal .modal-img {
   height: 420px;
@@ -1964,14 +2005,14 @@ event modal page style
 #eventModal .modal-date {
   width: 64px;
   height: 80px;
-  background-color: #4a3309;
+  background-color: var(--color-1);
   position: absolute;
   left: 11px;
   text-align: center;
   bottom: 21px;
   left: 23px;
   font-size: 22px;
-  color: #fff;
+  color: var(--color-6);
   line-height: 25px;
 }
 #eventModal .modal-date span {
@@ -2014,7 +2055,7 @@ Media quey 1024 page style
     top: 50%;
     left: 30px;
     transform: translate(0, -50%);
-    border: 2px solid #000;
+    border: 2px solid var(--color-7);
     width: 40px;
     height: 40px;
     text-align: center;
@@ -2249,12 +2290,12 @@ Media quey 991 page style
   #eventModal .modal-body .close i {
     width: 30px;
     height: 30px;
-    background-color: #fff;
+    background-color: var(--color-6);
     display: inline-block;
     line-height: 30px;
     text-align: center;
     font-size: 15px;
-    color: #000;
+    color: var(--color-7);
   }
 
   .confirm-page {
@@ -2262,7 +2303,7 @@ Media quey 991 page style
   }
 
   .confirm-page .complete-order-form {
-    background-color: #f8f8f8;
+    background-color: var(--color-15);
     padding-top: 30px;
     padding-right: 30px;
     padding-left: 30px;
@@ -2352,18 +2393,18 @@ Media quey 376 page style
 
 .rigister button {
   width: 100%;
-  background-color: #b58727;
+  background-color: var(--color-4);
   font-size: 18px;
   font-weight: bold;
   line-height: 60px;
-  color: #fff;
+  color: var(--color-6);
   text-align: center;
-  border: 1px solid #b58727;
+  border: 1px solid var(--color-4);
 }
 .rigister button:hover {
-  background-color: #fff;
-  border: 1px solid #b58727;
-  color: #b58727;
+  background-color: var(--color-6);
+  border: 1px solid var(--color-4);
+  color: var(--color-4);
 }
 
 
@@ -2383,14 +2424,14 @@ Media quey 376 page style
 }
 
 #rigisterModal .paymentNow {
-  background-color: #f8f8f8;
+  background-color: var(--color-15);
   padding-top: 61px;
   padding-bottom: 54px;
   /* margin-top: 31px; */
   text-align: center;
 }
 #rigisterModal .paymentNow i {
-  color: #189b59;
+  color: var(--color-27);
   font-size: 91px;
 }
 #rigisterModal .paymentNow h5 {
@@ -2505,122 +2546,9 @@ Media quey 321 page style
   transition: all 0.3s ease-in-out;
 }
 
-/*# sourceMappingURL=style.css.map */
-.registration .addSocial
-{
-  padding:0 20px;
-  width:100%;
-  height:60px;
-  font-size:16px;
-  background-color:#FFFFFF;
-  margin-bottom:20px;
-  border:1px solid #EBEBEB;
-  font-family: "Tajawal-Bold";
-  direction:rtl;
-}
-.registration .addSocial
-{
-  line-height:58px;
-  position:relative;
-}
-
-.registration .addSocial .title
-{
-  color:#6D6D6D;
-  float:right;
-}
-
-.registration .addSocial .add
-{
-  float:left;
-  cursor: pointer;
-  margin-right:15px;
-  position:relative;
-}
-
-.registration .addSocial .add i
-{
-  color:#8B8B8B;
-  font-size:25px;
-  margin-right:10px;
-  float:left;
-  margin-top:18px;
-}
-
-.registration .addSocial .add .name
-{
-  direction: ltr;
-  display:inline-block;
-  width:82px;
-  overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.registration .addSocial .inputSocial
-{
-  position:absolute;
-  top:calc(100% - 23px);
-  left:0;
-  z-index:9;
-  background-color:#fff;
-  display:none;
-}
-
-.registration .addSocial .inputSocial input
-{
-  width:220px;
-  height:50px;
-  border-radius:5px;
-  direction:ltr;
-  text-align:left;
-  margin-bottom:0;
-  padding-left:15px;
-  display:block;
-  box-shadow: 0 0 6px 3px rgba(0,0,0,0.03);
-  padding-right:85px;
-}
-
-.registration .addSocial .inputSocial .btnSoc
-{
-  position:absolute;
-  right:8px;
-  top:10px;
-  border-radius:5px;
-  width:65px;
-  height:30px;
-  border:none;
-  line-height:30px;
-  background-color:#DFA129;
-  color:#000;
-  text-align:center;
-  font-size:14px;
-  font-family: "Tajawal-Bold";
-}
-
-
-.registration .addSocial .inputSocial input::-webkit-input-placeholder{ /* Chrome/Opera/Safari */
-  color: #000;
-  text-align: left
-}
-
-.registration .addSocial .inputSocial input::-moz-placeholder { /* Firefox 19+ */
-  color: #00;
-  text-align: left
-}
-
-.registration .addSocial .inputSocial input:-ms-input-placeholder{ /* IE 10+ */
-  color: #000;
-  text-align: left
-}
-
-.registration .addSocial .inputSocial input:-moz-placeholder { /* Firefox 18- */
-  color: #000;
-  text-align: left
-}
 .registration .done
 {
-  background-color:#7C6074;
+  background-color:var(--color-28);
   padding:45px 20px 50px; 
   text-align:center;
   margin-bottom:30px;
@@ -2638,7 +2566,7 @@ Media quey 321 page style
 {
   font-family: "Tajawal-Bold";
   font-size:20px;
-  color:#fff;
+  color:var(--color-6);
   display:block;
   margin-bottom:15px;
 }
@@ -2648,7 +2576,7 @@ Media quey 321 page style
   font-size:30px;
   font-family: "Tajawal-Medium";
   display:inline-block;
-  color:#fff;
+  color:var(--color-6);
   margin-bottom:5px;
 }
 
@@ -2657,7 +2585,7 @@ Media quey 321 page style
   font-size:20px;
   font-family: "Tajawal-Medium";
   display:block;
-  color:#fff;
+  color:var(--color-6);
 }
 
 .select2-container{
@@ -2671,7 +2599,7 @@ Media quey 321 page style
     height: 60px;
     border: 0;
     outline: 0;
-    color: #495057;
+    color: var(--color-29);
 }
 
 .btnCheck
@@ -2689,13 +2617,13 @@ Media quey 321 page style
 
 .checkDiv .text
 {
-  color:#000;
+  color:var(--color-7);
   font-size:18px;
 }
 
 .checkDiv .text a
 {
-  color:#DFA129;
+  color:var(--color-30);
   text-decoration: underline!important;
 }
 
@@ -2723,7 +2651,7 @@ Media quey 321 page style
   right: 0;
   bottom: 0;
   border-radius:15px;
-  background-color: #F3F3F3;
+  background-color: var(--color-31);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -2746,11 +2674,11 @@ Media quey 321 page style
 }
 
 .switch input:checked + .sliderSwitch {
-  background-color: #DFA129;
+  background-color: var(--color-30);
 }
 
 .switch input:focus + .sliderSwitch {
-  box-shadow: 0 0 1px #DFA129;
+  box-shadow: 0 0 1px var(--color-30);
 }
 
 .switch input:checked + .sliderSwitch:before {
@@ -2763,4 +2691,171 @@ Media quey 321 page style
 }
 .mt-2{
   margin-top: 20px;
+}
+.addSocial 
+    {
+        padding: 0 20px;
+        width: 100%;
+        /* height: 60px; */
+        font-size: 16px;
+        background-color: var(--color-6);
+        margin-bottom: 20px;
+        border: 1px solid var(--color-32);
+        font-weight:700;
+        direction: rtl;
+        line-height:58px;
+        position:relative;
+    }
+    
+    .addSocial .title
+    {
+      color: var(--color-33);
+      float:right;
+      width: 100%;
+      margin-bottom: -10px;
+    }
+    
+    .addSocial .add
+    {
+      float:left;
+      margin-right:15px;
+      position:relative;
+    }
+    
+    .addSocial .add i
+    {
+      color: var(--color-34);
+      font-size:25px;
+      margin-right:10px;
+      float:left;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    
+    .addSocial .add .name
+    {
+      direction: ltr;
+      float:left;
+      text-align:left;
+      width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .addSocial .inputSocial
+    {
+      position:absolute;
+      top:calc(100% - 23px);
+      left:0;
+      z-index:9;
+      background-color:var(--color-6);
+      display:none;
+    }
+    
+    .addSocial .inputSocial input
+    {
+      width:220px;
+      height:50px;
+      border-radius:5px;
+      direction:ltr;
+      text-align:left;
+      margin-bottom:0;
+      padding-left:15px;
+      display:block;
+      box-shadow: 0 0 6px 3px rgba(0,0,0,0.03);
+      padding-right:85px;
+    }
+    
+    .addSocial .inputSocial .btnSoc
+    {
+      position:absolute;
+      right:8px;
+      top:10px;
+      border-radius:5px;
+      width:65px;
+      height:30px;
+      border:none;
+      line-height:30px;
+      background-color: var(--color-35);
+      color: var(--color-6);
+      text-align:center;
+      font-size:14px;
+      font-weight:700;
+      cursor: pointer
+    }
+    
+    
+    .addSocial .inputSocial input::-webkit-input-placeholder{ /* Chrome/Opera/Safari */
+      color: var(--color-7);
+      text-align: left
+    }
+    
+    .addSocial .inputSocial input::-moz-placeholder { /* Firefox 19+ */
+      color: var(--color-7);
+      text-align: left
+    }
+    
+    .addSocial .inputSocial input:-ms-input-placeholder{ /* IE 10+ */
+      color: var(--color-7);
+      text-align: left
+    }
+    
+    .addSocial .inputSocial input:-moz-placeholder { /* Firefox 18- */
+      color: var(--color-7);
+      text-align: left
+    }
+    
+
+@media (max-width: 1200px)
+{ 
+  .addSocial
+  {
+    height:auto;
+  }
+  
+  .addSocial .title
+  {
+    width:100%;
+  }
+
+  .addSocial .add
+  {
+    height:60px;
+    width: 100%;
+  }
+  
+  .addSocial .inputSocial
+  {
+    top:100%;
+  }
+}
+/* Tablets */
+@media (min-width:480px) and (max-width: 767px)
+{
+  .addSocial .inputSocial
+  {
+    left:-45px
+  }
+}
+@media(max-width: 767px) {
+  .addSocial .add
+  {
+    width:100%;
+  }
+  .addSocial .add .name
+  {
+    width:80px;
+    float: left;
+    text-align: left;
+  }
+}
+
+  
+
+@media (max-width:480px) {
+  .addSocial .title
+  {
+    font-size:14px;
+  }
 }

@@ -12,6 +12,9 @@ class VariablesControllers extends Controller {
 
     public function index() {
         $variableList = Variable::variableList(1);
+        $variableList['header_logo'] = Variable::where('var_key','HEADER_LOGO')->first();
+        $variableList['footer_logo'] = Variable::where('var_key','FOOTER_LOGO')->first();
+        $variableList['request_logo'] = Variable::where('var_key','REQUEST_LOGO')->first();
         return view('Variables.Views.index')
             ->with('data', (Object) $variableList);
     }
@@ -53,7 +56,7 @@ class VariablesControllers extends Controller {
         if($fileName == false){
             return false;
         }
-        Variable::where('id',$nextID)->update(['var_value'=>\URL::to('/').'/public/uploads/variables/'.$nextID.'/'.$fileName]);
+        Variable::where('id',$nextID)->update(['var_value'=>config("app.FRONT_URL").'public/uploads/variables/'.$nextID.'/'.$fileName]);
         
         return 1;        
     }

@@ -24,10 +24,10 @@ class Event extends Model{
         return \ImagesHelper::GetImagePath('events', $id, $photo,false);
     }
 
-    static function dataList($status=null,$ids=null,$type=null) {
+    static function dataList($status=null,$ids=null,$type=null,$sliderOn=null) {
         $input = \Request::all();
 
-        $source = self::NotDeleted()->where(function ($query) use ($input,$status,$ids,$type) {
+        $source = self::NotDeleted()->where(function ($query) use ($input,$status,$ids,$type,$sliderOn) {
                     if (isset($input['title']) && !empty($input['title'])) {
                         $query->where('title', 'LIKE', '%' . $input['title'] . '%');
                     } 
@@ -45,6 +45,9 @@ class Event extends Model{
                     }
                     if($ids != null){
                         $query->whereIn('id',$ids);
+                    }
+                    if($sliderOn != null){
+                        $query->where('show_slider',$sliderOn);
                     }
                 })->orderBy('sort','ASC');
 
@@ -70,6 +73,7 @@ class Event extends Model{
         $data = new  \stdClass();
         $data->id = $source->id;
         $data->title = $source->title;
+        $data->show_slider = $source->show_slider;
         $data->description = $source->description;
         $data->date = $source->date;
         $data->sort = $source->sort;

@@ -79,12 +79,13 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				data: {
 					// parameters for custom backend script demo
 					columnsDef: [
-						'id', 'title'],
+						'id', 'title','title_en'],
 				},
 			},
 			columns: [
 				{data: 'id'},
 				{data: 'title',},
+				{data: 'title_en',},
 				{data: 'id', responsivePriority: -1},
 			],
 			columnDefs: [
@@ -98,6 +99,14 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					className: 'edits',
 					render: function(data, type, full, meta) {
 						return '<a class="editable" data-col="title" data-id="'+full.id+'">'+data+'</a>';
+					},
+				},
+				{
+					targets: 2,
+					title: 'العنوان انجليزي',
+					className: 'edits',
+					render: function(data, type, full, meta) {
+						return '<a class="editable" data-col="title_en" data-id="'+full.id+'">'+data+'</a>';
 					},
 				},
 				{

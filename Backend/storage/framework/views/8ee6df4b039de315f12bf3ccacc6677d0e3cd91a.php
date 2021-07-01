@@ -1,4 +1,3 @@
-begin::Aside-->
 <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
@@ -213,7 +212,49 @@ begin::Aside-->
                 </li>
                 <?php endif; ?>
                 
-             
+                <?php if(\Helper::checkRules('list-memberships,list-conditions,list-features')): ?>
+                <li class="menu-item menu-item-submenu <?php echo e(Active(URL::to('/memberships*'),'menu-item-open active')); ?> <?php echo e(Active(URL::to('/conditions*'),'menu-item-open active')); ?> <?php echo e(Active(URL::to('/features*'),'menu-item-open active')); ?>" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="#" class="menu-link menu-toggle">
+                        <i class="menu-icon far fa-id-card"></i>
+                        <span class="menu-text">البطاقات</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu" kt-hidden-height="80">
+                        <span class="menu-arrow"></span>
+                        <ul class="menu-subnav">
+                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
+                                <span class="menu-link">
+                                    <span class="menu-text">البطاقات</span>
+                                </span>
+                            </li>
+                            <?php if(\Helper::checkRules('list-memberships')): ?>
+                            <li class="menu-item <?php echo e(Active(URL::to('/memberships*'))); ?>" aria-haspopup="true">
+                                <a href="<?php echo e(URL::to('/memberships')); ?>" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"></i>
+                                    <span class="menu-text">البطاقات</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            <?php if(\Helper::checkRules('list-conditions')): ?>
+                            <li class="menu-item <?php echo e(Active(URL::to('/conditions*'))); ?>" aria-haspopup="true">
+                                <a href="<?php echo e(URL::to('/conditions')); ?>" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"></i>
+                                    <span class="menu-text">شروط البطاقات</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            <?php if(\Helper::checkRules('list-features')): ?>
+                            <li class="menu-item <?php echo e(Active(URL::to('/features*'))); ?>" aria-haspopup="true">
+                                <a href="<?php echo e(URL::to('/features')); ?>" class="menu-link ">
+                                    <i class="menu-bullet menu-bullet-dot"></i>
+                                    <span class="menu-text">مميزات البطاقات</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </li>
+                <?php endif; ?>
 
                 <?php if(\Helper::checkRules('list-orders')): ?>
                 <li class="menu-item menu-item-submenu <?php echo e(Active(URL::to('/orders*'),'menu-item-open active')); ?> " aria-haspopup="true" data-menu-toggle="hover">

@@ -39,7 +39,7 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6">
           <div class="footer-logo">
-            <img src="{{ asset('/assets/images/form-logo.png') }}" alt="">
+            <img src="{{ \App\Models\Variable::getVar('FOOTER_LOGO') }}" alt="">
           </div>
           <div class="social">
             @php 
@@ -61,7 +61,7 @@
           </div>
           <div class="col-sm-12 col-md-6 col-lg-6">
             <div class="company-logo">
-              <img src="{{ asset('/assets/images/company.png') }}" alt="">
+              <a href="https://servers.com.sa/ar/Home.html"><img src="{{ asset('/assets/images/company.png') }}" alt=""></a>
             </div>
           </div>
         </div>

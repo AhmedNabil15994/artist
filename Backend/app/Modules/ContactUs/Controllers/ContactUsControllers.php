@@ -7,7 +7,6 @@ use App\Models\ContactUs;
 use App\Models\WebActions;
 use Illuminate\Http\Request;
 use DataTables;
-use App\Helpers\MailHelper;
 
 
 class ContactUsControllers extends Controller {
@@ -139,7 +138,7 @@ class ContactUsControllers extends Controller {
         $menuObj->updated_by = USER_ID;
         $menuObj->save();
 
-        MailHelper::prepareEmail($menuObj);        
+        // \MailHelper::prepareEmail((array)$menuObj);        
 
         WebActions::newType(2,'ContactUs');
         \Session::flash('success', "تنبيه! تم الرد بنجاح");

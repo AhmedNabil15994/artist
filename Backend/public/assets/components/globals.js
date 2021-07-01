@@ -254,6 +254,99 @@ $('#kt_dropzone_111').dropzone({
     },
 });
 
+$('.kt_dropzone_26').dropzone({
+    url: myURL + "/26/editImage", // Set the url for your upload script location
+    paramName: "file", // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 10, // MB
+    addRemoveLinks: true,
+    accept: function(file, done) {
+        if (file.name == "justinbieber.jpg") {
+            done("Naha, you don't.");
+        } else {
+            done();
+        }
+    },
+    success:function(file,data){
+        if(data){
+            // data = JSON.parse(data);
+            if(data.status.status != 1){
+                errorNotification(data.status.message);
+            }
+        }
+    },
+});
+
+$('.kt_dropzone_27').dropzone({
+    url: myURL + "/27/editImage", // Set the url for your upload script location
+    paramName: "file", // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 10, // MB
+    addRemoveLinks: true,
+    accept: function(file, done) {
+        if (file.name == "justinbieber.jpg") {
+            done("Naha, you don't.");
+        } else {
+            done();
+        }
+    },
+    success:function(file,data){
+        if(data){
+            // data = JSON.parse(data);
+            if(data.status.status != 1){
+                errorNotification(data.status.message);
+            }
+        }
+    },
+});
+
+$('.kt_dropzone_28').dropzone({
+    url: myURL + "/28/editImage", // Set the url for your upload script location
+    paramName: "file", // The name that will be used to transfer the file
+    maxFiles: 1,
+    maxFilesize: 10, // MB
+    addRemoveLinks: true,
+    accept: function(file, done) {
+        if (file.name == "justinbieber.jpg") {
+            done("Naha, you don't.");
+        } else {
+            done();
+        }
+    },
+    success:function(file,data){
+        if(data){
+            // data = JSON.parse(data);
+            if(data.status.status != 1){
+                errorNotification(data.status.message);
+            }
+        }
+    },
+});
+
+$('a.DeletePhotoq').on('click',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var id = $(this).data('area');
+    $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
+    $.ajax({
+        type: 'POST',
+        url: myURL+'/'+id+'/deleteImage',
+        data:{
+            '_token': $('meta[name="csrf-token"]').attr('content'),
+            'id': id,
+        },
+        success:function(data){
+            // data = JSON.parse(data);
+            if(data.status.status == 1){
+                successNotification(data.status.message);
+                $('#my-preview').remove();
+            }else{
+                errorNotification(data.status.message);
+            }
+        },
+    });
+});
+
 $('#kt_dropzone_112').dropzone({
     url: myURL + "/editImage", // Set the url for your upload script location
     paramName: "file3", // The name that will be used to transfer the file

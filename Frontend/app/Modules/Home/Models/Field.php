@@ -53,6 +53,7 @@ class Field extends Model{
         $data = new  \stdClass();
         $data->id = $source->id;
         $data->title = $source->title;
+        $data->title_en = $source->title_en != null ? $source->title_en : '';
         $data->sort = $source->sort;
         $data->status = $source->status;
         $data->statusText = $source->status == 0 ? 'مسودة' : 'مفعلة';

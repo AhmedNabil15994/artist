@@ -9,6 +9,7 @@ use App\Models\OrderDetails;
 use App\Models\User;
 use App\Models\UserMember;
 use App\Models\Membership;
+use App\Models\Field;
 use App\Models\WebActions;
 use App\Models\UserRequest;
 use App\Models\Variable;
@@ -114,6 +115,7 @@ class UserCardControllers extends Controller {
         $data['data'] = UserCard::getData($menuObj);
         $data['data']->order = Order::getData($menuObj->Order);
         $data['data']->allmemberships = Membership::dataList(1)['data'];
+        $data['data']->fields = Field::dataList(1)['data'];
         return view('UserCard.Views.edit')->with('data',  (object) $data['data']);
     }
 
@@ -160,9 +162,19 @@ class UserCardControllers extends Controller {
 
         $orderObj = Order::find($menuObj->order_id);
         if(isset($input['card_name']) && !empty($input['card_name'])){
-            $orderObj->card_name = $input['card_name'];
+            $orderObj->name = $input['card_name'];
             $orderObj->save();
-        }        
+        }    
+
+        if(isset($input['name']) && !empty($input['name'])){
+            $orderObj->name = $input['name'];
+            $orderObj->save();
+        } 
+
+        if(isset($input['field_id']) && !empty($input['field_id'])){
+            $orderObj->field_id = $input['field_id'];
+            $orderObj->save();
+        }           
 
         // Order Details
         //identity_image
@@ -211,13 +223,16 @@ class UserCardControllers extends Controller {
     }
 
     public function addImage($images,$nextID=false,$type) {
-        $fileName = \ImagesHelper::UploadImage('orders', $images, $nextID);
+        $userCardObj = UserCard::find($nextID);
+        $menuObj = OrderDetails::where('order_id',$userCardObj->order_id)->first();
+        
+        $fileName = \ImagesHelper::UploadImage('orders', $images, $userCardObj->order_id);
+       
         if($fileName == false){
             return false;
         }
 
 
-        $menuObj = OrderDetails::where('order_id',$nextID)->first();
         $menuObj->$type = $fileName;
         $menuObj->save();
         

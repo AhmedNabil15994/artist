@@ -1,5 +1,4 @@
 <?php
-namespace App\Helper;
 use App\Models\Variable;
 
 class MailHelper

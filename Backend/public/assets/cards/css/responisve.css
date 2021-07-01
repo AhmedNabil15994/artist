@@ -1,0 +1,53 @@
+
+/* small Screens & tablets & Smart phone */
+@media (max-width: 991px) 
+{
+	.memberships .owl-theme .owl-controls .owl-buttons div
+	{
+		right:0;
+	}
+	
+	.memberships .owl-theme .owl-controls .owl-buttons div.owl-prev
+	{
+		right:auto;
+		left:0
+	}
+}
+
+/* Mobile & Tablets */
+@media (max-width: 767px) 
+{
+	
+	.memberships
+	{
+		text-align:center
+	}
+	
+	.memberships .item .details .title
+	{
+		font-size:23px;
+	}
+	
+	.memberships .item .details span
+	{
+		font-size:20px;
+	}
+	
+}
+
+/* Mobile */
+@media (max-width: 479px) 
+{
+	.memberships .item .details .btnStyle,
+	.memberships .item .details .btns
+	{
+		position:static;
+		display:inline-block;
+		margin-bottom:15px;
+	}
+	
+	.memberships .item .details .btnStyle
+	{
+		margin-top:15px;
+	}
+}

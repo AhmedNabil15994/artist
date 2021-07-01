@@ -88,6 +88,7 @@ class Order extends Model{
         $dataObj->field_id = $source->field_id;
         $dataObj->fieldObj = Field::getOne($source->field_id);
         $dataObj->fieldText = $dataObj->fieldObj->title;
+        $dataObj->fieldTextEn = $dataObj->fieldObj->title_en;
         $dataObj->city_id = $source->city_id;
         $dataObj->cityObj = City::getOne($source->city_id);
         $dataObj->cityText = $dataObj->cityObj->title;

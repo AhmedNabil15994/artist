@@ -1,7 +1,7 @@
 <div class="bg-sidenavOpen"></div>
 <div class="splash">
     <div>
-      	<img src="{{ asset('/assets/images/logo.png') }}" alt="" />
+      	<img src="{{ \App\Models\Variable::getVar('HEADER_LOGO') }}" alt="" />
       	<div class="loadProgress">
 			<span class="lineStyle"></span>
 		</div>
@@ -9,7 +9,7 @@
 </div>
 
 <div id="mySidenav" class="sidenav">
-	<img class="logo" src="{{ asset('/assets/images/logo.png') }}" alt="">
+	<img class="logo" src="{{ \App\Models\Variable::getVar('HEADER_LOGO') }}" alt="">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
 			<i class="fas fa-times"></i>
 	</a>
@@ -25,6 +25,7 @@
         </ul>
 		</li>
 		<li><a class="navLink" href="{{ URL::to('/events') }}">الفعاليات</a></li>
+		<li><a class="navLink" href="{{ URL::to('/memberships') }}">العضويات</a></li>
 		{{-- <li class="NesteListParent">
 			<a class="navLink">لوائح وسياسات</a>
 			<i class="flaticon-left-arrow"></i>

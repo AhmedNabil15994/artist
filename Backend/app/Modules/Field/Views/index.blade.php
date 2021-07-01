@@ -154,6 +154,11 @@
                                     <input type="text" class="form-control m-input" name="title" value="{{ Request::get('title') }}" data-col-index="1">
                                     <br>
                                 </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <label>العنوان انجليزي:</label>
+                                    <input type="text" class="form-control m-input" name="title_en" value="{{ Request::get('title_en') }}" data-col-index="1">
+                                    <br>
+                                </div>
                             </div>
                             <div class="m-separator m-separator--md m-separator--dashed"></div>
                             <div class="row">
@@ -186,6 +191,7 @@
                 <tr>
                     <th>ID</th>
                     <th>العنوان عربي</th>
+                    <th>العنوان انجليزي</th>
                     <th>الاجراءات</th>
                 </tr>
             </thead>
@@ -193,6 +199,7 @@
                 <tr>
                     <th>ID</th>
                     <th>العنوان عربي</th>
+                    <th>العنوان انجليزي</th>
                     <th>الاجراءات</th>
                 </tr>
             </tfoot>

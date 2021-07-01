@@ -9,133 +9,85 @@
 	    <title></title>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		{{-- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet"> --}}
-	    <link rel="stylesheet" href="{{ asset('/assets/card/css/bootstrap.css') }}" />
-	    <link rel="stylesheet" href="{{ asset('/assets/card/css/bootstrap-rtl.css') }}" />
-	    <link rel="stylesheet" href="{{ asset('/assets/card/css/font-awesome.min.css') }}" />
-	    <link rel="stylesheet" href="{{ asset('/assets/card/css/style.css') }}" />
-	    {{-- <link rel="stylesheet" href="{{ asset('/assets/card/css/responisve.css') }}" />   --}}
+	    <link rel="stylesheet" href="{{ asset('/assets/cards/css/bootstrap.css') }}" />
+	    <link rel="stylesheet" href="{{ asset('/assets/cards/css/bootstrap-rtl.css') }}" />
+	    <link rel="stylesheet" href="{{ asset('/assets/cards/css/font-awesome.min.css') }}" />
+	    <link rel="stylesheet" href="{{ asset('/assets/cards/css/style.css') }}" />
+	    <link rel="stylesheet" href="{{ asset('/assets/cards/css/responisve.css') }}" />  
 	   	<!--[if lt IE 9]>
 	       	<script src="{{ asset('/assets/card/js/html5shiv.min.js') }}"></script>
 	       	<script src="{{ asset('/assets/card/js/respond.min.js') }}"></script>
 	   	<![endif]-->
-	   	<style type="text/css" media="screen">
+	   	<style type="text/css" media="">
 	   		@font-face {
-                font-family: "Cairo-Regular";
-                src:url('{{ asset("/assets/card/fonts/Cairo-Regular.ttf") }}') format('truetype');
+                font-family: "Tajawal-Regular";
+                src:url('{{ asset("/assets/cards/fonts/Tajawal-Regular.ttf") }}') format('truetype');
                 font-weight: normal;
                 font-style: normal;
             }
 
             @font-face {
-                font-family: "Cairo-Bold";
-                src: url('{{ asset("/assets/card/fonts/Cairo-Bold.ttf") }}') format('truetype');
+                font-family: "Tajawal-Bold";
+                src: url('{{ asset("/assets/cards/fonts/Tajawal-Bold.ttf") }}') format('truetype') ;
                 font-weight: normal;
                 font-style: normal;
             }
 
             @font-face {
-                font-family: "Cairo-ExtraBold";
-                src: url('{{ asset('/assets/card/fonts/Cairo-ExtraBold.ttf') }}') format('truetype');
+                font-family: "Tajawal-ExtraBold";
+                src: url('{{ asset('/assets/cards/fonts/Tajawal-ExtraBold.ttf') }}') format('truetype');
                 font-weight: normal;
                 font-style: normal;
             }
-	        .contentCard2 .data li,.validTill{
-	        	font-size: 24px;
-	        }
-
+            body{
+            	padding-top: 225px;
+            }
+            .card{
+    			font-family: 'Tajawal-Regular', sans-serif !important;
+            }
+	        
+	        svg{
+				position: absolute;
+				left: 120%;
+			}
+	
 	   	</style>
 	</head>
 	<body>
 
-	   	<div class="bgCard">
-			<div class="containerStyle">		
-			   <div class="headCard headCard2 clearfix">
-			   		<img style="float: right;" src="{{ asset('/assets/card/images/logo.png') }}" />
-			   		<h2 class="title" style="float: left;">
-			   			عضــــــــويــــــة {{ $data->membership_name }}
-			   		</h2>
-			   </div>
-			   <div class="contentCard2 clearfix">
-			   		<ul class="data" style="float: right;">
-			   			<li>الفرع: {{ $data->order->cityText }}</li>
-			   			<li>الاسم: {{ $data->order->name }}</li>
-			   			<li>المجال: {{ $data->order->fieldText }}</li>
-			   			<li>رقم العضوية: {{ $data->code }}</li>
-			   			<li>الجنسية: سعودي</li>
-			   			<li>رقم الحفيظة/الاقامة: {{ $data->order->identity_no }}</li>
-			   		</ul>
-			   		<div class="imageStyle" style="float: left;top: 0;">
-			   			<img src="{{ $data->order->identity_image }}" />
-			   		</div>
-			   </div>
-		 	</div>
-			<!-- line2 -->
-			<div class="line"></div>
-		   	<div class="containerStyle">
-		   		<div class="validTill">
-			   		صالحة حتى 
-			   		<span>{{ $data->end_date }}</span>
-			   		:Valid Till
-		   		</div>
-		   	</div>
-   		</div>
-	    
-   		<div class="bgCard">
-		   	<div class="headCard" style="padding-top: 0;">
-		   		<div class="containerStyle" style="float: left;">
-		   			<img src="{{ asset('/assets/card/images/logo.png') }}" />
-		   		</div>
-		   		<div class="clearfix"></div>
-		   	</div>
-		   	<!-- info2 -->
-		   	<div class="info info2">
-			   	<div class="containerStyle">
-				   <div class="contentCard clearfix">
-				   		<div class="rtl" style="float: right;width: 50%; text-align:right ">
-				   			بطاقة عضوية
-							<br>
-							تصرف هذة البطاقة لأعضاء الجمعية العاملين
-							<br>
-							والمنتسبين ويلزم تجديدها قبل تاريخ انتهائها
-				   		</div>
-				   		<div class="ltr" style="float: left;width: 50%; text-align:left ">
-				   			Membership
-				   			<br>
-							This Card is issued to SASCA Members
-							<br>
-							& Must be renwed befor the expiry date
-				   		</div>
-				   		<div class="clearfix"></div>
-				   </div>
-				   <div class="numbs">
-					   <center>
-						   	في حال العثور على هذة البطاقة الرجاء الاتصال : هاتف 014420100   -  فاكس 014420753
-						   	<br>
-						   	أو تسمليمها  لأقرب فرع من فروع الجمعية
-					   </center>
-				   </div>
-			   	</div>
-		   	</div>
-		   	<div class="cardFooter clearfix">
-		   		<div class="containerStyle">
-			   		<div class="contentCard clearfix">
-				   		<ul class="website" style="float: right;">
-				   			<li style="width: 220px;"><a href="#"><img src="{{ asset('/assets/card/images/phoneIcon.png') }}" /> www.sasca.org.sa</a></li>
-				   			<li style="width: 220px;"><a href="#"><img src="{{ asset('/assets/card/images/envelope.png') }}" /> info@sasca.org.sa</a></li>
-				   		</ul>
-				   		<p class="location" style="float: left;">
-				   			الرياض:ص.ب: 3659 الرمز البريدي 11481 - هاتف 0144420100 - فاكس 014420753
-				   			<br>
-				   			P.O.Box : 3659 Riyadh 11481 - Tel: 014420100 - Fax: 01440753
-				   		</p>
-			   		</div>
-			   	</div>
-		   	</div>
-	    </div>
+	   	<div class="card {{ $data->order->membership_id == 1 ? '' : 'card2' }}">
+	    	<div class="cardHead">
+	    		<img src="{{ asset('/assets/cards/images/logo.png') }}" class="logo1" />
+	    		<img src="{{ asset('/assets/cards/images/logo2.png') }}" class="logo2" />
+	    		<div class="line"></div>
+	    	</div>
+	    	<div class="details">
+		    	<div class="info">
+		    		<div class="img">
+		    			<img src="{{ $data->image }}" alt="" />
+		    		</div>
+		    		<h2 class="nameAr">{{ $data->order->name }}</h2>
+		    		<h2 class="nameEn">{{ $data->order->name_en }}</h2>
+		    		<span class="member">عضو {{ $data->membership_name }}</span>
+		    	</div>
+	    	</div>
+	    	
+	    	<div class="qrDiv">
+	    		<h3 class="title">{{ $data->order->fieldText }}</h3>
+	    		<h3 class="titleEn">{{ $data->order->fieldTextEn }}</h3>
+				{!! \QrCode::size(70)->generate(config('app.FRONT_URL').'printCard/'.$data->id) !!}
+	    	</div>
+	    	
+	    	<div class="codeDate">
+	    		<span class="code">{{ $data->code }}</span>
+	    		<span class="date">{{ date('m - Y',strtotime($data->end_date)) }}</span>
+	    	</div>
+	    	
+	    	<img src="{{ asset('/assets/cards/images/footerLine.png') }}" class="footerLine" />
+	   </div>
 
-	    <script src="{{ asset('/assets/card/js/jquery-1.11.2.min.js') }}"></script>
-	    <script src="{{ asset('/assets/card/js/bootstrap.min.js') }}"></script>
-	    <script src="{{ asset('/assets/card/js/custom.js') }}"></script>
+	    <script src="{{ asset('/assets/cards/js/jquery-1.11.2.min.js') }}"></script>
+	    <script src="{{ asset('/assets/cards/js/bootstrap.min.js') }}"></script>
 	    
 	</body>
 

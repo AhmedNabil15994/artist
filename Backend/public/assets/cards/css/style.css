@@ -1,0 +1,633 @@
+/* ------------------------------------------ */
+/*         General & Basic Styles
+/* ------------------------------------------ */
+
+body,html
+{
+	height:100%
+}
+
+body
+{
+	font-family: 'Tajawal', sans-serif;
+	background-color:#F6F6F6;
+}
+
+
+h1,h2,h3,h4,h5,h6
+{
+	margin-top:0;
+	margin-bottom:0
+}
+
+ul
+{
+	margin-bottom:0;
+	padding-right:0;
+	list-style:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+p
+{
+	margin-bottom:0
+}
+
+a
+{
+	text-decoration:none!important;
+	outline:none;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+a:hover, a:active, a:focus {
+    outline: 0;
+}
+
+.center-block
+{
+	float:none
+}
+
+.background-cover
+{
+	-webkit-background-size:cover!important;
+	-moz-background-size:cover!important;
+	-o-background-size:cover!important;
+	background-size:cover!important;
+}
+
+input,
+textarea,
+button,
+select
+{
+	outline:none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.Owl
+{
+    direction:ltr;
+}
+
+.card
+{
+	width:639px;
+	margin:50px auto;
+	background-color:#fff;
+	position:relative;
+	padding-bottom:20px;
+}
+
+.card .cardHead
+{
+	height:145px;
+	position:relative;
+	z-index:1
+}
+
+.card .cardHead .line
+{
+	position:absolute;
+	top:100%;
+	height:18px;
+	width:100%;
+	background:url(../images/Union1.png) center;
+}
+
+.card .cardHead .logo1
+{
+	position:absolute;
+	left:60px;
+	top:17px;
+}
+
+
+.card .cardHead .logo2
+{
+	position:absolute;
+	right:45px;
+	top:25px;
+}
+
+.card .cardHead:before
+{
+	content:"";
+	background:url(../images/Path1.png) no-repeat;
+	height:100%;
+	position:absolute;
+	right:0;
+	top:0;
+	height:100%;
+	z-index:-1;
+	width:373px
+}
+.card .cardHead:after
+{
+	content:"";
+	background:url(../images/Path2.png) no-repeat;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	height:100%;
+	z-index:-1;
+	width:311px;
+}
+
+.card .details
+{
+	padding:20px 35px;
+}
+
+.card .details .info
+{
+	margin-top:-60px;
+	text-align: center;
+	max-width:200px;
+	z-index: 2;
+	position:relative
+}
+
+.card .details .info .img
+{
+	position:relative;
+}
+
+.card .details .info .img:after
+{
+	content:"";
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 100%;
+    height: 100%;
+    background: url(../images/border.png) no-repeat center center;
+}
+
+.card .details .info img
+{
+	width:142px;
+	height:142px;
+	border-radius: 15px;
+	margin-bottom:10px;
+}
+
+.card .details .info .nameAr
+{
+	font-weight:700;
+	font-size:24px;
+	margin-bottom:15px;
+}
+
+.card .details .info .nameEn
+{
+	padding:0 20px;
+	background-color:#1376DB;
+	color:#fff;
+	font-size:17px;
+	height:30px;
+	line-height:30px;
+	margin-bottom:10px;
+	display:inline-block
+}
+
+.card .details .info .member
+{
+	margin-top:10px;
+	font-size:15px;
+	font-weight:700;
+	color:#000;
+	display:block
+}
+
+.card .footerLine
+{
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:100%;
+	height:20px;
+}
+
+.card .codeDate
+{
+	position:absolute;
+	left:20px;
+	bottom:40px;
+	text-align:center;
+	color:#000;
+	font-size:20px;
+}
+
+.card .codeDate .date
+{
+	display:block;
+}
+
+.card .qrDiv
+{
+	position: absolute;
+	left:50px;
+	bottom:140px;
+	margin-right:80px;
+	padding-right:25px;
+	border-right:3px solid #1376DB
+}
+
+.card .qrDiv .qrImg,
+.qrDiv svg
+{
+    position: absolute;
+    left: calc(100% + 40px);
+    top: -17px;
+}
+
+.card .qrDiv .title
+{
+	font-weight:700;
+	margin-bottom:10px;
+}
+
+.card .qrDiv .titleEn
+{
+	font-size:12px;
+}
+
+
+.card.card2 .details .info .img:after
+{
+	display:none;
+}
+
+.card.card2 .details .info .img img
+{
+	border:3px solid #207BC6
+}
+
+.card .cardHead:before
+{
+	background:url(../images/Path11.png) no-repeat;
+}
+.card.card2 .cardHead:after
+{
+	background:url(../images/Path22.png) no-repeat;
+}
+
+
+.memberships
+{
+	position:relative;
+	padding: 75px 0 55px;
+}
+
+.memberships .bg
+{
+	position:absolute;
+	top:0;
+	right:0;
+	width:100%;
+	height:85px;
+	background:url(../images/bgMemberShip.png);
+}
+
+.titleM
+{
+	font-weight:700;
+	margin-bottom:50px;
+	font-size:40px;
+	color:#1376DB;
+	text-align:center
+}
+
+.memberships .item
+{
+	padding:0 20px;
+}
+
+.memberships .item img
+{
+	width:100%;
+	margin-bottom:20px;
+	display:block;
+	border-radius: 20px;
+}
+
+.memberships .item .details
+{
+	position:relative;
+	border-radius: 20px;
+	padding:30px 40px;
+	background-color:#fff;
+	direction: rtl;
+}
+
+.memberships .item .details .title
+{
+	color:#000;
+	font-size:30px;
+	font-weight:700;
+	margin-bottom:10px;
+}
+
+.memberships .item .details span
+{
+	display:block;
+	font-size:25px;
+	font-weight:500;
+}
+
+.memberships .item .details .btnStyle
+{
+	position:absolute;
+	left:25px;
+	bottom:70px;
+	width:160px;
+	height:50px;
+	line-height:50px;
+	display:block;
+	color:#fff;
+	text-align:center;
+	font-size:18px;
+	font-weight:700;
+	box-shadow: 0 0 6px 3px rgba(0,0,0,0.06);
+	border-radius:30px;
+	background-color:#207bc6
+}
+
+.memberships .item .details .btns
+{
+	position:absolute;
+	left:25px;
+	bottom:30px;
+}
+
+.memberships .item .details .btns li
+{
+	float:right;
+}
+
+.memberships .item .details .btns li:not(:last-of-type):after
+{
+	content:"|";
+	font-size:18px;
+	color:#000;
+	margin:0 15px;
+	display:inline-block
+}
+
+.memberships .item .details .btns li a
+{
+	color:#000;
+	font-size:18px;
+	font-weight:500;
+}
+
+.memberships .owl-theme .owl-controls .owl-buttons div
+{
+	width:45px;
+	height:45px;
+	background-color:#000;
+	color:#fff;
+	text-align:center;
+	padding:0;
+	line-height:47px;
+	position:absolute;
+	right:-70px;
+	top:calc(50% - 22.5px);
+	opacity: 1;
+	font-size:20px;
+}
+
+.memberships .owl-theme .owl-controls .owl-buttons div.owl-prev
+{
+	right:auto;
+	left:-70px
+}
+
+/* small Screens & tablets & Smart phone */
+@media (max-width: 991px) 
+{
+	.memberships .owl-theme .owl-controls .owl-buttons div
+	{
+		right:0;
+	}
+	
+	.memberships .owl-theme .owl-controls .owl-buttons div.owl-prev
+	{
+		right:auto;
+		left:0
+	}
+}
+
+/* Mobile & Tablets */
+@media (max-width: 767px) 
+{
+	
+	.memberships
+	{
+		text-align:center
+	}
+	
+	.memberships .item .details .title
+	{
+		font-size:23px;
+	}
+	
+	.memberships .item .details span
+	{
+		font-size:20px;
+	}
+	.memberships .item .details .btnStyle,
+	.memberships .item .details .btns
+	{
+		position:static;
+		margin:15px auto;
+	}
+	
+	.memberships .item .details .btns
+	{
+		display:inline-block
+	}
+	
+}
+
+/* Mobile */
+@media (max-width: 479px) 
+{
+	.memberships .item .details .btnStyle,
+	.memberships .item .details .btns
+	{
+		position:static;
+		display:inline-block;
+		margin-bottom:15px;
+	}
+	
+	.memberships .item .details .btnStyle
+	{
+		margin-top:15px;
+	}
+	
+	.titleM
+	{
+		font-size:24px;
+	}
+	
+	.memberships .item
+	{
+		padding:0
+	}
+	
+}
+
+
+
+.features
+{
+    padding: 75px 0 55px;
+    background-color: #f9f9f9;
+}
+
+.features .titleStyle
+{
+	margin-bottom:50px;
+	color:#1376DB;
+	font-size:40px;
+	text-align:center
+}
+
+.features .titleStyle span
+{
+	font-weight:700;
+	margin-left:20px
+}
+
+.table-responsive
+{
+	overflow:auto;
+	max-width:100%;
+}
+
+
+.tableMemb
+{
+	border:1px solid #EBF0F3;
+	width:100%;
+	min-width:720px;
+}
+
+.tableMemb thead
+{
+	background-color:#FBFBFB;
+	border-bottom:1px solid #EBF0F3
+}
+
+.tableMemb thead tr th
+{
+	padding:10px 20px;
+	text-align:center;
+	font-weight:700;
+	color:#000;
+	font-size:25px;
+}
+
+.tableMemb thead tr th:not(:last-of-type)
+{
+	border-left:1px solid #EBF0F3
+}
+
+.tableMemb thead span
+{
+	color:#1376db;
+	display:block;
+	margin-top:5px;
+}
+
+.tableMemb tbody tr td
+{
+	font-size:15px;
+	font-weight:700;
+	color:#000;
+	padding:0 20px;
+	padding:20px 20px;
+}
+
+.tableMemb tbody tr td:nth-child(n+3)
+{
+	text-align:center
+}
+
+.tableMemb tbody tr td:not(:last-of-type)
+{
+	border-left:1px solid #EBF0F3
+}
+
+.tableMemb tbody tr td .fa-check,
+.tableMemb tbody tr td .flaticon-remove
+{
+	font-size:25px;
+	color:#707070
+}
+
+.tableMemb tbody tr:nth-of-type(odd) {
+	background-color:#3882de08
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

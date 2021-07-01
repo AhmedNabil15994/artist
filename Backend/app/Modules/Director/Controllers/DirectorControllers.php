@@ -70,6 +70,8 @@ class DirectorControllers extends Controller {
         }
 
         $menuObj->title = $input['title'];
+        $menuObj->show_slider = $input['show_slider'];
+        $menuObj->description = $input['description'];
         $menuObj->type = 2;
         $menuObj->status = $input['status'];
         $menuObj->updated_at = DATE_TIME;
@@ -110,6 +112,8 @@ class DirectorControllers extends Controller {
         
         $menuObj = new Director;
         $menuObj->title = $input['title'];
+        $menuObj->show_slider = $input['show_slider'];
+        $menuObj->description = $input['description'];
         $menuObj->type = 2;
         $menuObj->status = $input['status'];
         $menuObj->sort = Director::newSortIndex();

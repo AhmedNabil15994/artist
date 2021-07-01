@@ -45,6 +45,16 @@
 			                  		<input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="البريد الالكتروني:">
 			                	</div>
 			              	</div>
+			              	<div class="col-sm-12 col-lg-12">
+			                  	<div class="form-group">
+			                      	<select class="form-control select2" name="membership_id">
+			                        	<option value="">حدد العضوية:</option>
+			                        	@foreach($data->memberships as $membership)
+			                        	<option value="{{ $membership->id }}" {{ Request::has('membership_id') && Request::get('membership_id') == $membership->id ? 'selected' : ''  }} {{ isset($data->data->membership_id) && $data->data->membership_id == $membership->id ? 'selected' : (old('membership_id') == $membership->id ? 'selected' : '') }}>{{ $membership->title . ' ( '.$membership->price.' ريال)' }}</option>
+			                        	@endforeach
+			                      	</select>
+			                  	</div>
+			                </div>
 				            <div class="col-sm-12 col-lg-12">
 				                <div class="form-group">
 				                  	<select class="form-control select2" name="city_id">
@@ -76,13 +86,50 @@
 			              	</div>
               				<div class="col-sm-12 col-lg-12">
                 				<div class="form-group">
-									<input type="text" name="facebook" id="" class="form-control" placeholder="مواقع التواصل الاجتماعي:">
-                				</div>
-              				</div>
-              				<div class="col-sm-12 col-lg-12">
-                				<div class="form-group">
-                  					<input type="text" name="coupon" class="form-control" value="{{ isset($data->data->coupon) ? $data->data->coupon  : old('coupon') }}" placeholder="كوبون الخصم :">
-                				</div>
+				                    <div class="addSocial clearfix">
+				                      	<span class="title">إضافة مواقع التواصل الاجتماعي</span>
+				                      	<div class="add" id="add1">
+				                        	<i class="fa fa-twitter"></i>
+				                        	<span class="name"></span>
+				                        	<div class="inputSocial" style="">
+				                          		<input type="text" name="twitter" placeholder="@yourname" value="">
+				                          		<span class="btnSoc">اضافة</span>
+				                        	</div>
+				                      	</div>
+				                      	<div class="add" id="add2">
+				                        	<i class="fa fa-youtube-play"></i>
+				                        	<span class="name"></span>
+				                        	<div class="inputSocial">
+				                          		<input type="text" name="youtube" placeholder="@yourname" value="">
+				                          		<span class="btnSoc">اضافة</span>
+				                        	</div>
+				                      	</div>
+				                      	<div class="add" id="add3">
+				                        	<i class="fa fa-instagram"></i>
+				                        	<span class="name"></span>
+				                        	<div class="inputSocial">
+				                          		<input type="text" name="instagram" placeholder="@yourname" value="">
+				                          		<span class="btnSoc">اضافة</span>
+				                        	</div>
+				                      	</div>
+				                      	<div class="add" id="add4">
+				                        	<i class="fa fa-snapchat-ghost"></i>
+				                        	<span class="name"></span>
+				                        	<div class="inputSocial">
+				                          		<input type="text" name="snapchat" placeholder="@yourname" value="">
+				                          		<span class="btnSoc">اضافة</span>
+				                        	</div>
+				                      	</div>
+				                      	<div class="add" id="add5">
+				                        	<i class="fa fa-facebook"></i>
+				                        	<span class="name"></span>
+				                        	<div class="inputSocial">
+				                          		<input type="text" name="facebook" placeholder="@yourname" value="">
+				                          		<span class="btnSoc">اضافة</span>
+				                        	</div>
+				                      	</div>
+				                    </div>
+				                  </div>
               				</div>
               				<div class="col-sm-12 col-lg-12">
                 				<div class="form-group">

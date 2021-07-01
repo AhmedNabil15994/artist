@@ -74,7 +74,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			processing: true,
 			serverSide: true,
 			ajax: {
-				url: '/ATAdmin/userCards',
+				url: '/userCards',
 				type: 'GET',
 				data:function(dtParms){
 			       	dtParms.status = $('select[name="status"]').val();
@@ -220,7 +220,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 						var editButton = '';
 
 						if($('input[name="data-area"]').val() == 1){
-							editButton = '<a href="/ATAdmin/userCards/edit/'+data+'" class="dropdown-item">'+
+							editButton = '<a href="/userCards/edit/'+data+'" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon fa fa-pencil-alt"></i>'+
 		                                    '<span class="m-nav__link-text">تعديل</span>'+
 		                                '</a>';
@@ -244,7 +244,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 		                            '</button>'+
 		                            '<div class="dropdown-menu" dropdown-toggle="hover">'+
 		                                newMembButton+
-		                                '<a href="/ATAdmin/userCards/'+full.id+'/viewCard" class="dropdown-item">'+
+		                                '<a href="/userCards/'+full.id+'/viewCard" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon far fa-credit-card"></i>'+
 		                                    '<span class="m-nav__link-text">طباعة العضوية</span>'+
 		                                '</a>'+

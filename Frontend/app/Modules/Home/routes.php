@@ -30,4 +30,8 @@ Route::group(['prefix' => '/'] , function () {
     Route::post('/paymentSuccess', 'HomeControllers@paymentSuccess');
     Route::get('/paymentFailed', 'HomeControllers@paymentFailed');
 
+    Route::get('/printCard/{id}', 'HomeControllers@printCard');
+
+    Route::get('/memberships', 'HomeControllers@memberships');
+
 });

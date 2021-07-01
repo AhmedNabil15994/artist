@@ -31,10 +31,6 @@
                           <i class="flaticon-visibility"></i>
                           <span>مشاهدة</span>
                       </a>
-                      <a href="{{ $one->photo }}" class="option option-2">
-                          <i class="flaticon-download-circular-button"></i>
-                          <span>تحميل</span>
-                      </a>
                       <div class="clear"></div>
                   </div>
               </div>

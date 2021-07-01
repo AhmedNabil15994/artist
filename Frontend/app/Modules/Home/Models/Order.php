@@ -94,7 +94,9 @@ class Order extends Model{
         $dataObj->email = $source->email;
         $dataObj->card_name = $source->card_name;
         $dataObj->field_id = $source->field_id;
-        $dataObj->fieldObj = Field::getOne($source->Field);
+        $dataObj->fieldObj = Field::getOne($source->field_id);
+        $dataObj->fieldText = $dataObj->fieldObj->title;
+        $dataObj->fieldTextEn = $dataObj->fieldObj->title_en;
         $dataObj->city_id = $source->city_id;
         $dataObj->cityObj = City::getOne($source->City);
         $dataObj->membership_id = $source->membership_id;

@@ -128,6 +128,15 @@
                     </div>     
                     <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                         <div class="col-lg-12">
+                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">عرض في الاسلايدر</label>
+                            <select class="form-control" name="show_slider">
+                                <option value="0" {{ old('show_slider') == 0 ? 'selected' : '' }}>لا</option>
+                                <option value="1" {{ old('show_slider') == 1 ? 'selected' : '' }}>نعم</option>
+                            </select>
+                        </div>
+                    </div>   
+                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
+                        <div class="col-lg-12">
                             <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">الصورة</label>
                             <div class="dropzone dropzone-default mb-5" id="kt_dropzone_1">
                                 <div class="dropzone-msg dz-message needsclick">

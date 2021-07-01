@@ -1,4 +1,3 @@
-begin::Aside-->
 <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
@@ -213,7 +212,7 @@ begin::Aside-->
                 </li>
                 @endif
                 
-             {{--    @if(\Helper::checkRules('list-memberships,list-conditions,list-features'))
+                @if(\Helper::checkRules('list-memberships,list-conditions,list-features'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/memberships*'),'menu-item-open active') }} {{ Active(URL::to('/conditions*'),'menu-item-open active') }} {{ Active(URL::to('/features*'),'menu-item-open active') }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon far fa-id-card"></i>
@@ -255,7 +254,7 @@ begin::Aside-->
                         </ul>
                     </div>
                 </li>
-                @endif --}}
+                @endif
 
                 @if(\Helper::checkRules('list-orders'))
                 <li class="menu-item menu-item-submenu {{ Active(URL::to('/orders*'),'menu-item-open active') }} " aria-haspopup="true" data-menu-toggle="hover">

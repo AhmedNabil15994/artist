@@ -25,6 +25,9 @@ class VerifyCsrfToken extends Middleware
         '/directors/add/uploadImage',
         '/directors/edit/*/editImage',
 
+        '/founders/add/uploadImage',
+        '/founders/edit/*/editImage',
+
         '/userCards/edit/*/editImage',
 
         '/events/add/uploadImage',
@@ -42,6 +45,7 @@ class VerifyCsrfToken extends Middleware
 
         '/panelSettings/deleteImage',
         '/panelSettings/*',
+        '/generalSettings/*',
 
         '/photos/add/uploadImage',
         '/photos/edit/*/editImage',

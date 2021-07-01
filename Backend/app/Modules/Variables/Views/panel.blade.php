@@ -69,13 +69,22 @@
                     @foreach($data->data as $item => $variable)
                     <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                         <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2 {{ $item == 0 ? 'mt-15' : '' }}" style="margin-bottom: 20px;">{{ $variable->key }}</label>
                             @if($variable->var_type == 0)
-                            <input class="form-control" type="number" name="value{{ $variable->id }}" value="{{ $variable->value }}" maxlength="" placeholder="">
+                            @php
+                                $color = '';
+                                if(strpos($variable->key, '#') !== false){
+                                    $result = explode('#', $variable->key);
+                                    // dd();
+                                    $color = '#'.str_replace(')', '', $result[1]).'"';
+                                }
+                                // dd($color);
+                            @endphp
+                            <label class="label label-danger label-pill label-inline mr-2 {{ $item == 0 ? 'mt-15' : '' }}" style="margin-bottom: 20px; background-color: {!! $color != '' ? $color : 'transparent' !!} ">{{ $variable->key }}</label>
+                            <input class="form-control" type="{{ $color != '' ? 'text' : 'number' }}" {{ $color != '' ? "dir=ltr" : '' }} name="value{{ $variable->id }}" value="{{ $variable->value }}" maxlength="" placeholder="">
                             @elseif($variable->var_type == 4)
                             <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                                 <div class="col-lg-12">
-                                    <div class="dropzone dropzone-default" id="kt_dropzone_111" data-area="{{ $variable->id }}">
+                                    <div class="dropzone dropzone-default" id="kt_dropzone_1120" data-area="{{ $variable->id }}">
                                         <div class="dropzone-msg dz-message needsclick">
                                             <h3 class="dropzone-msg-title"><i class="flaticon-upload-1 fa-4x"></i></h3>
                                             <span class="dropzone-msg-desc">اسحب الملفات هنا أو انقر هنا للرفع .</span>

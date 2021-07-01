@@ -70,6 +70,7 @@ class Event extends Model{
         $data = new  \stdClass();
         $data->id = $source->id;
         $data->title = $source->title;
+        $data->show_slider = $source->show_slider;
         $data->description = $source->description;
         $data->date = $source->date;
         $data->sort = $source->sort;

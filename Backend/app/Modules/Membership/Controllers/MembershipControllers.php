@@ -42,9 +42,9 @@ class MembershipControllers extends Controller {
     }
 
     public function add() {
-        $data['features'] = Feature::dataList(1)['data'];
-        $data['conditions'] = Condition::dataList(1)['data'];
-        return view('Membership.Views.add')->with('data', (object) $data);
+        // $data['features'] = Feature::dataList(1)['data'];
+        // $data['conditions'] = Condition::dataList(1)['data'];
+        return view('Membership.Views.add');
     }
 
     public function edit($id) {
@@ -56,8 +56,8 @@ class MembershipControllers extends Controller {
         }
 
         $data['data'] = Membership::getData($menuObj);
-        $data['features'] = Feature::dataList(1)['data'];
-        $data['conditions'] = Condition::dataList(1)['data'];
+        // $data['features'] = Feature::dataList(1)['data'];
+        // $data['conditions'] = Condition::dataList(1)['data'];
         return view('Membership.Views.edit')->with('data', (object) $data);      
     }
 
@@ -80,8 +80,8 @@ class MembershipControllers extends Controller {
         $menuObj->title = $input['title'];
         $menuObj->price = doubleval(str_replace(',', '.', $input['price']));
         $menuObj->discount_price = doubleval(str_replace(',', '.', $input['discount_price']));
-        $menuObj->features = isset($input['features']) ? serialize($input['features']) : ''; 
-        $menuObj->conditions = isset($input['conditions']) ? serialize($input['conditions']) : ''; 
+        // $menuObj->features = isset($input['features']) ? serialize($input['features']) : ''; 
+        // $menuObj->conditions = isset($input['conditions']) ? serialize($input['conditions']) : ''; 
         $menuObj->status = $input['status'];
         $menuObj->updated_at = DATE_TIME;
         $menuObj->updated_by = USER_ID;
@@ -106,8 +106,8 @@ class MembershipControllers extends Controller {
         $menuObj->title = $input['title'];
         $menuObj->price = doubleval(str_replace(',', '.', $input['price']));
         $menuObj->discount_price = doubleval(str_replace(',', '.', $input['discount_price']));
-        $menuObj->features = isset($input['features']) ? serialize($input['features']) : ''; 
-        $menuObj->conditions = isset($input['conditions']) ? serialize($input['conditions']) : ''; 
+        // $menuObj->features = isset($input['features']) ? serialize($input['features']) : ''; 
+        // $menuObj->conditions = isset($input['conditions']) ? serialize($input['conditions']) : ''; 
         $menuObj->status = $input['status'];
         $menuObj->sort = Membership::newSortIndex();
         $menuObj->created_at = DATE_TIME;

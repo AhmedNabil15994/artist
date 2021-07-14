@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-	<div class="breadcrumb" style="background-image: url('{{ asset("/assets/images/breadcrumb.png") }}');">
+	<div class="breadcrumb" style="background-image: url('{{ $data->mainPhoto->photo }}');">
     <div class="container">
       <h5>من نحن</h5>
       <ul class="list-unstyled">

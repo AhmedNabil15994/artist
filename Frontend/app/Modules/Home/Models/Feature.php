@@ -54,6 +54,9 @@ class Feature extends Model{
         $data->id = $source->id;
         $data->title = $source->title;
         $data->description = $source->description;
+        $data->memberships = $source->memberships != null ? $source->memberships : '';
+        $data->memberships_ids = $source->memberships != null ? unserialize($source->memberships) : [];
+        $data->membershipsText = $source->memberships != null ? Membership::NotDeleted()->where('status',1)->whereIn('id',$data->memberships_ids)->pluck('title') : [];
         $data->sort = $source->sort;
         $data->status = $source->status;
         $data->statusText = $source->status == 0 ? 'مسودة' : 'مفعلة';

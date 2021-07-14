@@ -75,15 +75,24 @@ class Membership extends Model{
     }
 
     static function getData($source) {
+        $idForSearch = 's:'.strlen($source->id).':"'.$source->id.'";';
+
+        $features = Feature::NotDeleted()->where('status',1)->where('memberships','LIKE','%'.$idForSearch.'%');
+        $conditions = Condition::NotDeleted()->where('status',1)->where('memberships','LIKE','%'.$idForSearch.'%');
+
         $data = new  \stdClass();
         $data->id = $source->id;
         $data->title = $source->title;
         $data->price = $source->price;
-        $data->discount_price = $source->discount_price;
-        $data->features = $source->features != null ? unserialize($source->features) : '';
-        $data->conditions = $source->conditions != null ? unserialize($source->conditions) : '';
-        $data->featruesText = $source->features != null ? Feature::NotDeleted()->where('status',1)->whereIn('id',unserialize($source->features))->pluck('title') : [];
-        $data->conditionsText = $source->conditions != null ? Condition::NotDeleted()->where('status',1)->whereIn('id',unserialize($source->conditions))->pluck('title') : [];
+        $data->discount_price = $source->discount_price ? $source->discount_price : '';
+        $data->features = $features->pluck('id');
+        $data->features = reset($data->features);
+        $data->conditions = $conditions->pluck('id');
+        $data->conditions = reset($data->conditions);
+        $data->featruesText = $features->pluck('title');
+        $data->featruesText = reset($data->featruesText);
+        $data->conditionsText = $conditions->pluck('title');
+        $data->conditionsText = reset($data->conditionsText);
         $data->sort = $source->sort;
         $data->status = $source->status;
         $data->statusText = $source->status == 0 ? 'مسودة' : 'مفعلة';

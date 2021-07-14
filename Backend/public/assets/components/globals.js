@@ -565,3 +565,18 @@ $('select[name="valid_type"]').on('change',function(){
         $('input[name="valid_value"]').attr('data-toggle','datetimepicker');
     }
 });
+
+
+$('.SelectAllCheckBox').on('click',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('input[type="checkbox"]').attr('checked','checked');
+    $('input[type="checkbox"]').parents('tr').addClass('selected');
+});
+
+$('.UnSelectAllCheckBox').on('click',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('input[type="checkbox"]').attr('checked', false);
+    $('input[type="checkbox"]').parents('tr').removeClass('selected');
+});

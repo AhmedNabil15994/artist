@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use App\Models\Feature;
+use App\Models\Membership;
 use App\Models\WebActions;
 use Illuminate\Http\Request;
 use DataTables;
@@ -37,7 +38,8 @@ class FeatureControllers extends Controller {
     }
 
     public function add() {
-        return view('Feature.Views.add');
+        $data['memberships'] = Membership::dataList(1)['data'];
+        return view('Feature.Views.add')->with('data', (object) $data);
     }
 
     public function edit($id) {
@@ -50,6 +52,7 @@ class FeatureControllers extends Controller {
         }
 
         $data['data'] = Feature::getData($menuObj);
+        $data['memberships'] = Membership::dataList(1)['data'];
         return view('Feature.Views.edit')->with('data', (object) $data);      
     }
 
@@ -71,6 +74,7 @@ class FeatureControllers extends Controller {
 
         $menuObj->title = $input['title'];
         $menuObj->description = $input['description'];
+        $menuObj->memberships = isset($input['memberships']) ? serialize($input['memberships']) : ''; 
         $menuObj->status = $input['status'];
         $menuObj->updated_at = DATE_TIME;
         $menuObj->updated_by = USER_ID;
@@ -93,6 +97,7 @@ class FeatureControllers extends Controller {
         $menuObj = new Feature;
         $menuObj->title = $input['title'];
         $menuObj->description = $input['description'];
+        $menuObj->memberships = isset($input['memberships']) ? serialize($input['memberships']) : ''; 
         $menuObj->status = $input['status'];
         $menuObj->sort = Feature::newSortIndex();
         $menuObj->created_at = DATE_TIME;

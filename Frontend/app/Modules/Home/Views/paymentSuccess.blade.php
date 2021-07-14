@@ -39,7 +39,7 @@
 	    	<div class="thankYou paymentNow">
 		        <i class="flaticon-verified"></i>
 		        <h5>شكراً لك</h5>
-		        <p>تم ارسال طلبكم بنجاح يرجى مراجعة البريد الاكتروني</p>
+		        <p>تم ارسال طلبكم بنجاح</p>
 		    </div>
 		    {{-- <div class="card style{{ $data->membership->membership_id }}">
                 <img src="{{ asset('/assets/cards/images/bg'.$data->membership->membership_id.'.png') }}" class="bg1" alt="" />
@@ -71,11 +71,4 @@
 
 @section('scripts')
 <script src="{{ asset('/assets/js/complete.js') }}" type="text/javascript"></script>
-<script>
-    $(function(){
-        setTimeout(function(){
-            window.location.href = '/printCard/{{ $data->membership->id }}';
-        },2000);
-    });
-</script>   
 @endsection

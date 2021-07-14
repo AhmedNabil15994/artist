@@ -160,6 +160,48 @@ class OrderControllers extends Controller {
         return redirect()->back();
     }
 
+    public function newMember($id,$status)
+    {
+        $id = (int) $id;
+        $status = (int) $status;
+
+        $menuObj = Order::getOne($id);
+        if($menuObj == null || $status != 6 ) {
+            return Redirect('404');
+        }
+
+        if($status == 6){
+            $key = base64_encode('order-'.$menuObj->id);
+            $message = 'تم انشاء العضوية بنجاح للتحميل اضعط هنا : '.config('app.FRONT_URL').'printCard/'.$key;
+            // dd($message);
+            JawalyHelper::sendSMS($menuObj->phone,$message);
+
+            $start_date = now()->format('Y-m-d');
+            $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
+            $cardObj = UserCard::NotDeleted()->where('order_id',$id)->first();
+            if(!$cardObj){
+                $cardObj = new UserCard;
+                $cardObj->code = UserCard::getNewCode();
+                $cardObj->sort = UserCard::newSortIndex();
+                $cardObj->created_at = DATE_TIME;
+                $cardObj->created_by = 1;
+            }
+            $cardObj->order_id = $menuObj->id;
+            $cardObj->membership_id = $menuObj->membership_id;
+            $cardObj->deliver_no = null;
+            $cardObj->start_date = $start_date;
+            $cardObj->end_date = $end_date;
+            $cardObj->status = 2;
+            $cardObj->save();
+
+            $menuObj->status = $status;
+            $menuObj->save();
+        }
+
+        \Session::flash('success','تم التعديل بنجاح');
+        return redirect()->back();
+    }
+
     public function charts() {
         $input = \Request::all();
         $now = date('Y-m-d');

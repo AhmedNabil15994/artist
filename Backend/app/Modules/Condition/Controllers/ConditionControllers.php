@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use App\Models\Condition;
+use App\Models\Membership;
 use App\Models\WebActions;
 use Illuminate\Http\Request;
 use DataTables;
@@ -37,7 +38,8 @@ class ConditionControllers extends Controller {
     }
 
     public function add() {
-        return view('Condition.Views.add');
+        $data['memberships'] = Membership::dataList(1)['data'];
+        return view('Condition.Views.add')->with('data', (object) $data);
     }
 
     public function edit($id) {
@@ -50,6 +52,7 @@ class ConditionControllers extends Controller {
         }
 
         $data['data'] = Condition::getData($menuObj);
+        $data['memberships'] = Membership::dataList(1)['data'];
         return view('Condition.Views.edit')->with('data', (object) $data);      
     }
 
@@ -71,6 +74,7 @@ class ConditionControllers extends Controller {
 
         $menuObj->title = $input['title'];
         $menuObj->description = $input['description'];
+        $menuObj->memberships = isset($input['memberships']) ? serialize($input['memberships']) : ''; 
         $menuObj->status = $input['status'];
         $menuObj->updated_at = DATE_TIME;
         $menuObj->updated_by = USER_ID;
@@ -93,6 +97,7 @@ class ConditionControllers extends Controller {
         $menuObj = new Condition;
         $menuObj->title = $input['title'];
         $menuObj->description = $input['description'];
+        $menuObj->memberships = isset($input['memberships']) ? serialize($input['memberships']) : ''; 
         $menuObj->status = $input['status'];
         $menuObj->sort = Condition::newSortIndex();
         $menuObj->created_at = DATE_TIME;

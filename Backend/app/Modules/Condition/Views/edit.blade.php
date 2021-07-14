@@ -23,7 +23,7 @@
                         <a href="{{ URL::to('/') }}" class="text-muted"><i class="m-nav__link-icon la la-home"></i></a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="{{ URL::to('/condition') }}" class="text-muted">شروط البطاقات</a>
+                        <a href="{{ URL::to('/conditions') }}" class="text-muted">شروط البطاقات</a>
                     </li>
                     <li class="breadcrumb-item">
                         <a href="{{ URL::current() }}" class="text-muted">تعديل</a>
@@ -43,19 +43,19 @@
                 </button>
                 <div class="dropdown-menu" dropdown-toggle="hover">
                     @if(\Helper::checkRules('add-condition'))
-                    <a href="{{ URL::to('/condition/add') }}" class="dropdown-item">
+                    <a href="{{ URL::to('/conditions/add') }}" class="dropdown-item">
                         <i class="m-nav__link-icon fa fa-plus"></i>
                         <span class="m-nav__link-text">اضافة</span>
                     </a>
                     @endif
                     @if(\Helper::checkRules('sort-condition'))
-                    <a href="{{ URL::to('/condition/arrange') }}" class="dropdown-item">
+                    <a href="{{ URL::to('/conditions/arrange') }}" class="dropdown-item">
                         <i class="m-nav__link-icon fa fa-sort-numeric-up"></i>
                         <span class="m-nav__link-text">ترتيب</span>
                     </a>
                     @endif
                     @if(\Helper::checkRules('charts-condition'))
-                    <a href="{{ URL::to('/condition/charts') }}" class="dropdown-item">
+                    <a href="{{ URL::to('/conditions/charts') }}" class="dropdown-item">
                         <i class="m-nav__link-icon flaticon-graph"></i>
                         <span class="m-nav__link-text">الاحصائيات</span>
                     </a>
@@ -89,7 +89,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="AddTabs" role="tabpanel">
-                <form class="forms m-form m-form--group-seperator-dashed" method="POST" action="{{ URL::to('/condition/update/'.$data->data->id) }}">  
+                <form class="forms m-form m-form--group-seperator-dashed" method="POST" action="{{ URL::to('/conditions/update/'.$data->data->id) }}">  
                     @csrf
                     <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                         <div class="col-lg-12">
@@ -106,6 +106,34 @@
                             <span class="m-form__help LastUpdate">تم الحفظ فى :  {{ $data->data->created_at }}</span>
                         </div>
                     </div>      
+                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
+                        <div class="col-lg-12">
+                            <label class="label label-danger label-pill label-inline mr-2 mt-15" style="margin-bottom: 20px;">العضويات</label>
+                            <div class="row">
+                                @foreach($data->memberships as $key => $membership)
+                                <div class="col-lg-6 col-sm-6">
+                                    <label class="checkbox checkbox-success">
+                                    <input type="checkbox" {{ $data->data->memberships_ids != '' && in_array($membership->id,$data->data->memberships_ids) ? 'checked' : '' }} name="memberships[]" value="{{ $membership->id }}" />
+                                    <span></span>{{ $membership->title }}</label>
+                                </div>
+                                @endforeach
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <br>
+                                            <button type="button" style="width:100%;" class="btn btn-success btn-lg btn-block SelectAllCheckBox">اختيار الكل</button>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <br>
+                                            <button type="button" style="width:100%;" class="btn btn-danger btn-lg btn-block UnSelectAllCheckBox">عدم اختيار الكل</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="m-form__help LastUpdate">تم الحفظ فى :  {{ $data->data->created_at }}</span>
+                        </div>
+                    </div>  
                 </form>
             </div>
         </div>

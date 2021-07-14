@@ -121,27 +121,32 @@ class HomeControllers extends Controller {
 
     public function aboutUs(){   
         $data = Page::dataList(1,[1,4,5,6]);
+        $data['mainPhoto'] = Page::dataList(1,[10])['data'];
         return view('Home.Views.aboutUs')->with('data',(object) $data);
     }
 
     public function events(){
         $data['events'] = Event::dataList(1,null,1)['data'];
         $data['initiatives'] = Event::dataList(1,null,2)['data'];
+        $data['mainPhoto'] = Page::dataList(1,[13])['data'];
         return view('Home.Views.events')->with('data',(object) $data);
     }
 
     public function founders(){   
         $data['data'] = Director::dataList(1,null,1)['data'];
+        $data['mainPhoto'] = Page::dataList(1,[12])['data'];
         return view('Home.Views.founders')->with('data',(object) $data);
     }
 
     public function directors(){   
         $data['data'] = Director::dataList(1,null,2)['data'];
+        $data['mainPhoto'] = Page::dataList(1,[11])['data'];
         return view('Home.Views.directors')->with('data',(object) $data);
     }
 
     public function regulations(){   
         $data['data'] = Regulation::dataList(1)['data'];
+        $data['mainPhoto'] = Page::dataList(1,[14])['data'];
         return view('Home.Views.regulations')->with('data',(object) $data);
     }
 
@@ -182,6 +187,7 @@ class HomeControllers extends Controller {
         $data['memberships'] = Membership::dataList(1)['data'];
         $data['fields'] = Field::dataList(1)['data'];
         $data['cities'] = City::dataList(1)['data'];
+        $data['mainPhoto'] = Page::dataList(1,[15])['data'];
         return view('Home.Views.registeration')->with('data',(object) $data);
     }
 
@@ -442,30 +448,30 @@ class HomeControllers extends Controller {
             $orderObj->status = 5;
             $orderObj->save();
 
-            $start_date = now()->format('Y-m-d');
-            $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
-            $menuObj = UserCard::NotDeleted()->where('order_id',$newOne)->first();
-            if(!$menuObj){
-                $menuObj = new UserCard;
-                $menuObj->code = UserCard::getNewCode();
-            }
-            $menuObj->order_id = $orderObj->id;
-            $menuObj->membership_id = $orderObj->membership_id;
-            $menuObj->deliver_no = null;
-            $menuObj->start_date = $start_date;
-            $menuObj->end_date = $end_date;
-            $menuObj->status = 2;
-            $menuObj->sort = UserCard::newSortIndex();
-            $menuObj->created_at = DATE_TIME;
-            $menuObj->created_by = 1;
-            $menuObj->save();
+            // $start_date = now()->format('Y-m-d');
+            // $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
+            // $menuObj = UserCard::NotDeleted()->where('order_id',$newOne)->first();
+            // if(!$menuObj){
+            //     $menuObj = new UserCard;
+            //     $menuObj->code = UserCard::getNewCode();
+            // }
+            // $menuObj->order_id = $orderObj->id;
+            // $menuObj->membership_id = $orderObj->membership_id;
+            // $menuObj->deliver_no = null;
+            // $menuObj->start_date = $start_date;
+            // $menuObj->end_date = $end_date;
+            // $menuObj->status = 2;
+            // $menuObj->sort = UserCard::newSortIndex();
+            // $menuObj->created_at = DATE_TIME;
+            // $menuObj->created_by = 1;
+            // $menuObj->save();
 
             $orderDetailsObj->transfer_image = $fileName;
             $orderDetailsObj->save();
 
             $dataObj['id'] = base64_encode('order-'.$orderObj->id);
             $dataObj['price'] = $orderObj->Membership->price.'.00';
-            $dataObj['membership'] = $menuObj;
+            // $dataObj['membership'] = $menuObj;
             $dataObj['image'] = OrderDetails::getData(OrderDetails::where('order_id',$orderObj->id)->first())->image;
             return view('Home.Views.paymentSuccess')->with('data',(object) $dataObj);
         }
@@ -498,35 +504,37 @@ class HomeControllers extends Controller {
         $orderObj->status = 5;
         $orderObj->save();
 
-        $start_date = now()->format('Y-m-d');
-        $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
-        $menuObj = UserCard::NotDeleted()->where('order_id',$id)->first();
-        if(!$menuObj){
-            $menuObj = new UserCard;
-            $menuObj->code = UserCard::getNewCode();
-        }
-        $menuObj->order_id = $orderObj->id;
-        $menuObj->membership_id = $orderObj->membership_id;
-        $menuObj->deliver_no = null;
-        $menuObj->start_date = $start_date;
-        $menuObj->end_date = $end_date;
-        $menuObj->status = 2;
-        $menuObj->sort = UserCard::newSortIndex();
-        $menuObj->created_at = DATE_TIME;
-        $menuObj->created_by = 1;
-        $menuObj->save();
+        // $start_date = now()->format('Y-m-d');
+        // $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
+        // $menuObj = UserCard::NotDeleted()->where('order_id',$id)->first();
+        // if(!$menuObj){
+        //     $menuObj = new UserCard;
+        //     $menuObj->code = UserCard::getNewCode();
+        // }
+        // $menuObj->order_id = $orderObj->id;
+        // $menuObj->membership_id = $orderObj->membership_id;
+        // $menuObj->deliver_no = null;
+        // $menuObj->start_date = $start_date;
+        // $menuObj->end_date = $end_date;
+        // $menuObj->status = 2;
+        // $menuObj->sort = UserCard::newSortIndex();
+        // $menuObj->created_at = DATE_TIME;
+        // $menuObj->created_by = 1;
+        // $menuObj->save();
         
         $dataObj['id'] = base64_encode('order-'.Session::get('newOrderId'));
         $dataObj['price'] = $orderObj->Membership->price.'.00';
-        $dataObj['membership'] = $menuObj;
+        // $dataObj['membership'] = $menuObj;
         $dataObj['image'] = OrderDetails::getData(OrderDetails::where('order_id',$orderObj->id)->first())->image;
         Session::forget('newOrderId');
         return view('Home.Views.paymentSuccess')->with('data',(object) $dataObj);
     }
 
     public function printCard($id) {
+        $key = base64_decode($id);
+        $id = str_replace('order-', '', $key);
         $id = (int) $id;
-        $menuObj = UserCard::getOne($id);
+        $menuObj = UserCard::where('order_id',$id)->first();
         if(!$menuObj){
             return redirect(404);
         }

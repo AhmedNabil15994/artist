@@ -151,6 +151,7 @@ return [
     'OrderControllers@delete' => 'delete-order',
     'OrderControllers@fastEdit' => 'edit-order',
     'OrderControllers@changeStatus' => 'edit-order',
+    'OrderControllers@newMember' => 'edit-order',
     'OrderControllers@status' => 'edit-order',
     'OrderControllers@edit' => 'edit-order',
     'OrderControllers@Update' => 'edit-order',

@@ -104,6 +104,33 @@
                             <input class="form-control mb-5" type="text" name="description" value="{{ old('description') }}" maxlength="" placeholder="">
                         </div>
                     </div>     
+                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
+                        <div class="col-lg-12">
+                            <label class="label label-danger label-pill label-inline mr-2 mt-15" style="margin-bottom: 20px;">العضويات: </label>
+                            <div class="row mains">
+                                @foreach($data->memberships as $key => $membership)
+                                <div class="col-lg-6 col-sm-6">
+                                    <label class="checkbox checkbox-success">
+                                    <input type="checkbox" name="memberships[]" value="{{ $membership->id }}" />
+                                    <span></span>{{ $membership->title }}</label>
+                                </div>
+                                @endforeach
+
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <br>
+                                            <button type="button" style="width:100%;" data-cols='mains' class="btn btn-success btn-lg btn-block SelectAllCheckBox">اختيار الكل</button>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <br>
+                                            <button type="button" style="width:100%;" data-cols='mains' class="btn btn-danger btn-lg btn-block UnSelectAllCheckBox">عدم اختيار الكل</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
                 </form>
             </div>
         </div>

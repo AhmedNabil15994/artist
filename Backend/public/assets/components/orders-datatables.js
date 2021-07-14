@@ -242,12 +242,12 @@ var KTDatatablesAdvancedMultipleControls = function() {
 		                                    '<span class="m-nav__link-text">تعديل</span>'+
 		                                '</a>';
 						}
-						// if(full.status == 5){
-						// 	newMembButton = '<a href="#" class="dropdown-item newMemb" data-cols="'+full.id+'" data-image="'+full.image+'" data-identity_no="'+full.identity_no+'" data-identity_end_date="'+full.identity_end_date+'" data-identity_image="'+full.identity_image+'" >'+
-		    //                                 '<i class="m-nav__link-icon far fa-credit-card"></i>'+
-		    //                                 '<span class="m-nav__link-text">انشاء عضوية جديدة</span>'+
-		    //                             '</a>';
-						// }
+						if(full.status == 5){
+							newMembButton = '<a href="'+('/'+$('input.url').val()+'/'+full.id+'/accept/6')+'" class="dropdown-item" >'+
+		                                    '<i class="m-nav__link-icon far fa-credit-card"></i>'+
+		                                    '<span class="m-nav__link-text">انشاء عضوية جديدة</span>'+
+		                                '</a>';
+						}
 						return '<div class="main-menu dropdown dropdown-inline">'+
 		                            '<button type="button" class="btn btn-light-primary btn-icon btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+
 		                                '<i class="ki ki-bold-more-hor"></i>'+

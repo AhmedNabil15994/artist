@@ -117,62 +117,6 @@
                             <input class="form-control mb-5" type="text" name="discount_price" value="{{ $data->data->discount_price }}" maxlength="" placeholder="">
                         </div>
                     </div>
-                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
-                        <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2 mt-15" style="margin-bottom: 20px;">الشروط</label>
-                            <div class="row">
-                                @foreach($data->conditions as $key => $oneCondition)
-                                <div class="col-lg-6 col-sm-6">
-                                    <label class="checkbox checkbox-success">
-                                    <input type="checkbox" {{ $data->data->conditions != '' && in_array($oneCondition->id,$data->data->conditions) ? 'checked' : '' }} name="conditions[]" value="{{ $oneCondition->id }}" />
-                                    <span></span>{{ $oneCondition->title }}</label>
-                                </div>
-                                @endforeach
-
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <br>
-                                            <button type="button" style="width:100%;" class="btn btn-success btn-lg btn-block SelectAllCheckBox">اختيار الكل</button>
-                                        </div>
-                                        <div class="col-lg-6 col-sm-6">
-                                            <br>
-                                            <button type="button" style="width:100%;" class="btn btn-danger btn-lg btn-block UnSelectAllCheckBox">عدم اختيار الكل</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="m-form__help LastUpdate">تم الحفظ فى :  {{ $data->data->created_at }}</span>
-                        </div>
-                    </div> 
-                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
-                        <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2 mt-15" style="margin-bottom: 20px;">المميزات</label>
-                            <div class="row">
-                                @foreach($data->features as $key => $oneFeature)
-                                <div class="col-lg-6 col-sm-6">
-                                    <label class="checkbox checkbox-success">
-                                    <input type="checkbox" {{ $data->data->features != '' && in_array($oneFeature->id,$data->data->features) ? 'checked' : '' }} name="features[]" value="{{ $oneFeature->id }}" />
-                                    <span></span>{{ $oneFeature->title }}</label>
-                                </div>
-                                @endforeach
-
-                                <div class="col-lg-12">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <br>
-                                            <button type="button" style="width:100%;" class="btn btn-success btn-lg btn-block SelectAllCheckBox">اختيار الكل</button>
-                                        </div>
-                                        <div class="col-lg-6 col-sm-6">
-                                            <br>
-                                            <button type="button" style="width:100%;" class="btn btn-danger btn-lg btn-block UnSelectAllCheckBox">عدم اختيار الكل</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="m-form__help LastUpdate">تم الحفظ فى :  {{ $data->data->created_at }}</span>
-                        </div>
-                    </div> 
                 </form>
             </div>
         </div>

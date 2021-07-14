@@ -1,64 +1,6 @@
 $(document).ready(function () {
   // AOS.init();
 
-  // var oldColors = ['#4a3309','#7b591a','#b98e33','#b58727','#d19515'];
-  // var newColors = [
-  //   $('input[name="COLOR1"]').val(),
-  //   $('input[name="COLOR2"]').val(),
-  //   $('input[name="COLOR3"]').val(),
-  //   $('input[name="COLOR4"]').val(),
-  //   $('input[name="COLOR5"]').val(),
-  // ];
-
-  // function rgba2hex(orig) {
-  //   var a, isPercent,
-  //     rgb = orig.replace(/\s/g, '').match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i),
-  //     alpha = (rgb && rgb[4] || "").trim(),
-  //     hex = rgb ?
-  //     (rgb[1] | 1 << 8).toString(16).slice(1) +
-  //     (rgb[2] | 1 << 8).toString(16).slice(1) +
-  //     (rgb[3] | 1 << 8).toString(16).slice(1) : orig;
-
-  //   if (alpha !== "") {
-  //     a = alpha;
-  //   } else {
-  //     a = 01;
-  //   }
-  //   // multiply before convert to HEX
-  //   a = ((a * 255) | 1 << 8).toString(16).slice(1)
-  //   hex = hex ;
-
-  //   return '#' + hex;
-  // }
-
-
-  // $('body *').each(function(index, el) {
-  //   var elemBackground = rgba2hex($(el).css('backgroundColor'));
-  //   var elemColor = rgba2hex($(el).css('color'));
-  //   var elemBack = rgba2hex($(el).css('background'));
-  //   var elemBorderColor = rgba2hex($(el).css('borderColor'));
-   
-  //   if(oldColors.indexOf(elemBackground) > -1 ){
-  //     var found = oldColors.indexOf(elemBackground);
-  //     $(el).css('backgroundColor',newColors[found]);
-  //   }
-
-  //   if(oldColors.indexOf(elemColor) > -1 ){
-  //     var found = oldColors.indexOf(elemColor);
-  //     $(el).css('color',newColors[found]);
-  //   }  
-
-  //   if(oldColors.indexOf(elemBack) > -1 ){
-  //     var found = oldColors.indexOf(elemBack);
-  //     $(el).css('background',newColors[found]);
-  //   }  
-
-  //   if(oldColors.indexOf(elemBorderColor) > -1 ){
-  //     var found = oldColors.indexOf(elemBorderColor);
-  //     $(el).css('borderColor',newColors[found]);
-  //   }  
-  // });
-
   $(window).scroll(() => {
     if ($(this).scrollTop() > 20) {
       $(".myNavbar").addClass("fixed-navbar");
@@ -68,8 +10,10 @@ $(document).ready(function () {
       $("#floating").css("opacity", "0");
     }
   });
-
-  $('.select2').select2();
+    
+    if($('.select2').length){
+        $('.select2').select2();    
+    }
 
   $("#floating").click(() => {
     $("html, body").animate(
@@ -227,17 +171,17 @@ $(document).ready(function () {
     });
   }
 
-	  
-	$('body,html').on('click', function(e) {
-		var container = $(".mycustom-select .title,.mycustom-select .title *"),
-		Sub = $(".selectList");
-		
-	    if( !$(e.target).is(container)  ){
-	        Sub.slideUp();
-	    }
-	
-	});
-	
+    
+  $('body,html').on('click', function(e) {
+    var container = $(".mycustom-select .title,.mycustom-select .title *"),
+    Sub = $(".selectList");
+    
+      if( !$(e.target).is(container)  ){
+          Sub.slideUp();
+      }
+  
+  });
+  
 
   $(".selectList li").each((index, item) => {
     // console.log($(item))

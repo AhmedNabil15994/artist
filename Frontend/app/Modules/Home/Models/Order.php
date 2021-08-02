@@ -118,9 +118,9 @@ class Order extends Model{
         }elseif($status == 3){
             $text = 'تم الرفض';
         }elseif($status == 4){
-            $text = 'جاري التحويل البنكي';
+            $text = 'جاري الدفع';
         }elseif($status == 5){
-            $text = 'تم التحويل البنكي';
+            $text = 'تم الدفع';
         }elseif($status == 6){
             $text = 'تم انشاء العضوية';
         }

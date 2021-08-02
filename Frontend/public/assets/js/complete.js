@@ -28,7 +28,7 @@ $(function(){
 		setTimeout(function(){
 			var myUrl = window.location.href;
 			var newUrl = myUrl.replace("payment", "paymentGateway");
-			window.location.href = newUrl;
+			// window.location.href = newUrl;
 		},3000);
 	}
 

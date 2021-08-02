@@ -3,7 +3,23 @@
 @section('title','الدفع')
 
 @section('styles')
-
+<style type="text/css" media="screen">
+	.paymentNow{
+		padding-left: 15px;
+    	padding-right: 15px;
+	}
+	.paymentNow .col-xs-4{
+		width: 33.3333%;
+		display: inline-block;
+		float: left;
+	}
+	.paymentNow .title{
+		margin-bottom: 25px;
+	}
+	.pad{
+		padding-top: 36px;
+	}
+</style>
 @endsection
 
 @section('content')
@@ -20,9 +36,19 @@
   	<div class="confirm-page">
 	    <div class="container">
 	    	<div class="paymentNow now">
-		        <i class="flaticon-verified"></i>
-		        <h5>الدفع الآن</h5>
-		        <p>جاري تحويلك لعملية الدفع الالكتروني</p>
+		        <h2 class="title">اختر نوع الدفع قبل التوجة الى بوابة الدفع</h2>
+				<div class="row mb-3">
+					<div class="col-xs-4"><a href="{{ URL::to('/paymentGateway/VISA') }}">
+						<img src="{{ asset('assets/images/visa.svg') }}" alt="">
+					</a></div>
+					<div class="col-xs-4 pad"><a href="{{ URL::to('/paymentGateway/MASTER') }}">
+						<img src="{{ asset('assets/images/mastercard.svg') }}" alt="">
+					</a></div>
+					<div class="col-xs-4 pad"><a href="{{ URL::to('/paymentGateway/MADA') }}">
+						<img src="{{ asset('assets/images/Mada_Logo.svg') }}" alt="">
+					</a></div>
+				</div>
+				<img src="{{ asset('/assets/images/waiting.svg') }}" alt="" class="iconPayment fa-spin" />
 		    </div>
 	    </div>
 	</div>

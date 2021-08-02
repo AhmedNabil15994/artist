@@ -148,8 +148,8 @@
                                     <br>
                                 </div>  
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <label>تاريخ انتهاء الهوية:</label>
-                                    <input type="text" class="form-control m-input datetimepicker-input" id="kt_datetimepicker_7_5" placeholder="تاريخ انتهاء الهوية"  name="identity_end_date" value="{{ Request::get('identity_end_date') }}" data-col-index="5" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_5">
+                                    <label>تاريخ الميلاد:</label>
+                                    <input type="text" class="form-control m-input datetimepicker-input" id="kt_datetimepicker_7_5" placeholder="تاريخ الميلاد"  name="identity_end_date" value="{{ Request::get('identity_end_date') }}" data-col-index="5" data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_5">
                                     <br>
                                 </div>   
                                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -199,11 +199,10 @@
                 <tr>
                     <th>ID</th>
                     <th>الكود</th>
-                    <th>صورة التحويل البنكي</th>
                     <th>الصورة الشخصية</th>
                     <th>صورة الهوية</th>
                     <th>رقم الهوية</th>
-                    <th>تاريخ انتهاء الهوية</th>
+                    <th>تاريخ الميلاد</th>
                     <th>رقم الشحنة</th>
                     <th>الحالة</th>
                     <th>الاجراءات</th>
@@ -213,11 +212,10 @@
                 <tr>
                     <th>ID</th>
                     <th>الكود</th>
-                    <th>صورة التحويل البنكي</th>
                     <th>الصورة الشخصية</th>
                     <th>صورة الهوية</th>
                     <th>رقم الهوية</th>
-                    <th>تاريخ انتهاء الهوية</th>
+                    <th>تاريخ الميلاد</th>
                     <th>رقم الشحنة</th>
                     <th>الحالة</th>
                     <th>الاجراءات</th>

@@ -7,12 +7,12 @@
 @endsection
 
 @section('content')
-	<div class="header-slider">
+  <div class="header-slider">
     <div class="slider-item" style="background-image: url('{{ $data->sliders[0]->photo }}');">
       <div class="header-content">
         <div class="container">
           <h5>{{ $data->sliders[0]->title }}</h5>
-          <p>{{ $data->sliders[0]->description }}</p>
+          <p>{!! $data->sliders[0]->description !!}</p>
         </div>
       </div>
     </div>
@@ -20,7 +20,7 @@
       <div class="header-content">
         <div class="container">
           <h5>{{ $data->sliders[1]->title }}</h5>
-          <p>{{ $data->sliders[1]->description }}</p>
+          <p>{!! $data->sliders[1]->description !!}</p>
         </div>
       </div>
     </div>
@@ -297,7 +297,7 @@
     </div>
   </div>
 
-  <div class="numbers">
+  <div class="numbers" style="background-image: url('{{ $data->countersImage->photo }}');">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-lg-4">

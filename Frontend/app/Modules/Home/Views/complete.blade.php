@@ -54,7 +54,7 @@
 	            		<input type="text" name="identity_no" value="{{ isset($data->data->identity_no) ? $data->data->identity_no : old('identity_no') }}" class="form-control" placeholder="رقم الهوية">
 	          		</div>
 	          		<div class="form-group">
-	            		<input type="text" class="form-control" id="datepicker" name="identity_end_date"  value="{{ isset($data->data->identity_end_date) ? $data->data->identity_end_date : old('identity_end_date') }}" placeholder="تاريخ انتهاء الهوية:">
+	            		<input type="text" class="form-control" id="datepicker" name="identity_end_date"  value="{{ isset($data->data->identity_end_date) ? $data->data->identity_end_date : old('identity_end_date') }}" placeholder="تاريخ الميلاد:">
 	          		</div>
 	          	<button type="submit">التسجيل الآن</button>
 	        	</form>

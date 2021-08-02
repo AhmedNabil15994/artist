@@ -101,7 +101,7 @@
                     </div>   
                     <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
                         <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">تاريخ انتهاء الهوية</label>
+                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">تاريخ الميلاد</label>
                             <input class="form-control datetimepicker-input" id="kt_datetimepicker_7_1"  data-toggle="datetimepicker" data-target="#kt_datetimepicker_7_1" type="text" name="identity_end_date" value="{{ $data->identity_end_date }}" maxlength="" placeholder="">
                             <span class="m-form__help LastUpdate">تم الحفظ فى :  {{ $data->created_at }}</span>
                         </div>
@@ -228,35 +228,6 @@
                                                 </figure>
                                             </div>
                                             <a class="DeleteCardPhoto" data-tabs="image" data-area="{{ $data->id }}"><i class="flaticon-delete"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group row" style="padding-right: 0;padding-left: 0;padding-bottom: 10px;">
-                        <div class="col-lg-12">
-                            <label class="label label-danger label-pill label-inline mr-2" style="margin-bottom: 20px;">صورة التحويل البنكي</label>
-                            <div class="dropzone dropzone-default" id="kt_dropzone_112">
-                                <div class="dropzone-msg dz-message needsclick">
-                                    <h3 class="dropzone-msg-title"><i class="flaticon-upload-1 fa-4x"></i></h3>
-                                    <span class="dropzone-msg-desc">اسحب الملفات هنا أو انقر هنا للرفع .</span>
-                                </div>
-                                @if($data->transfer_image != '')
-                                <div class="dz-preview dz-image-preview" id="my-preview3">  
-                                    <div class="dz-image">
-                                        <img alt="image" src="{{ $data->transfer_image }}">
-                                    </div>  
-                                    <div class="dz-details">
-                                        <div class="PhotoBTNS">
-                                            <div class="my-gallery" itemscope="" itemtype="" data-pswp-uid="1">
-                                               <figure itemprop="associatedMedia" itemscope="" itemtype="">
-                                                    <a href="{{ $data->transfer_image }}" itemprop="contentUrl" data-size="555x370"><i class="flaticon-search"></i></a>
-                                                    <img src="{{ $data->transfer_image }}" itemprop="thumbnail" style="display: none;">
-                                                </figure>
-                                            </div>
-                                            <a class="DeleteCardPhoto" data-tabs="transfer_image" data-area="{{ $data->id }}"><i class="flaticon-delete"></i></a>
                                         </div>
                                     </div>
                                 </div>

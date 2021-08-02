@@ -23,12 +23,12 @@ Route::group(['prefix' => '/'] , function () {
     Route::get('/complete/{id}', 'HomeControllers@complete');
     Route::post('/complete/{id}', 'HomeControllers@postComplete');
 
-    Route::get('/payment/{id}', 'HomeControllers@payment');
-    Route::get('/paymentGateway/{id}','HomeControllers@paymentGateway');
-    Route::post('/paymentGateway/{id}', 'HomeControllers@checkPayment');
 
-    Route::post('/paymentSuccess', 'HomeControllers@paymentSuccess');
+    Route::get('/payment/{id}', 'HomeControllers@payment');
+    Route::get('/paymentGateway/{type}','HomeControllers@paymentGateway');
+    Route::get('/checkPayment', 'HomeControllers@checkPayment');
     Route::get('/paymentFailed', 'HomeControllers@paymentFailed');
+    Route::get('/paymentSuccess', 'HomeControllers@paymentSuccess');
 
     Route::get('/printCard/{id}', 'HomeControllers@printCard');
 

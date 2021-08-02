@@ -91,7 +91,7 @@ class HomeControllers extends Controller {
 
         $message = [
             'identity_no.required' => "يرجي ادخال رقم الهوية",
-            'identity_end_date.required' => "يرجي ادخال تاريخ انتهاء العضوية",
+            'identity_end_date.required' => "يرجي ادخال تاريخ الميلاد",
             'image.required' => "يرجي ارفاق الصورة الشخصية",
             'identity_image.required' => "يرجي ارفاق صورة الهوية",
         ];
@@ -108,11 +108,12 @@ class HomeControllers extends Controller {
         $data['events'] = Event::dataList(1,null,1,1)['data'];
         $data['initiatives'] = Event::dataList(1,null,2,1)['data'];
         $data['categories'] = Category::dataList(1)['data'];
-        $data['sliders'] = Slider::dataList(1,[1,2])['data'];
+        $data['sliders'] = Slider::dataList(1,[1,11])['data'];
         $data['founders'] = Director::dataList(1,null,2,1)['data'];
         $data['fields'] = Field::dataList(1)['data'];
         $data['cities'] = City::dataList(1)['data'];
         $data['counters'] = Page::dataList(1,[7,8,9])['data'];
+        $data['countersImage'] = Page::dataList(1,[16])['data'][0];
         $data['partners'] = Slider::generateObj(Slider::NotDeleted()->where('title','الشركاء والداعمين'))['data'];
         $data['lat'] = Variable::getVar('latitude:');
         $data['lng'] = Variable::getVar('longitude:');
@@ -362,19 +363,14 @@ class HomeControllers extends Controller {
 
     public function payment($id){
         $key = base64_decode($id);
-        $newOne = str_replace('order-', '', $key);
-        $newOne = (int) $newOne;
-
+        $id = str_replace('order-', '', $key);
+        $id = (int) $id;
+        Session::put('newOrderId',$id);
         Session::forget('errorMSG');
-
-        $orderObj = Order::getOne($newOne);
+        $orderObj = Order::getOne($id);
         if($orderObj == null){
             Session::flash('error', 'هذا الطلب غير موجود');
             return redirect()->to('/');
-        }
-
-        if(!$orderObj->Details->identity_no){
-            return redirect()->to('/complete/'.$id);
         }
 
         if($orderObj->status != 4){
@@ -385,97 +381,56 @@ class HomeControllers extends Controller {
         return view('Home.Views.payment')->with('data',(object) $data);
     }
 
-    public function paymentGateway($id){
-        $key = base64_decode($id);
-        $newOne = str_replace('order-', '', $key);
-        $newOne = (int) $newOne;
-
-        Session::put('newOrderId',$newOne);
-        Session::forget('errorMSG');
-        
-        $orderObj = Order::getOne($newOne);
+    public function paymentGateway($type){
+        if(!Session::has('newOrderId') || Session::get('newOrderId') == 0 || !in_array($type, ['VISA','MASTER','MADA'])){
+            return redirect('404');
+        }
+        $id = Session::get('newOrderId');
+        $orderObj = Order::getOne($id);
         if($orderObj == null){
             Session::flash('error', 'هذا الطلب غير موجود');
             return redirect()->to('/');
-        }
-
-        if(!$orderObj->Details->identity_no){
-            return redirect()->to('/complete/'.$id);
         }
 
         if($orderObj->status != 4){
             Session::flash('error', 'هذا الطلب قيد الملاحظة');
             return redirect()->to('/');
         }
+        if($type == 'MADA'){
+            $brands = 'MADA';
+        }else{
+            $brands = 'VISA MASTER';
+        }
 
-        $data = $orderObj;
-        return view('Home.Views.paymentGateway')->with('data',(object) $data);
+        Session::put('paymentType',$type);
+
+        $data['price'] = $orderObj->Membership->price.'.00';
+        $data['id'] = $orderObj->id;
+        $data['email'] = $orderObj->email;
+        $responseObj = \PaymentHelper::getPaymentInfo($data,$type);
+        $dataObj['response'] = $responseObj;
+        $dataObj['redirectURL'] = \URL::to('/checkPayment');
+        $dataObj['formBrands'] = $brands;
+        return view('Home.Views.paymentGateway')->with('data',(object) $dataObj);
     }
 
-    public function checkPayment($id,Request $request){
-        $key = base64_decode($id);
-        $newOne = str_replace('order-', '', $key);
-        $newOne = (int) $newOne;
-        $input = \Request::all();
 
-        Session::put('newOrderId',$newOne);
-        Session::forget('errorMSG');
-        
-        $orderObj = Order::getOne($newOne);
-        if($orderObj == null){
-            Session::flash('error', 'هذا الطلب غير موجود');
-            return redirect()->to('/');
-        }
+    public function checkPayment(Request $request){
+        $data = \Request::all();
+        $responseObj = \PaymentHelper::checkPaymentStatus($data['id'],Session::get('paymentType'));
 
-        if(!$orderObj->Details->identity_no){
-            return redirect()->to('/complete/'.$id);
-        }
-
-        if($orderObj->status != 4){
-            Session::flash('error', 'هذا الطلب قيد الملاحظة');
-            return redirect()->to('/');
-        }
-
-        $orderDetailsObj = $orderObj->Details;
-
-        if ($request->hasFile('file')) {
-            $files = $request->file('file');
-            $fileName = \ImagesHelper::UploadImage('orders', $files, $newOne);
-            if($fileName == false){
-                return redirect('/paymentFailed');
-            }
-
+        if(strpos($responseObj->result->description,'Transaction succeeded') !== false || strpos($responseObj->result->description,'successfully') !== false || (isset($responseObj->resultDetails) && strpos($responseObj->resultDetails->ExtendedDescription,'Transaction Approved.') !== false || strpos(@$responseObj->resultDetails->{'response.acquirerMessage'},'Approved') !== false)){
+           
+            $id = Session::get('newOrderId');
+            $orderObj = Order::getOne($id);
             $orderObj->status = 5;
             $orderObj->save();
-
-            // $start_date = now()->format('Y-m-d');
-            // $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
-            // $menuObj = UserCard::NotDeleted()->where('order_id',$newOne)->first();
-            // if(!$menuObj){
-            //     $menuObj = new UserCard;
-            //     $menuObj->code = UserCard::getNewCode();
-            // }
-            // $menuObj->order_id = $orderObj->id;
-            // $menuObj->membership_id = $orderObj->membership_id;
-            // $menuObj->deliver_no = null;
-            // $menuObj->start_date = $start_date;
-            // $menuObj->end_date = $end_date;
-            // $menuObj->status = 2;
-            // $menuObj->sort = UserCard::newSortIndex();
-            // $menuObj->created_at = DATE_TIME;
-            // $menuObj->created_by = 1;
-            // $menuObj->save();
-
-            $orderDetailsObj->transfer_image = $fileName;
-            $orderDetailsObj->save();
-
-            $dataObj['id'] = base64_encode('order-'.$orderObj->id);
-            $dataObj['price'] = $orderObj->Membership->price.'.00';
-            // $dataObj['membership'] = $menuObj;
-            $dataObj['image'] = OrderDetails::getData(OrderDetails::where('order_id',$orderObj->id)->first())->image;
-            return view('Home.Views.paymentSuccess')->with('data',(object) $dataObj);
+           
+            Session::forget('paymentType');
+            return redirect('/paymentSuccess');
         }
-
+        Session::put('errorMSG',@$responseObj->resultDetails->{'response.acquirerMessage'});
+        Session::flash('error',@$responseObj->resultDetails->{'response.acquirerMessage'});
         return redirect('/paymentFailed');
     }
 
@@ -495,7 +450,7 @@ class HomeControllers extends Controller {
             return redirect()->to('/');
         }
 
-        if($orderObj->status != 4){
+        if($orderObj->status != 5){
             Session::flash('error', 'هذا الطلب قيد الملاحظة');
             return redirect()->to('/');
         }
@@ -504,27 +459,27 @@ class HomeControllers extends Controller {
         $orderObj->status = 5;
         $orderObj->save();
 
-        // $start_date = now()->format('Y-m-d');
-        // $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
-        // $menuObj = UserCard::NotDeleted()->where('order_id',$id)->first();
-        // if(!$menuObj){
-        //     $menuObj = new UserCard;
-        //     $menuObj->code = UserCard::getNewCode();
-        // }
-        // $menuObj->order_id = $orderObj->id;
-        // $menuObj->membership_id = $orderObj->membership_id;
-        // $menuObj->deliver_no = null;
-        // $menuObj->start_date = $start_date;
-        // $menuObj->end_date = $end_date;
-        // $menuObj->status = 2;
-        // $menuObj->sort = UserCard::newSortIndex();
-        // $menuObj->created_at = DATE_TIME;
-        // $menuObj->created_by = 1;
-        // $menuObj->save();
+        $start_date = now()->format('Y-m-d');
+        $end_date = date("Y-m-d", strtotime(now()->format('Y-m-d'). " + 1 year"));
+        $menuObj = UserCard::NotDeleted()->where('order_id',$id)->first();
+        if(!$menuObj){
+            $menuObj = new UserCard;
+            $menuObj->code = UserCard::getNewCode();
+        }
+        $menuObj->order_id = $orderObj->id;
+        $menuObj->membership_id = $orderObj->membership_id;
+        $menuObj->deliver_no = null;
+        $menuObj->start_date = $start_date;
+        $menuObj->end_date = $end_date;
+        $menuObj->status = 2;
+        $menuObj->sort = UserCard::newSortIndex();
+        $menuObj->created_at = DATE_TIME;
+        $menuObj->created_by = 1;
+        $menuObj->save();
         
         $dataObj['id'] = base64_encode('order-'.Session::get('newOrderId'));
         $dataObj['price'] = $orderObj->Membership->price.'.00';
-        // $dataObj['membership'] = $menuObj;
+        $dataObj['membership'] = $menuObj;
         $dataObj['image'] = OrderDetails::getData(OrderDetails::where('order_id',$orderObj->id)->first())->image;
         Session::forget('newOrderId');
         return view('Home.Views.paymentSuccess')->with('data',(object) $dataObj);

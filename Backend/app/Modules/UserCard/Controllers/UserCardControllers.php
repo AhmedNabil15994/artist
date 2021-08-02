@@ -33,7 +33,7 @@ class UserCardControllers extends Controller {
 
         $message = [
             'identity_no.required' => 'يرجي ادخال رقم الهوية',
-            'identity_end_date.required' => "يرجي ادخال تاريخ انتهاء الهوية",
+            'identity_end_date.required' => "يرجي ادخال تاريخ الميلاد",
             'membership_id.required' => "يرجي اختيار العضوية",
             'status.required' => "يرجي اختيار الحالة",
         ];

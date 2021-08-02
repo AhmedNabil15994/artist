@@ -74,7 +74,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			processing: true,
 			serverSide: true,
 			ajax: {
-				url: '/userCards',
+				url: '/ATAdmin/userCards',
 				type: 'GET',
 				data:function(dtParms){
 			       	dtParms.status = $('select[name="status"]').val();
@@ -82,14 +82,13 @@ var KTDatatablesAdvancedMultipleControls = function() {
 			       	dtParms.start_date = $('input[name="start_date"]').val();
 			       	dtParms.end_date = $('input[name="end_date"]').val();
 			        dtParms.columnsDef= [
-						'id', 'code','transfer_image' ,'image','identity_image','identity_no','identity_end_date','deliver_no','membership_name','start_date','end_date','statusText'];
+						'id', 'code' ,'image','identity_image','identity_no','identity_end_date','deliver_no','membership_name','start_date','end_date','statusText'];
 			        return dtParms
 			    }
 			},
 			columns: [
 				{data: 'id'},
 				{data: 'code'},
-				{data: 'transfer_image'},
 				{data: 'image'},
 				{data: 'identity_image'},
 				{data: 'identity_no'},
@@ -114,24 +113,6 @@ var KTDatatablesAdvancedMultipleControls = function() {
 				},
 				{
 					targets: 2,
-					title: 'صورة التحويل البنكي',
-					render: function(data, type, full, meta) {
-						var myElem= '<span class="label label-danger label-pill label-inline">لا يوجد</span>';
-						if(data != ''){
-							myElem = '<div class="my-gallery" itemscope="" itemtype="" data-pswp-uid="1">'+
-                            		'<figure itemprop="associatedMedia" itemscope="" itemtype="">'+
-                               			'<a href="'+data+'" itemprop="contentUrl" data-size="555x370">'+
-                                    		'<img src="'+data+'" class="topics-img">'+
-                                		'</a>'+
-                                		'<img src="'+data+'" itemprop="thumbnail" style="display: none;">'+
-                            		'</figure>'+
-                        		'</div>';
-						}
-						return myElem;
-					},
-				},
-				{
-					targets: 3,
 					title: 'الصورة الشخصية',
 					render: function(data, type, full, meta) {
 						var myElem= '<span class="label label-danger label-pill label-inline">لا يوجد</span>';
@@ -149,7 +130,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 4,
+					targets: 3,
 					title: 'صورة الهوية',
 					render: function(data, type, full, meta) {
 						var myElem= '<span class="label label-danger label-pill label-inline">لا يوجد</span>';
@@ -167,7 +148,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 5,
+					targets: 4,
 					title: 'رقم الهوية',
 					className: 'edits',
 					render: function(data, type, full, meta) {
@@ -175,7 +156,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 6,
+					targets: 5,
 					title: 'تاريخ انتهاء الهوية',
 					className: 'edits dates',
 					render: function(data, type, full, meta) {
@@ -183,7 +164,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 7,
+					targets: 6,
 					title: 'رقم الشحنة',
 					className: 'edits',
 					render: function(data, type, full, meta) {
@@ -191,7 +172,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 					},
 				},
 				{
-					targets: 8,
+					targets: 7,
 					title: 'الحالة',
 					className: 'edits selects',
 					render: function(data, type, full, meta) {
@@ -220,7 +201,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 						var editButton = '';
 
 						if($('input[name="data-area"]').val() == 1){
-							editButton = '<a href="/userCards/edit/'+data+'" class="dropdown-item">'+
+							editButton = '<a href="/ATAdmin/userCards/edit/'+data+'" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon fa fa-pencil-alt"></i>'+
 		                                    '<span class="m-nav__link-text">تعديل</span>'+
 		                                '</a>';
@@ -244,7 +225,7 @@ var KTDatatablesAdvancedMultipleControls = function() {
 		                            '</button>'+
 		                            '<div class="dropdown-menu" dropdown-toggle="hover">'+
 		                                newMembButton+
-		                                '<a href="/userCards/'+full.id+'/viewCard" class="dropdown-item">'+
+		                                '<a href="/ATAdmin/userCards/'+full.id+'/viewCard" class="dropdown-item">'+
 		                                    '<i class="m-nav__link-icon far fa-credit-card"></i>'+
 		                                    '<span class="m-nav__link-text">طباعة العضوية</span>'+
 		                                '</a>'+
